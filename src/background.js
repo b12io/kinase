@@ -1,7 +1,7 @@
 /* global chrome */
 
-chrome.browserAction.onClicked.addListener(tab => {
+chrome.browserAction.onClicked.addListener(() => {
   chrome.tabs.executeScript(null, {
-    file: 'dist/main.js'
-  })
-})
+    file: 'dist/main.js',
+  });
+});

@@ -1,8 +1,4 @@
 module.exports = {
-  extends: 'standard',
+  extends: 'airbnb',
   installedESLint: true,
-  plugins: [
-    'promise',
-    'standard'
-  ]
 };
