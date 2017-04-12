@@ -1,41 +1,43 @@
-var path = require('path')
+const path = require('path');
 
 module.exports = {
   resolve: {
+    extensions: ['.js', '.json', '.jsx'],
     modules: [
       path.join(__dirname, 'src'),
-      'node_modules'
-    ]
+      'node_modules',
+    ],
   },
   entry: {
     background: 'background.js',
-    main: 'main.js'
+    main: 'main.jsx',
   },
   output: {
     path: path.join(__dirname, 'dist'),
-    filename: '[name].js'
+    filename: '[name].js',
   },
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: /\.jsx?$/,
+        exclude: [/node_modules/, /.*\.min\.js/],
         use: 'eslint-loader',
-        enforce: 'pre'
+        enforce: 'pre',
       }, {
-        test: /\.js$/,
+        test: /\.jsx?$/,
         exclude: [/node_modules/, /.*\.min\.js/],
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['es2015'],
+            presets: ['es2015', 'react'],
             plugins: [
               'transform-runtime',
-              'transform-object-rest-spread'
-            ]
-          }
-        }
-      }
-    ]
+              'transform-object-rest-spread',
+            ],
+          },
+        },
+      },
+    ],
   },
-  devtool: 'cheap-source-map'
-}
+  devtool: 'cheap-source-map',
+};
