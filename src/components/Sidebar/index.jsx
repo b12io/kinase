@@ -2,14 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
-import Annotation from 'components/Annotation';
+import AnnotationMapping from 'components/AnnotationMapping';
 
 import styles from './style.scss';
 
 function Sidebar(props) {
   const annotations = Object.keys(props.annotations).map(annotationName => (
     <li key={annotationName}>
-      <Annotation annotationName={annotationName} />
+      <AnnotationMapping annotationName={annotationName} />
     </li>
   ));
   return (
@@ -27,10 +27,8 @@ Sidebar.defaultProps = {
   annotations: {},
 };
 
-const mapStateToProps = state => ({
-  annotations: state.annotations,
-});
-
 export default connect(
-  mapStateToProps,
+  state => ({
+    annotations: state.annotations,
+  }),
 )(Sidebar);

@@ -2,14 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
-import AnnotationField from 'components/AnnotationField';
+import AnnotationMappingField from 'components/AnnotationMappingField';
 
 import styles from './style.scss';
 
-function Annotation(props) {
+function AnnotationMapping(props) {
   const fields = Object.keys(props.annotation).map(fieldName => (
     <li key={fieldName}>
-      <AnnotationField annotationName={props.annotationName} fieldName={fieldName} />
+      <AnnotationMappingField annotationName={props.annotationName} fieldName={fieldName} />
     </li>
   ));
   return (
@@ -20,18 +20,16 @@ function Annotation(props) {
   );
 }
 
-Annotation.propTypes = {
+AnnotationMapping.propTypes = {
   annotation: PropTypes.objectOf(PropTypes.string),
   annotationName: PropTypes.string.isRequired,
 };
-Annotation.defaultProps = {
+AnnotationMapping.defaultProps = {
   annotation: {},
 };
 
-const mapStateToProps = (state, ownProps) => ({
-  annotation: state.annotations[ownProps.annotationName],
-});
-
 export default connect(
-  mapStateToProps,
-)(Annotation);
+  (state, ownProps) => ({
+    annotation: state.annotations[ownProps.annotationName],
+  }),
+)(AnnotationMapping);
