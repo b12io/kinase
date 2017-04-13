@@ -21,7 +21,7 @@ function AnnotationMapping(props) {
 }
 
 AnnotationMapping.propTypes = {
-  annotation: PropTypes.objectOf(PropTypes.string),
+  annotation: PropTypes.objectOf(PropTypes.objectOf(PropTypes.string)),
   annotationName: PropTypes.string.isRequired,
 };
 AnnotationMapping.defaultProps = {

@@ -21,7 +21,7 @@ function Sidebar(props) {
 }
 
 Sidebar.propTypes = {
-  annotations: PropTypes.objectOf(PropTypes.objectOf(PropTypes.string)),
+  annotations: PropTypes.objectOf(PropTypes.objectOf(PropTypes.objectOf(PropTypes.string))),
 };
 Sidebar.defaultProps = {
   annotations: {},

@@ -1,5 +1,8 @@
 {
   "about": {
-    "text": null
+    "text": {
+      "source": null,
+      "content": null
+    }
   }
 }
