@@ -38,6 +38,7 @@ module.exports = {
         },
       }, {
         test: /\.s?css$/,
+        exclude: [/node_modules/],
         use: [
           'style-loader',
           {
@@ -49,6 +50,12 @@ module.exports = {
           },
           'sass-loader',
         ],
+      },
+      {
+        // TODO(jrbotros): Figure out how to namespace external styles with CSS modules
+        test: /\.s?css$/,
+        include: [/node_modules/],
+        use: ['style-loader', 'css-loader', 'sass-loader'],
       },
     ],
   },

@@ -7,7 +7,7 @@ import AnnotationMappingField from 'components/AnnotationMappingField';
 import styles from './style.scss';
 
 function AnnotationMapping(props) {
-  const fields = Object.keys(props.annotation).map(fieldName => (
+  const fields = Object.keys(props.schema).map(fieldName => (
     <li key={fieldName}>
       <AnnotationMappingField annotationName={props.annotationName} fieldName={fieldName} />
     </li>
@@ -21,15 +21,15 @@ function AnnotationMapping(props) {
 }
 
 AnnotationMapping.propTypes = {
-  annotation: PropTypes.objectOf(PropTypes.objectOf(PropTypes.string)),
+  schema: PropTypes.objectOf(PropTypes.string),
   annotationName: PropTypes.string.isRequired,
 };
 AnnotationMapping.defaultProps = {
-  annotation: {},
+  schema: {},
 };
 
 export default connect(
   (state, ownProps) => ({
-    annotation: state.annotations[ownProps.annotationName],
+    schema: state.schema[ownProps.annotationName],
   }),
 )(AnnotationMapping);

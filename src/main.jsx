@@ -14,29 +14,40 @@ import Sidebar from 'components/Sidebar';
 import styles from 'main.scss';
 import { PORT_NAME } from 'redux/constants';
 import { selectElement } from 'redux/proxyActions';
+import { currentFieldTypeSelector } from 'redux/selectors';
 
 const selectorGenerator = new CssSelectorGenerator({
-  // TODO: Exclude specific classes (e.g., `tether-*`) but allow others
+  // TODO(jrbotros): Exclude specific classes (e.g., `tether-*`) but allow others
   selectors: ['id', 'tag', 'nthchild'],
 });
 
-const getWrappedText = (node) => {
-  const textNodes = filter(
-    node.childNodes, child => child.nodeType === child.TEXT_NODE);
-  const combined = trim(
-    textNodes.map(textNode => textNode.textContent).join(''));
-  return combined || null;
-};
-
-const getWrappedImage = node => (
-  node instanceof HTMLImageElement && node.src ? node.src : null);
-
-const getWrappedContent = node => getWrappedText(node) || getWrappedImage(node);
-
-if (!document.querySelector('tent-main')) {
+if (!document.querySelector(styles.tentMain)) {
   const store = new Store({
     portName: PORT_NAME,
   });
+
+  const getWrappedText = (node) => {
+    const textNodes = filter(
+      node.childNodes, child => child.nodeType === child.TEXT_NODE);
+    const combined = trim(
+      textNodes.map(textNode => textNode.textContent).join(''));
+    return combined || null;
+  };
+
+  const getWrappedImage = node => (
+    node instanceof HTMLImageElement && node.src ? node.src : null);
+
+  const getWrappedContent = (node) => {
+    switch (currentFieldTypeSelector(store.getState())) {
+      case 'text':
+        return getWrappedText(node);
+      case 'image':
+        return getWrappedImage(node);
+      default:
+        return null;
+    }
+  };
+
 
   const mainContainer = document.createElement('div');
   mainContainer.setAttribute('class', styles.tentMain);
