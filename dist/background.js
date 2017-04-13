@@ -4143,6 +4143,9 @@ var _proxyActions = __webpack_require__(70);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+// NOTE: The `alias` middleware allows async actions to be triggered from the
+// proxy store but carried out on the background page. Read more at:
+// https://github.com/tshaddix/react-chrome-redux/wiki/Advanced-Usage
 exports.default = (0, _defineProperty3.default)({}, _constants.SELECT_ELEMENT, function (action) {
   return function (dispatch, getState) {
     var _getState = getState(),
