@@ -3,4 +3,10 @@
 .annotationField {
   border: 1px solid $dark-gray;
   padding: 5px;
+
+  textarea {
+    width: 100%;
+    height: auto;
+    box-sizing: border-box;
+  }
 }

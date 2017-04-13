@@ -4,16 +4,16 @@
   position: relative;
   color: $dark-gray;
   padding: 15px;
-}
 
-header {
-  border-bottom: 1px solid $dark-gray;
-  font-size: 1.5em;
-  margin-bottom: 15px;
-}
+  header {
+    border-bottom: 1px solid $dark-gray;
+    font-size: 1.5em;
+    margin-bottom: 15px;
+  }
 
-ul, li {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+  ul, li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
 }

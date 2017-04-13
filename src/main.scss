@@ -16,3 +16,14 @@ $sidebar-width: 30vw;
   right: 0;
   overflow: scroll;
 }
+
+.tentHighlight {
+  border: 1px solid red;
+  box-sizing: border-box;
+  cursor: cell;
+}
+
+.disableLink {
+  pointer-events: none;
+  cursor: default;
+}
