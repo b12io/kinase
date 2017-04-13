@@ -1,0 +1,18 @@
+$sidebar-width: 30vw;
+
+.tentSidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: $sidebar-width;
+}
+
+.tentMain {
+  position: fixed;
+  top: 0;
+  left: $sidebar-width;
+  bottom: 0;
+  right: 0;
+  overflow: scroll;
+}

@@ -1,0 +1,19 @@
+@import '~variables.scss';
+
+.sidebar {
+  position: relative;
+  color: $dark-gray;
+  padding: 15px;
+}
+
+header {
+  border-bottom: 1px solid $dark-gray;
+  font-size: 1.5em;
+  margin-bottom: 15px;
+}
+
+ul, li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
