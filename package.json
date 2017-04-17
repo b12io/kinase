@@ -22,8 +22,10 @@
     "webpack": "2.3.3"
   },
   "dependencies": {
+    "css-selector-generator": "1.0.2",
     "lodash.filter": "4.6.0",
     "lodash.isnil": "4.0.0",
+    "lodash.isundefined": "3.0.1",
     "lodash.trim": "4.5.1",
     "prop-types": "15.5.8",
     "react": "15.5.4",
@@ -32,6 +34,6 @@
     "react-redux": "5.0.4",
     "redux": "3.6.0",
     "redux-thunk": "2.2.0",
-    "unique-selector": "0.3.4"
+    "tether": "1.4.0"
   }
 }
