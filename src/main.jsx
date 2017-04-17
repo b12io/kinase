@@ -56,7 +56,18 @@ if (!document.querySelector(styles.tentMain)) {
   const sidebarContainer = document.createElement('div');
   sidebarContainer.setAttribute('class', styles.tentSidebar);
   document.body.innerHTML = mainContainer.outerHTML;
+
+  // Wrap extension interface in a shadow root to sandbox styles
+  const sidebarShadow = sidebarContainer.attachShadow({ mode: 'open' });
   document.body.appendChild(sidebarContainer);
+  document.querySelectorAll('.webpack-styles').forEach((style) => {
+    // TODO: Separate shadow root styles from external styles in build
+    sidebarShadow.appendChild(style.cloneNode(true));
+  });
+  const reactRoot = sidebarShadow.appendChild(document.createElement('div'));
+
+  // Prevent inheriting styles from parent elements
+  reactRoot.style.all = 'initial';
 
   const highlighter = new Highlighter();
   document.querySelector(`.${styles.tentMain}`)
@@ -80,6 +91,6 @@ if (!document.querySelector(styles.tentMain)) {
       <Provider store={store}>
         <Sidebar />
       </Provider>,
-      sidebarContainer);
+      reactRoot);
   });
 }

@@ -1,5 +1,14 @@
 const path = require('path');
 
+const customStyleLoader = {
+  loader: 'style-loader',
+  options: {
+    attrs: {
+      class: 'webpack-styles',
+    },
+  },
+};
+
 module.exports = {
   resolve: {
     extensions: ['.js', '.json', '.jsx'],
@@ -40,7 +49,7 @@ module.exports = {
         test: /\.s?css$/,
         exclude: [/node_modules/],
         use: [
-          'style-loader',
+          customStyleLoader,
           {
             loader: 'css-loader',
             options: {
@@ -52,10 +61,14 @@ module.exports = {
         ],
       },
       {
-        // TODO(jrbotros): Figure out how to namespace external styles with CSS modules
+        // TODO: Figure out how to namespace external styles with CSS modules
         test: /\.s?css$/,
         include: [/node_modules/],
-        use: ['style-loader', 'css-loader', 'sass-loader'],
+        use: [
+          customStyleLoader,
+          'css-loader',
+          'sass-loader',
+        ],
       },
     ],
   },

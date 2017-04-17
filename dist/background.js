@@ -63,7 +63,11 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
+<<<<<<< c7957327d33c00c77785ac587ac7eafa0f3cd898
 /******/ 	return __webpack_require__(__webpack_require__.s = 256);
+=======
+/******/ 	return __webpack_require__(__webpack_require__.s = 246);
+>>>>>>> fix(styles): sandbox sidebar styles with shadow DOM
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -6673,10 +6677,17 @@ module.exports = function(it){
 /* 211 */
 /***/ (function(module, exports, __webpack_require__) {
 
+<<<<<<< c7957327d33c00c77785ac587ac7eafa0f3cd898
 var ctx                = __webpack_require__(34)
   , invoke             = __webpack_require__(276)
   , html               = __webpack_require__(89)
   , cel                = __webpack_require__(48)
+=======
+var ctx                = __webpack_require__(33)
+  , invoke             = __webpack_require__(271)
+  , html               = __webpack_require__(85)
+  , cel                = __webpack_require__(47)
+>>>>>>> fix(styles): sandbox sidebar styles with shadow DOM
   , global             = __webpack_require__(6)
   , process            = global.process
   , setTask            = global.setImmediate
@@ -6776,6 +6787,7 @@ module.exports = {
 /* 235 */,
 /* 236 */,
 /* 237 */,
+<<<<<<< c7957327d33c00c77785ac587ac7eafa0f3cd898
 /* 238 */,
 /* 239 */,
 /* 240 */,
@@ -6788,6 +6800,9 @@ module.exports = {
 /* 247 */,
 /* 248 */,
 /* 249 */
+=======
+/* 238 */
+>>>>>>> fix(styles): sandbox sidebar styles with shadow DOM
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6801,7 +6816,11 @@ var _defineProperty2 = __webpack_require__(203);
 
 var _defineProperty3 = _interopRequireDefault(_defineProperty2);
 
+<<<<<<< c7957327d33c00c77785ac587ac7eafa0f3cd898
 var _promise = __webpack_require__(263);
+=======
+var _promise = __webpack_require__(254);
+>>>>>>> fix(styles): sandbox sidebar styles with shadow DOM
 
 var _promise2 = _interopRequireDefault(_promise);
 
@@ -6828,7 +6847,11 @@ exports.default = (0, _defineProperty3.default)({}, _constants.SELECT_ELEMENT, f
 });
 
 /***/ }),
+<<<<<<< c7957327d33c00c77785ac587ac7eafa0f3cd898
 /* 250 */
+=======
+/* 239 */
+>>>>>>> fix(styles): sandbox sidebar styles with shadow DOM
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6842,17 +6865,25 @@ var _defineProperty2 = __webpack_require__(203);
 
 var _defineProperty3 = _interopRequireDefault(_defineProperty2);
 
+<<<<<<< c7957327d33c00c77785ac587ac7eafa0f3cd898
 var _extends4 = __webpack_require__(107);
+=======
+var _extends4 = __webpack_require__(257);
+>>>>>>> fix(styles): sandbox sidebar styles with shadow DOM
 
 var _extends5 = _interopRequireDefault(_extends4);
 
 exports.default = annotations;
 
+<<<<<<< c7957327d33c00c77785ac587ac7eafa0f3cd898
 var _lodash = __webpack_require__(135);
 
 var _lodash2 = _interopRequireDefault(_lodash);
 
 var _testAnnotations = __webpack_require__(432);
+=======
+var _testAnnotations = __webpack_require__(421);
+>>>>>>> fix(styles): sandbox sidebar styles with shadow DOM
 
 var _testAnnotations2 = _interopRequireDefault(_testAnnotations);
 
@@ -6907,11 +6938,20 @@ function annotations() {
 }
 
 /***/ }),
+<<<<<<< c7957327d33c00c77785ac587ac7eafa0f3cd898
 /* 251 */,
 /* 252 */,
 /* 253 */,
 /* 254 */,
 /* 255 */
+=======
+/* 240 */,
+/* 241 */,
+/* 242 */,
+/* 243 */,
+/* 244 */,
+/* 245 */
+>>>>>>> fix(styles): sandbox sidebar styles with shadow DOM
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6940,7 +6980,11 @@ thunk.withExtraArgument = createThunkMiddleware;
 exports['default'] = thunk;
 
 /***/ }),
+<<<<<<< c7957327d33c00c77785ac587ac7eafa0f3cd898
 /* 256 */
+=======
+/* 246 */
+>>>>>>> fix(styles): sandbox sidebar styles with shadow DOM
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6954,11 +6998,19 @@ var _reduxThunk = __webpack_require__(255);
 
 var _reduxThunk2 = _interopRequireDefault(_reduxThunk);
 
+<<<<<<< c7957327d33c00c77785ac587ac7eafa0f3cd898
 var _aliases = __webpack_require__(249);
 
 var _aliases2 = _interopRequireDefault(_aliases);
 
 var _annotations = __webpack_require__(250);
+=======
+var _aliases = __webpack_require__(238);
+
+var _aliases2 = _interopRequireDefault(_aliases);
+
+var _annotations = __webpack_require__(239);
+>>>>>>> fix(styles): sandbox sidebar styles with shadow DOM
 
 var _annotations2 = _interopRequireDefault(_annotations);
 
@@ -6978,6 +7030,7 @@ chrome.browserAction.onClicked.addListener(function () {
 });
 
 /***/ }),
+<<<<<<< c7957327d33c00c77785ac587ac7eafa0f3cd898
 /* 257 */,
 /* 258 */,
 /* 259 */,
@@ -7009,6 +7062,83 @@ module.exports = __webpack_require__(7).Promise;
 /* 271 */,
 /* 272 */,
 /* 273 */
+=======
+/* 247 */,
+/* 248 */,
+/* 249 */,
+/* 250 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = { "default": __webpack_require__(260), __esModule: true };
+
+/***/ }),
+/* 251 */,
+/* 252 */,
+/* 253 */,
+/* 254 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = { "default": __webpack_require__(265), __esModule: true };
+
+/***/ }),
+/* 255 */,
+/* 256 */,
+/* 257 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+exports.__esModule = true;
+
+var _assign = __webpack_require__(250);
+
+var _assign2 = _interopRequireDefault(_assign);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = _assign2.default || function (target) {
+  for (var i = 1; i < arguments.length; i++) {
+    var source = arguments[i];
+
+    for (var key in source) {
+      if (Object.prototype.hasOwnProperty.call(source, key)) {
+        target[key] = source[key];
+      }
+    }
+  }
+
+  return target;
+};
+
+/***/ }),
+/* 258 */,
+/* 259 */,
+/* 260 */
+/***/ (function(module, exports, __webpack_require__) {
+
+__webpack_require__(286);
+module.exports = __webpack_require__(8).Object.assign;
+
+/***/ }),
+/* 261 */,
+/* 262 */,
+/* 263 */,
+/* 264 */,
+/* 265 */
+/***/ (function(module, exports, __webpack_require__) {
+
+__webpack_require__(116);
+__webpack_require__(117);
+__webpack_require__(118);
+__webpack_require__(291);
+module.exports = __webpack_require__(8).Promise;
+
+/***/ }),
+/* 266 */,
+/* 267 */,
+/* 268 */
+>>>>>>> fix(styles): sandbox sidebar styles with shadow DOM
 /***/ (function(module, exports) {
 
 module.exports = function(it, Constructor, name, forbiddenField){
@@ -7018,6 +7148,7 @@ module.exports = function(it, Constructor, name, forbiddenField){
 };
 
 /***/ }),
+<<<<<<< c7957327d33c00c77785ac587ac7eafa0f3cd898
 /* 274 */,
 /* 275 */
 /***/ (function(module, exports, __webpack_require__) {
@@ -7028,6 +7159,18 @@ var ctx         = __webpack_require__(34)
   , anObject    = __webpack_require__(15)
   , toLength    = __webpack_require__(94)
   , getIterFn   = __webpack_require__(289)
+=======
+/* 269 */,
+/* 270 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var ctx         = __webpack_require__(33)
+  , call        = __webpack_require__(274)
+  , isArrayIter = __webpack_require__(272)
+  , anObject    = __webpack_require__(14)
+  , toLength    = __webpack_require__(92)
+  , getIterFn   = __webpack_require__(285)
+>>>>>>> fix(styles): sandbox sidebar styles with shadow DOM
   , BREAK       = {}
   , RETURN      = {};
 var exports = module.exports = function(iterable, entries, fn, that, ITERATOR){
@@ -7049,7 +7192,11 @@ exports.BREAK  = BREAK;
 exports.RETURN = RETURN;
 
 /***/ }),
+<<<<<<< c7957327d33c00c77785ac587ac7eafa0f3cd898
 /* 276 */
+=======
+/* 271 */
+>>>>>>> fix(styles): sandbox sidebar styles with shadow DOM
 /***/ (function(module, exports) {
 
 // fast apply, http://jsperf.lnkit.com/fast-apply/5
@@ -7070,7 +7217,11 @@ module.exports = function(fn, args, that){
 };
 
 /***/ }),
+<<<<<<< c7957327d33c00c77785ac587ac7eafa0f3cd898
 /* 277 */
+=======
+/* 272 */
+>>>>>>> fix(styles): sandbox sidebar styles with shadow DOM
 /***/ (function(module, exports, __webpack_require__) {
 
 // check on default Array iterator
@@ -7083,8 +7234,13 @@ module.exports = function(it){
 };
 
 /***/ }),
+<<<<<<< c7957327d33c00c77785ac587ac7eafa0f3cd898
 /* 278 */,
 /* 279 */
+=======
+/* 273 */,
+/* 274 */
+>>>>>>> fix(styles): sandbox sidebar styles with shadow DOM
 /***/ (function(module, exports, __webpack_require__) {
 
 // call something on iterator step with safe closing on error
@@ -7101,7 +7257,11 @@ module.exports = function(iterator, fn, value, entries){
 };
 
 /***/ }),
+<<<<<<< c7957327d33c00c77785ac587ac7eafa0f3cd898
 /* 280 */
+=======
+/* 275 */
+>>>>>>> fix(styles): sandbox sidebar styles with shadow DOM
 /***/ (function(module, exports, __webpack_require__) {
 
 var ITERATOR     = __webpack_require__(8)('iterator')
@@ -7127,9 +7287,15 @@ module.exports = function(exec, skipClosing){
 };
 
 /***/ }),
+<<<<<<< c7957327d33c00c77785ac587ac7eafa0f3cd898
 /* 281 */,
 /* 282 */,
 /* 283 */
+=======
+/* 276 */,
+/* 277 */,
+/* 278 */
+>>>>>>> fix(styles): sandbox sidebar styles with shadow DOM
 /***/ (function(module, exports, __webpack_require__) {
 
 var global    = __webpack_require__(6)
@@ -7202,8 +7368,52 @@ module.exports = function(){
 };
 
 /***/ }),
+<<<<<<< c7957327d33c00c77785ac587ac7eafa0f3cd898
 /* 284 */,
 /* 285 */
+=======
+/* 279 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+// 19.1.2.1 Object.assign(target, source, ...)
+var getKeys  = __webpack_require__(29)
+  , gOPS     = __webpack_require__(88)
+  , pIE      = __webpack_require__(59)
+  , toObject = __webpack_require__(51)
+  , IObject  = __webpack_require__(87)
+  , $assign  = Object.assign;
+
+// should work with symbols and should have deterministic property order (V8 bug)
+module.exports = !$assign || __webpack_require__(24)(function(){
+  var A = {}
+    , B = {}
+    , S = Symbol()
+    , K = 'abcdefghijklmnopqrst';
+  A[S] = 7;
+  K.split('').forEach(function(k){ B[k] = k; });
+  return $assign({}, A)[S] != 7 || Object.keys($assign({}, B)).join('') != K;
+}) ? function assign(target, source){ // eslint-disable-line no-unused-vars
+  var T     = toObject(target)
+    , aLen  = arguments.length
+    , index = 1
+    , getSymbols = gOPS.f
+    , isEnum     = pIE.f;
+  while(aLen > index){
+    var S      = IObject(arguments[index++])
+      , keys   = getSymbols ? getKeys(S).concat(getSymbols(S)) : getKeys(S)
+      , length = keys.length
+      , j      = 0
+      , key;
+    while(length > j)if(isEnum.call(S, key = keys[j++]))T[key] = S[key];
+  } return T;
+} : $assign;
+
+/***/ }),
+/* 280 */,
+/* 281 */
+>>>>>>> fix(styles): sandbox sidebar styles with shadow DOM
 /***/ (function(module, exports, __webpack_require__) {
 
 var hide = __webpack_require__(11);
@@ -7215,8 +7425,13 @@ module.exports = function(target, src, safe){
 };
 
 /***/ }),
+<<<<<<< c7957327d33c00c77785ac587ac7eafa0f3cd898
 /* 286 */,
 /* 287 */
+=======
+/* 282 */,
+/* 283 */
+>>>>>>> fix(styles): sandbox sidebar styles with shadow DOM
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7236,7 +7451,11 @@ module.exports = function(KEY){
 };
 
 /***/ }),
+<<<<<<< c7957327d33c00c77785ac587ac7eafa0f3cd898
 /* 288 */
+=======
+/* 284 */
+>>>>>>> fix(styles): sandbox sidebar styles with shadow DOM
 /***/ (function(module, exports, __webpack_require__) {
 
 // 7.3.20 SpeciesConstructor(O, defaultConstructor)
@@ -7249,7 +7468,11 @@ module.exports = function(O, D){
 };
 
 /***/ }),
+<<<<<<< c7957327d33c00c77785ac587ac7eafa0f3cd898
 /* 289 */
+=======
+/* 285 */
+>>>>>>> fix(styles): sandbox sidebar styles with shadow DOM
 /***/ (function(module, exports, __webpack_require__) {
 
 var classof   = __webpack_require__(207)
@@ -7262,17 +7485,35 @@ module.exports = __webpack_require__(7).getIteratorMethod = function(it){
 };
 
 /***/ }),
+<<<<<<< c7957327d33c00c77785ac587ac7eafa0f3cd898
 /* 290 */,
 /* 291 */,
 /* 292 */,
 /* 293 */,
 /* 294 */
+=======
+/* 286 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// 19.1.3.1 Object.assign(target, source)
+var $export = __webpack_require__(18);
+
+$export($export.S + $export.F, 'Object', {assign: __webpack_require__(279)});
+
+/***/ }),
+/* 287 */,
+/* 288 */,
+/* 289 */,
+/* 290 */,
+/* 291 */
+>>>>>>> fix(styles): sandbox sidebar styles with shadow DOM
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 var LIBRARY            = __webpack_require__(50)
   , global             = __webpack_require__(6)
+<<<<<<< c7957327d33c00c77785ac587ac7eafa0f3cd898
   , ctx                = __webpack_require__(34)
   , classof            = __webpack_require__(207)
   , $export            = __webpack_require__(16)
@@ -7283,6 +7524,18 @@ var LIBRARY            = __webpack_require__(50)
   , speciesConstructor = __webpack_require__(288)
   , task               = __webpack_require__(211).set
   , microtask          = __webpack_require__(283)()
+=======
+  , ctx                = __webpack_require__(33)
+  , classof            = __webpack_require__(196)
+  , $export            = __webpack_require__(18)
+  , isObject           = __webpack_require__(20)
+  , aFunction          = __webpack_require__(56)
+  , anInstance         = __webpack_require__(268)
+  , forOf              = __webpack_require__(270)
+  , speciesConstructor = __webpack_require__(284)
+  , task               = __webpack_require__(200).set
+  , microtask          = __webpack_require__(278)()
+>>>>>>> fix(styles): sandbox sidebar styles with shadow DOM
   , PROMISE            = 'Promise'
   , TypeError          = global.TypeError
   , process            = global.process
@@ -7474,7 +7727,11 @@ if(!USE_NATIVE){
     this._h = 0;              // <- rejection state, 0 - default, 1 - handled, 2 - unhandled
     this._n = false;          // <- notify
   };
+<<<<<<< c7957327d33c00c77785ac587ac7eafa0f3cd898
   Internal.prototype = __webpack_require__(285)($Promise.prototype, {
+=======
+  Internal.prototype = __webpack_require__(281)($Promise.prototype, {
+>>>>>>> fix(styles): sandbox sidebar styles with shadow DOM
     // 25.4.5.3 Promise.prototype.then(onFulfilled, onRejected)
     then: function then(onFulfilled, onRejected){
       var reaction    = newPromiseCapability(speciesConstructor(this, $Promise));
@@ -7500,9 +7757,15 @@ if(!USE_NATIVE){
 }
 
 $export($export.G + $export.W + $export.F * !USE_NATIVE, {Promise: $Promise});
+<<<<<<< c7957327d33c00c77785ac587ac7eafa0f3cd898
 __webpack_require__(37)($Promise, PROMISE);
 __webpack_require__(287)(PROMISE);
 Wrapper = __webpack_require__(7)[PROMISE];
+=======
+__webpack_require__(36)($Promise, PROMISE);
+__webpack_require__(283)(PROMISE);
+Wrapper = __webpack_require__(8)[PROMISE];
+>>>>>>> fix(styles): sandbox sidebar styles with shadow DOM
 
 // statics
 $export($export.S + $export.F * !USE_NATIVE, PROMISE, {
@@ -7525,7 +7788,11 @@ $export($export.S + $export.F * (LIBRARY || !USE_NATIVE), PROMISE, {
     return capability.promise;
   }
 });
+<<<<<<< c7957327d33c00c77785ac587ac7eafa0f3cd898
 $export($export.S + $export.F * !(USE_NATIVE && __webpack_require__(280)(function(iter){
+=======
+$export($export.S + $export.F * !(USE_NATIVE && __webpack_require__(275)(function(iter){
+>>>>>>> fix(styles): sandbox sidebar styles with shadow DOM
   $Promise.all(iter)['catch'](empty);
 })), PROMISE, {
   // 25.4.4.1 Promise.all(iterable)
@@ -7571,6 +7838,12 @@ $export($export.S + $export.F * !(USE_NATIVE && __webpack_require__(280)(functio
 });
 
 /***/ }),
+<<<<<<< c7957327d33c00c77785ac587ac7eafa0f3cd898
+=======
+/* 292 */,
+/* 293 */,
+/* 294 */,
+>>>>>>> fix(styles): sandbox sidebar styles with shadow DOM
 /* 295 */,
 /* 296 */,
 /* 297 */,
@@ -7697,6 +7970,7 @@ $export($export.S + $export.F * !(USE_NATIVE && __webpack_require__(280)(functio
 /* 418 */,
 /* 419 */,
 /* 420 */,
+<<<<<<< c7957327d33c00c77785ac587ac7eafa0f3cd898
 /* 421 */,
 /* 422 */,
 /* 423 */,
@@ -7709,6 +7983,9 @@ $export($export.S + $export.F * !(USE_NATIVE && __webpack_require__(280)(functio
 /* 430 */,
 /* 431 */,
 /* 432 */
+=======
+/* 421 */
+>>>>>>> fix(styles): sandbox sidebar styles with shadow DOM
 /***/ (function(module, exports) {
 
 module.exports = {
