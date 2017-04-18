@@ -56,23 +56,9 @@ if (!document.querySelector(styles.tentMain)) {
   const sidebarContainer = document.createElement('div');
   sidebarContainer.setAttribute('class', styles.tentSidebar);
   document.body.innerHTML = mainContainer.outerHTML;
-
-  // Wrap extension interface in a shadow root to sandbox styles
-  const sidebarShadow = sidebarContainer.attachShadow({ mode: 'open' });
-
   document.body.appendChild(sidebarContainer);
 
-  /**
-   * Copy all custom styles into shadow DOM
-   * TODO(jrbotros): Separate interface styles from external styles in build
-   */
-  document.querySelectorAll('.bundled-styles')
-    .forEach((style) => {
-      sidebarShadow.appendChild(style.cloneNode(true));
-    });
-
-  // Set up main interface container inside shadow root
-  const reactRoot = sidebarShadow.appendChild(document.createElement('div'));
+  const reactRoot = sidebarContainer.appendChild(document.createElement('div'));
 
   // Prevent inheriting styles from parent elements
   reactRoot.style.all = 'initial';

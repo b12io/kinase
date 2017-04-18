@@ -21194,21 +21194,10 @@ if (!document.querySelector(_main2.default.tentMain)) {
   sidebarContainer.setAttribute('class', _main2.default.tentSidebar);
   document.body.innerHTML = mainContainer.outerHTML;
 
-  // Wrap extension interface in a shadow root to sandbox styles
-  var sidebarShadow = sidebarContainer.attachShadow({ mode: 'open' });
-
   document.body.appendChild(sidebarContainer);
 
-  /**
-   * Copy all custom styles into shadow DOM
-   * TODO(jrbotros): Separate interface styles from external styles in build
-   */
-  document.querySelectorAll('.bundled-styles').forEach(function (style) {
-    sidebarShadow.appendChild(style.cloneNode(true));
-  });
-
   // Set up main interface container inside shadow root
-  var reactRoot = sidebarShadow.appendChild(document.createElement('div'));
+  var reactRoot = sidebarContainer.appendChild(document.createElement('div'));
 
   // Prevent inheriting styles from parent elements
   reactRoot.style.all = 'initial';
