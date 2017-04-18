@@ -13548,7 +13548,7 @@ module.exports = __webpack_require__(341);
 var content = __webpack_require__(304);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // add the styles to the DOM
-var update = __webpack_require__(85)(content, {});
+var update = __webpack_require__(85)(content, {"attrs":{"class":"bundled-styles"}});
 if(content.locals) module.exports = content.locals;
 // Hot Module Replacement
 if(false) {
@@ -17476,7 +17476,7 @@ var _AnnotationMapping = __webpack_require__(257);
 
 var _AnnotationMapping2 = _interopRequireDefault(_AnnotationMapping);
 
-var _style = __webpack_require__(428);
+var _style = __webpack_require__(427);
 
 var _style2 = _interopRequireDefault(_style);
 
@@ -20739,7 +20739,7 @@ var _AnnotationMappingField = __webpack_require__(258);
 
 var _AnnotationMappingField2 = _interopRequireDefault(_AnnotationMappingField);
 
-var _style = __webpack_require__(426);
+var _style = __webpack_require__(425);
 
 var _style2 = _interopRequireDefault(_style);
 
@@ -20830,7 +20830,7 @@ var _ImageField2 = _interopRequireDefault(_ImageField);
 
 var _proxyActions = __webpack_require__(86);
 
-var _style = __webpack_require__(427);
+var _style = __webpack_require__(426);
 
 var _style2 = _interopRequireDefault(_style);
 
@@ -21009,7 +21009,7 @@ var _react = __webpack_require__(26);
 
 var _react2 = _interopRequireDefault(_react);
 
-__webpack_require__(425);
+__webpack_require__(428);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -21193,7 +21193,25 @@ if (!document.querySelector(_main2.default.tentMain)) {
   var sidebarContainer = document.createElement('div');
   sidebarContainer.setAttribute('class', _main2.default.tentSidebar);
   document.body.innerHTML = mainContainer.outerHTML;
+
+  // Wrap extension interface in a shadow root to sandbox styles
+  var sidebarShadow = sidebarContainer.attachShadow({ mode: 'open' });
+
   document.body.appendChild(sidebarContainer);
+
+  /**
+   * Copy all custom styles into shadow DOM
+   * TODO(jrbotros): Separate interface styles from external styles in build
+   */
+  document.querySelectorAll('.bundled-styles').forEach(function (style) {
+    sidebarShadow.appendChild(style.cloneNode(true));
+  });
+
+  // Set up main interface container inside shadow root
+  var reactRoot = sidebarShadow.appendChild(document.createElement('div'));
+
+  // Prevent inheriting styles from parent elements
+  reactRoot.style.all = 'initial';
 
   var highlighter = new _highlighter2.default();
   document.querySelector('.' + _main2.default.tentMain).addEventListener('mouseover', function (event) {
@@ -21215,7 +21233,7 @@ if (!document.querySelector(_main2.default.tentMain)) {
       _reactRedux.Provider,
       { store: store },
       _react2.default.createElement(_Sidebar2.default, null)
-    ), sidebarContainer);
+    ), reactRoot);
   });
 }
 
@@ -39945,17 +39963,17 @@ module.exports = function (css) {
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(300);
+var content = __webpack_require__(301);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // add the styles to the DOM
-var update = __webpack_require__(85)(content, {});
+var update = __webpack_require__(85)(content, {"attrs":{"class":"bundled-styles"}});
 if(content.locals) module.exports = content.locals;
 // Hot Module Replacement
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!../../css-loader/index.js!../../sass-loader/lib/loader.js!./filepicker.css", function() {
-			var newContent = require("!!../../css-loader/index.js!../../sass-loader/lib/loader.js!./filepicker.css");
+		module.hot.accept("!!../../../node_modules/css-loader/index.js??ref--2-1!../../../node_modules/sass-loader/lib/loader.js!./style.scss", function() {
+			var newContent = require("!!../../../node_modules/css-loader/index.js??ref--2-1!../../../node_modules/sass-loader/lib/loader.js!./style.scss");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -39971,10 +39989,10 @@ if(false) {
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(301);
+var content = __webpack_require__(302);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // add the styles to the DOM
-var update = __webpack_require__(85)(content, {});
+var update = __webpack_require__(85)(content, {"attrs":{"class":"bundled-styles"}});
 if(content.locals) module.exports = content.locals;
 // Hot Module Replacement
 if(false) {
@@ -39997,10 +40015,10 @@ if(false) {
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(302);
+var content = __webpack_require__(303);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // add the styles to the DOM
-var update = __webpack_require__(85)(content, {});
+var update = __webpack_require__(85)(content, {"attrs":{"class":"bundled-styles"}});
 if(content.locals) module.exports = content.locals;
 // Hot Module Replacement
 if(false) {
@@ -40023,17 +40041,17 @@ if(false) {
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(303);
+var content = __webpack_require__(300);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // add the styles to the DOM
-var update = __webpack_require__(85)(content, {});
+var update = __webpack_require__(85)(content, {"attrs":{"class":"bundled-styles"}});
 if(content.locals) module.exports = content.locals;
 // Hot Module Replacement
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!../../../node_modules/css-loader/index.js??ref--2-1!../../../node_modules/sass-loader/lib/loader.js!./style.scss", function() {
-			var newContent = require("!!../../../node_modules/css-loader/index.js??ref--2-1!../../../node_modules/sass-loader/lib/loader.js!./style.scss");
+		module.hot.accept("!!../../css-loader/index.js!../../sass-loader/lib/loader.js!./filepicker.css", function() {
+			var newContent = require("!!../../css-loader/index.js!../../sass-loader/lib/loader.js!./filepicker.css");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
