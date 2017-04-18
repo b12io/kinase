@@ -7,7 +7,7 @@ import { setCurrentField, updateField } from 'redux/proxyActions';
 
 import styles from './style.scss';
 
-class AnnotationMappingField extends React.Component {
+class AnnotatedItemField extends React.Component {
   constructor(props) {
     super(props);
     this.state = { value: '' };
@@ -66,7 +66,7 @@ class AnnotationMappingField extends React.Component {
 
   render() {
     return (
-      <div className={styles.annotationField}>
+      <div className={styles.annotatedItemField}>
         <div>{this.props.fieldName}</div>
         <div>{this.props.mapping.source}</div>
         { this.getField() }
@@ -75,7 +75,7 @@ class AnnotationMappingField extends React.Component {
   }
 }
 
-AnnotationMappingField.propTypes = {
+AnnotatedItemField.propTypes = {
   fieldName: PropTypes.string.isRequired,
   fieldType: PropTypes.string.isRequired,
   mapping: PropTypes.objectOf(PropTypes.string),
@@ -83,7 +83,7 @@ AnnotationMappingField.propTypes = {
   updateMapping: PropTypes.func.isRequired,
 };
 
-AnnotationMappingField.defaultProps = {
+AnnotatedItemField.defaultProps = {
   mapping: {},
 };
 
@@ -101,4 +101,4 @@ export default connect(
     updateMapping: (content, source) => dispatch(
       updateField(ownProps.annotationName, ownProps.fieldName, content, source)),
   }),
-)(AnnotationMappingField);
+)(AnnotatedItemField);

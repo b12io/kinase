@@ -2,20 +2,20 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
-import AnnotationMapping from 'components/AnnotationMapping';
+import AnnotatedItem from 'components/AnnotatedItem';
 
 import styles from './style.scss';
 
 function Sidebar(props) {
-  const annotations = Object.keys(props.schema).map(annotationName => (
+  const annotatedItems = Object.keys(props.schema).map(annotationName => (
     <li key={annotationName}>
-      <AnnotationMapping annotationName={annotationName} />
+      <AnnotatedItem annotationName={annotationName} />
     </li>
   ));
   return (
     <div className={styles.sidebar}>
       <header>Tent</header>
-      <ul>{annotations}</ul>
+      <ul>{annotatedItems}</ul>
     </div>
   );
 }
