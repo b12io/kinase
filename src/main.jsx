@@ -5,27 +5,20 @@ import isNil from 'lodash.isnil';
 import trim from 'lodash.trim';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import unique from 'unique-selector';
+import CssSelectorGenerator from 'css-selector-generator';
 import { Provider } from 'react-redux';
 import { Store } from 'react-chrome-redux';
 
+import Highlighter from 'highlighter';
 import Sidebar from 'components/Sidebar';
 import styles from 'main.scss';
 import { PORT_NAME } from 'redux/constants';
 import { selectElement } from 'redux/proxyActions';
 
-const removeHighlight = (node) => {
-  node.classList.remove(styles.tentHighlight);
-  node.classList.remove(styles.disableLink);
-};
-
-const highlight = (node) => {
-  if (node.attributes.href) {
-    node.classList.add(styles.disableLink);
-  }
-  // TODO: Highlight shouldn't interfere with website display
-  node.classList.add(styles.tentHighlight);
-};
+const selectorGenerator = new CssSelectorGenerator({
+  // TODO: Exclude specific classes (e.g., `tether-*`) but allow others
+  selectors: ['id', 'tag', 'nthchild'],
+});
 
 const getWrappedText = (node) => {
   const textNodes = filter(
@@ -54,15 +47,11 @@ if (!document.querySelector('tent-main')) {
   document.body.innerHTML = mainContainer.outerHTML;
   document.body.appendChild(sidebarContainer);
 
-  let currentNode = null;
+  const highlighter = new Highlighter();
   document.querySelector(`.${styles.tentMain}`)
     .addEventListener('mouseover', (event) => {
-      if (currentNode) {
-        removeHighlight(currentNode);
-      }
       if (getWrappedContent(event.target)) {
-        highlight(event.target);
-        currentNode = event.target;
+        highlighter.highlight(event.target);
       }
     });
 
@@ -70,7 +59,8 @@ if (!document.querySelector('tent-main')) {
     .addEventListener('click', (event) => {
       const content = getWrappedContent(event.target);
       if (!isNil(content)) {
-        store.dispatch(selectElement(unique(event.target), content));
+        const selector = selectorGenerator.getSelector(event.target);
+        store.dispatch(selectElement(selector, content));
       }
     });
 
