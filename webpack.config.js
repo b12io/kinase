@@ -4,7 +4,7 @@ const customStyleLoader = {
   loader: 'style-loader',
   options: {
     attrs: {
-      class: 'webpack-styles',
+      class: 'bundled-styles',
     },
   },
 };
@@ -46,6 +46,10 @@ module.exports = {
           },
         },
       }, {
+        /**
+         * Load custom styles as CSS modules, but don't namespace imported third-party styles
+         * TODO(jrbotros): Figure out how to namespace external styles with CSS modules
+         */
         test: /\.s?css$/,
         exclude: [/node_modules/],
         use: [
@@ -61,7 +65,9 @@ module.exports = {
         ],
       },
       {
-        // TODO: Figure out how to namespace external styles with CSS modules
+        /**
+         * Load third-party styles without CSS modules
+         */
         test: /\.s?css$/,
         include: [/node_modules/],
         use: [

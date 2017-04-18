@@ -59,11 +59,19 @@ if (!document.querySelector(styles.tentMain)) {
 
   // Wrap extension interface in a shadow root to sandbox styles
   const sidebarShadow = sidebarContainer.attachShadow({ mode: 'open' });
+
   document.body.appendChild(sidebarContainer);
-  document.querySelectorAll('.webpack-styles').forEach((style) => {
-    // TODO: Separate shadow root styles from external styles in build
-    sidebarShadow.appendChild(style.cloneNode(true));
-  });
+
+  /**
+   * Copy all custom styles into shadow DOM
+   * TODO(jrbotros): Separate interface styles from external styles in build
+   */
+  document.querySelectorAll('.bundled-styles')
+    .forEach((style) => {
+      sidebarShadow.appendChild(style.cloneNode(true));
+    });
+
+  // Set up main interface container inside shadow root
   const reactRoot = sidebarShadow.appendChild(document.createElement('div'));
 
   // Prevent inheriting styles from parent elements
