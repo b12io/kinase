@@ -6846,7 +6846,7 @@ var _extends4 = __webpack_require__(107);
 
 var _extends5 = _interopRequireDefault(_extends4);
 
-exports.default = annotations;
+exports.default = annotatedItems;
 
 var _lodash = __webpack_require__(135);
 
@@ -6874,7 +6874,7 @@ var initialState = {
   currentField: null
 };
 
-function annotation(state, action) {
+function annotatedItem(state, action) {
   switch (action.type) {
     case _constants.UPDATE_FIELD:
       return (0, _extends5.default)({}, state, (0, _defineProperty3.default)({}, action.fieldName, {
@@ -6887,7 +6887,7 @@ function annotation(state, action) {
   }
 }
 
-function annotations() {
+function annotatedItems() {
   var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initialState;
   var action = arguments[1];
 
@@ -6899,7 +6899,7 @@ function annotations() {
       });
     case _constants.UPDATE_FIELD:
       return (0, _extends5.default)({}, state, {
-        mappings: (0, _extends5.default)({}, state.mappings, (0, _defineProperty3.default)({}, action.annotationName, annotation(state.mappings[action.annotationName], action)))
+        mappings: (0, _extends5.default)({}, state.mappings, (0, _defineProperty3.default)({}, action.annotationName, annotatedItem(state.mappings[action.annotationName], action)))
       });
     default:
       return state;

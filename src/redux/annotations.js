@@ -14,7 +14,7 @@ const initialState = {
   currentField: null,
 };
 
-function annotation(state, action) {
+function annotatedItem(state, action) {
   switch (action.type) {
     case UPDATE_FIELD:
       return {
@@ -30,7 +30,7 @@ function annotation(state, action) {
   }
 }
 
-export default function annotations(state = initialState, action) {
+export default function annotatedItems(state = initialState, action) {
   switch (action.type) {
     case SET_CURRENT_FIELD:
       return {
@@ -43,7 +43,7 @@ export default function annotations(state = initialState, action) {
         ...state,
         mappings: {
           ...state.mappings,
-          [action.annotationName]: annotation(
+          [action.annotationName]: annotatedItem(
             state.mappings[action.annotationName], action),
         },
       };

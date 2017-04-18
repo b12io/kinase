@@ -17472,9 +17472,9 @@ var _propTypes2 = _interopRequireDefault(_propTypes);
 
 var _reactRedux = __webpack_require__(87);
 
-var _AnnotationMapping = __webpack_require__(257);
+var _AnnotatedItem = __webpack_require__(257);
 
-var _AnnotationMapping2 = _interopRequireDefault(_AnnotationMapping);
+var _AnnotatedItem2 = _interopRequireDefault(_AnnotatedItem);
 
 var _style = __webpack_require__(427);
 
@@ -17483,11 +17483,11 @@ var _style2 = _interopRequireDefault(_style);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function Sidebar(props) {
-  var annotations = (0, _keys2.default)(props.schema).map(function (annotationName) {
+  var annotatedItems = (0, _keys2.default)(props.schema).map(function (annotationName) {
     return _react2.default.createElement(
       'li',
       { key: annotationName },
-      _react2.default.createElement(_AnnotationMapping2.default, { annotationName: annotationName })
+      _react2.default.createElement(_AnnotatedItem2.default, { annotationName: annotationName })
     );
   });
   return _react2.default.createElement(
@@ -17501,7 +17501,7 @@ function Sidebar(props) {
     _react2.default.createElement(
       'ul',
       null,
-      annotations
+      annotatedItems
     )
   );
 }
@@ -20735,9 +20735,9 @@ var _propTypes2 = _interopRequireDefault(_propTypes);
 
 var _reactRedux = __webpack_require__(87);
 
-var _AnnotationMappingField = __webpack_require__(258);
+var _AnnotatedItemField = __webpack_require__(258);
 
-var _AnnotationMappingField2 = _interopRequireDefault(_AnnotationMappingField);
+var _AnnotatedItemField2 = _interopRequireDefault(_AnnotatedItemField);
 
 var _style = __webpack_require__(425);
 
@@ -20745,17 +20745,17 @@ var _style2 = _interopRequireDefault(_style);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function AnnotationMapping(props) {
+function AnnotatedItem(props) {
   var fields = (0, _keys2.default)(props.schema).map(function (fieldName) {
     return _react2.default.createElement(
       'li',
       { key: fieldName },
-      _react2.default.createElement(_AnnotationMappingField2.default, { annotationName: props.annotationName, fieldName: fieldName })
+      _react2.default.createElement(_AnnotatedItemField2.default, { annotationName: props.annotationName, fieldName: fieldName })
     );
   });
   return _react2.default.createElement(
     'div',
-    { className: _style2.default.annotation },
+    { className: _style2.default.annotatedItem },
     _react2.default.createElement(
       'span',
       null,
@@ -20769,11 +20769,11 @@ function AnnotationMapping(props) {
   );
 }
 
-AnnotationMapping.propTypes = {
+AnnotatedItem.propTypes = {
   schema: _propTypes2.default.objectOf(_propTypes2.default.string),
   annotationName: _propTypes2.default.string.isRequired
 };
-AnnotationMapping.defaultProps = {
+AnnotatedItem.defaultProps = {
   schema: {}
 };
 
@@ -20781,7 +20781,7 @@ exports.default = (0, _reactRedux.connect)(function (state, ownProps) {
   return {
     schema: state.schema[ownProps.annotationName]
   };
-})(AnnotationMapping);
+})(AnnotatedItem);
 
 /***/ }),
 /* 258 */
@@ -20836,13 +20836,13 @@ var _style2 = _interopRequireDefault(_style);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var AnnotationMappingField = function (_React$Component) {
-  (0, _inherits3.default)(AnnotationMappingField, _React$Component);
+var AnnotatedItemField = function (_React$Component) {
+  (0, _inherits3.default)(AnnotatedItemField, _React$Component);
 
-  function AnnotationMappingField(props) {
-    (0, _classCallCheck3.default)(this, AnnotationMappingField);
+  function AnnotatedItemField(props) {
+    (0, _classCallCheck3.default)(this, AnnotatedItemField);
 
-    var _this = (0, _possibleConstructorReturn3.default)(this, (AnnotationMappingField.__proto__ || (0, _getPrototypeOf2.default)(AnnotationMappingField)).call(this, props));
+    var _this = (0, _possibleConstructorReturn3.default)(this, (AnnotatedItemField.__proto__ || (0, _getPrototypeOf2.default)(AnnotatedItemField)).call(this, props));
 
     _this.state = { value: '' };
 
@@ -20850,7 +20850,7 @@ var AnnotationMappingField = function (_React$Component) {
     return _this;
   }
 
-  (0, _createClass3.default)(AnnotationMappingField, [{
+  (0, _createClass3.default)(AnnotatedItemField, [{
     key: 'componentWillReceiveProps',
     value: function componentWillReceiveProps(nextProps) {
       this.setState({ value: nextProps.mapping.content || '' });
@@ -20907,7 +20907,7 @@ var AnnotationMappingField = function (_React$Component) {
     value: function render() {
       return _react2.default.createElement(
         'div',
-        { className: _style2.default.annotationField },
+        { className: _style2.default.annotatedItemField },
         _react2.default.createElement(
           'div',
           null,
@@ -20922,10 +20922,10 @@ var AnnotationMappingField = function (_React$Component) {
       );
     }
   }]);
-  return AnnotationMappingField;
+  return AnnotatedItemField;
 }(_react2.default.Component);
 
-AnnotationMappingField.propTypes = {
+AnnotatedItemField.propTypes = {
   fieldName: _propTypes2.default.string.isRequired,
   fieldType: _propTypes2.default.string.isRequired,
   mapping: _propTypes2.default.objectOf(_propTypes2.default.string),
@@ -20933,7 +20933,7 @@ AnnotationMappingField.propTypes = {
   updateMapping: _propTypes2.default.func.isRequired
 };
 
-AnnotationMappingField.defaultProps = {
+AnnotatedItemField.defaultProps = {
   mapping: {}
 };
 
@@ -20952,7 +20952,7 @@ exports.default = (0, _reactRedux.connect)(function (state, ownProps) {
       return dispatch((0, _proxyActions.updateField)(ownProps.annotationName, ownProps.fieldName, content, source));
     }
   };
-})(AnnotationMappingField);
+})(AnnotatedItemField);
 
 /***/ }),
 /* 259 */
@@ -21193,10 +21193,8 @@ if (!document.querySelector(_main2.default.tentMain)) {
   var sidebarContainer = document.createElement('div');
   sidebarContainer.setAttribute('class', _main2.default.tentSidebar);
   document.body.innerHTML = mainContainer.outerHTML;
-
   document.body.appendChild(sidebarContainer);
 
-  // Set up main interface container inside shadow root
   var reactRoot = sidebarContainer.appendChild(document.createElement('div'));
 
   // Prevent inheriting styles from parent elements
@@ -23709,11 +23707,11 @@ exports = module.exports = __webpack_require__(64)(undefined);
 
 
 // module
-exports.push([module.i, ".style__annotation___3eD0f {\n  border: 1px solid #333;\n  padding: 5px; }\n", ""]);
+exports.push([module.i, ".style__annotatedItem___3gPW8 {\n  border: 1px solid #333;\n  padding: 5px; }\n", ""]);
 
 // exports
 exports.locals = {
-	"annotation": "style__annotation___3eD0f"
+	"annotatedItem": "style__annotatedItem___3gPW8"
 };
 
 /***/ }),
@@ -23725,11 +23723,11 @@ exports = module.exports = __webpack_require__(64)(undefined);
 
 
 // module
-exports.push([module.i, ".style__annotationField___13udn {\n  border: 1px solid #333;\n  padding: 5px; }\n  .style__annotationField___13udn textarea {\n    width: 100%;\n    height: auto;\n    box-sizing: border-box; }\n", ""]);
+exports.push([module.i, ".style__annotatedItemField___N9Ke0 {\n  border: 1px solid #333;\n  padding: 5px; }\n  .style__annotatedItemField___N9Ke0 textarea {\n    width: 100%;\n    height: auto;\n    box-sizing: border-box; }\n", ""]);
 
 // exports
 exports.locals = {
-	"annotationField": "style__annotationField___13udn"
+	"annotatedItemField": "style__annotatedItemField___N9Ke0"
 };
 
 /***/ }),
