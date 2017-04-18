@@ -1,10 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Collapse from 'rc-collapse';
 import { connect } from 'react-redux';
 
 import ImageField from 'components/ImageField';
-import { setCurrentField, updateField } from 'redux/proxyActions';
+import { setCurrentField } from 'redux/proxyActions';
 
+import 'rc-collapse/assets/index.css';
 import styles from './style.scss';
 
 class AnnotatedItemField extends React.Component {
@@ -13,6 +15,7 @@ class AnnotatedItemField extends React.Component {
     this.state = { value: '' };
 
     this.handleChange = this.handleChange.bind(this);
+    this.toggleCollapse = this.toggleCollapse.bind(this);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -36,7 +39,6 @@ class AnnotatedItemField extends React.Component {
             <ImageField
               singleFile
               file={this.getMockFile()}
-              eventHandlers={{ removedfile: this.removeFile.bind(this) }}
             />
           </div>
         );
@@ -51,25 +53,38 @@ class AnnotatedItemField extends React.Component {
       return {
         url,
         size: 0,
+        name: this.props.mapping.content,
       };
     }
     return null;
-  }
-
-  removeFile() {
-    this.props.updateMapping(null, null);
   }
 
   handleChange(event) {
     this.setState({ value: event.target.value });
   }
 
+  toggleCollapse(activeKeys) {
+    // TODO(jrbotros): Find a nicer way to determine whether collapsed
+    return activeKeys.length ? Promise.resolve() : this.props.resetFocus();
+  }
+
   render() {
     return (
       <div className={styles.annotatedItemField}>
-        <div>{this.props.fieldName}</div>
-        <div>{this.props.mapping.source}</div>
-        { this.getField() }
+        <Collapse accordion={false} onChange={this.toggleCollapse}>
+          <Collapse.Panel header={this.props.fieldName}>
+            <div className={styles.fieldGroup}>
+              <div className={styles.fieldLabel}>Content</div>
+              {this.getField()}
+            </div>
+            <div className={styles.fieldGroup}>
+              <div className={styles.fieldLabel}>Source</div>
+              <div className={styles.mappingSourcePath}>
+                {this.props.mapping.source}
+              </div>
+            </div>
+          </Collapse.Panel>
+        </Collapse>
       </div>
     );
   }
@@ -79,8 +94,8 @@ AnnotatedItemField.propTypes = {
   fieldName: PropTypes.string.isRequired,
   fieldType: PropTypes.string.isRequired,
   mapping: PropTypes.objectOf(PropTypes.string),
+  resetFocus: PropTypes.func.isRequired,
   setFocus: PropTypes.func.isRequired,
-  updateMapping: PropTypes.func.isRequired,
 };
 
 AnnotatedItemField.defaultProps = {
@@ -96,9 +111,8 @@ export default connect(
     mapping: state.mappings[ownProps.annotationName][ownProps.fieldName],
   }),
   (dispatch, ownProps) => ({
+    resetFocus: () => dispatch(setCurrentField(null, null)),
     setFocus: () => dispatch(
       setCurrentField(ownProps.annotationName, ownProps.fieldName)),
-    updateMapping: (content, source) => dispatch(
-      updateField(ownProps.annotationName, ownProps.fieldName, content, source)),
   }),
 )(AnnotatedItemField);

@@ -1,0 +1,37 @@
+$border-radius: 3px;
+
+.imageField {
+  :global(.dropzone) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    &:global(.dz-started) {
+      border: 0;
+    }
+
+    :global(.dz-preview) {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      background: transparent;
+      border-radius: $border-radius;
+
+      :global(.dz-details) {
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      :global(.dz-image) {
+        width: 100%;
+        height: auto;
+        border-radius: $border-radius;
+
+        img {
+          width: 100%;
+          height: auto;
+        }
+      }
+    }
+  }
+}
