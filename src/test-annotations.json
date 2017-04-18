@@ -1,8 +1,9 @@
 {
   "about": {
-    "text": {
-      "source": null,
-      "content": null
-    }
+    "description": "text"
+  },
+  "contact": {
+    "name": "text",
+    "photo": "image"
   }
 }

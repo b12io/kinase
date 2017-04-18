@@ -7,7 +7,7 @@ import AnnotationMapping from 'components/AnnotationMapping';
 import styles from './style.scss';
 
 function Sidebar(props) {
-  const annotations = Object.keys(props.annotations).map(annotationName => (
+  const annotations = Object.keys(props.schema).map(annotationName => (
     <li key={annotationName}>
       <AnnotationMapping annotationName={annotationName} />
     </li>
@@ -21,14 +21,14 @@ function Sidebar(props) {
 }
 
 Sidebar.propTypes = {
-  annotations: PropTypes.objectOf(PropTypes.objectOf(PropTypes.objectOf(PropTypes.string))),
+  schema: PropTypes.objectOf(PropTypes.objectOf(PropTypes.string)),
 };
 Sidebar.defaultProps = {
-  annotations: {},
+  schema: {},
 };
 
 export default connect(
   state => ({
-    annotations: state.annotations,
+    schema: state.schema,
   }),
 )(Sidebar);

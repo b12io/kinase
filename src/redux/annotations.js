@@ -1,10 +1,17 @@
+import mapValues from 'lodash.mapvalues';
 import testAnnotations from 'test-annotations.json';
-import { UPDATE_FIELD } from 'redux/constants';
+import { SET_CURRENT_FIELD, UPDATE_FIELD } from 'redux/constants';
 
 const initialState = {
-  annotations: testAnnotations,
-  currentAnnotation: 'about',
-  currentField: 'text',
+  schema: testAnnotations,
+  mappings: (
+    mapValues(testAnnotations, (annotationName, fields) => (
+        mapValues(fields, () => ({
+          source: null,
+          content: null,
+        }))))),
+  currentAnnotation: null,
+  currentField: null,
 };
 
 function annotation(state, action) {
@@ -15,6 +22,7 @@ function annotation(state, action) {
         [action.fieldName]: {
           source: action.source,
           content: action.content,
+          original: action.content,
         },
       };
     default:
@@ -24,13 +32,19 @@ function annotation(state, action) {
 
 export default function annotations(state = initialState, action) {
   switch (action.type) {
+    case SET_CURRENT_FIELD:
+      return {
+        ...state,
+        currentAnnotation: action.annotationName,
+        currentField: action.fieldName,
+      };
     case UPDATE_FIELD:
       return {
         ...state,
-        annotations: {
-          ...state.annotations,
+        mappings: {
+          ...state.mappings,
           [action.annotationName]: annotation(
-            state.annotations[action.annotationName], action),
+            state.mappings[action.annotationName], action),
         },
       };
     default:

@@ -6,6 +6,7 @@ $sidebar-width: 30vw;
   left: 0;
   bottom: 0;
   width: $sidebar-width;
+  overflow: scroll;
 }
 
 .tentMain {
