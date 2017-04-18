@@ -4,7 +4,9 @@ import DropzoneComponent from 'react-dropzone-component';
 import PropTypes from 'prop-types';
 import React from 'react';
 
+import 'dropzone/dist/dropzone.css';
 import 'react-dropzone-component/styles/filepicker.css';
+import styles from './style.scss';
 
 let dropzone;
 export default class ImageField extends React.Component {
@@ -46,11 +48,13 @@ export default class ImageField extends React.Component {
 
   render() {
     return (
-      <DropzoneComponent
-        config={{ postUrl: 'no-url' }}
-        djsConfig={{ clickable: false }}
-        eventHandlers={this.eventHandlers}
-      />
+      <span className={styles.imageField}>
+        <DropzoneComponent
+          config={{ postUrl: 'no-url' }}
+          djsConfig={{ clickable: false }}
+          eventHandlers={this.eventHandlers}
+        />
+      </span>
     );
   }
 }

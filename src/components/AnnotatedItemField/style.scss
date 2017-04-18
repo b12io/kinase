@@ -1,7 +1,6 @@
 @import '~variables.scss';
 
 .annotatedItemField {
-  border: 1px solid $dark-gray;
   padding: 5px;
 
   textarea {
@@ -9,4 +8,18 @@
     height: auto;
     box-sizing: border-box;
   }
+}
+
+.fieldGroup {
+  padding: 5px 0;
+  display: flex;
+  flex-direction: column;
+  & > *:not(:last-child) {
+    margin-bottom: 5px;
+  }
+}
+
+.mappingSourcePath {
+  font-style: italic;
+  font-size: 0.8em;
 }
