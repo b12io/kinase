@@ -24,9 +24,11 @@ export default class Highlighter {
     this.element.style.height = `${target.offsetHeight + this.padding}px`;
     target.addEventListener('click', preventLink);
     if (!isUndefined(this.tether)) {
+      this.tether.target.classList.remove(styles.tentHighlightTarget);
       this.tether.target.removeEventListener('click', preventLink);
       this.tether.destroy();
     }
+    target.classList.add(styles.tentHighlightTarget);
     this.tether = new Tether({
       target,
       element: this.element,
