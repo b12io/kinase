@@ -6,6 +6,9 @@
   padding: 15px;
 
   header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     border-bottom: 1px solid $dark-gray;
     font-size: 1.5em;
     margin-bottom: 15px;

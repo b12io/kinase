@@ -1,7 +1,9 @@
 import {
   ADD_COLLECTION_MAPPING,
   DELETE_COLLECTION_MAPPING,
-  SELECT_ELEMENT,
+  LOAD_ANNOTATIONS_PROXY,
+  SAVE_ANNOTATED_ITEMS_PROXY,
+  SELECT_ELEMENT_PROXY,
   SET_CURRENT_FIELD,
   UPDATE_FIELD,
 } from 'redux/constants';
@@ -21,11 +23,23 @@ export function deleteCollectionMapping(annotationName, collectionIndex) {
   };
 }
 
+export function loadAnnotations() {
+  return {
+    type: LOAD_ANNOTATIONS_PROXY,
+  };
+}
+
+export function saveAnnotatedItems() {
+  return {
+    type: SAVE_ANNOTATED_ITEMS_PROXY,
+  };
+}
+
 export function selectElement(selector, content) {
   return {
     selector,
     content,
-    type: SELECT_ELEMENT,
+    type: SELECT_ELEMENT_PROXY,
   };
 }
 

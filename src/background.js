@@ -1,8 +1,9 @@
 /* global chrome */
 
+import promiseMiddleware from 'redux-promise';
+import thunk from 'redux-thunk';
 import { createStore, applyMiddleware } from 'redux';
 import { alias, wrapStore } from 'react-chrome-redux';
-import thunk from 'redux-thunk';
 
 import aliases from 'redux/aliases';
 import main from 'redux/reducers/main';
@@ -13,6 +14,7 @@ const store = createStore(
   applyMiddleware(
     alias(aliases),
     thunk,
+    promiseMiddleware,
   ),
 );
 wrapStore(store, { portName: PORT_NAME });

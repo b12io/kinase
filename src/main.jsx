@@ -7,14 +7,14 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import CssSelectorGenerator from 'css-selector-generator';
 import { Provider } from 'react-redux';
-import { Store } from 'react-chrome-redux';
 
+import setupProxyStore from 'redux/proxyStore';
 import Highlighter from 'highlighter';
 import Sidebar from 'components/Sidebar';
-import styles from 'main.scss';
-import { PORT_NAME } from 'redux/constants';
 import { selectElement } from 'redux/proxyActions';
 import { currentFieldTypeSelector } from 'redux/selectors';
+
+import styles from 'main.scss';
 
 const selectorGenerator = new CssSelectorGenerator({
   // TODO(jrbotros): Exclude specific classes (e.g., `tether-*`) but allow others
@@ -22,9 +22,7 @@ const selectorGenerator = new CssSelectorGenerator({
 });
 
 if (!document.querySelector(styles.tentMain)) {
-  const store = new Store({
-    portName: PORT_NAME,
-  });
+  const store = setupProxyStore();
 
   const getWrappedText = (node) => {
     const textNodes = filter(

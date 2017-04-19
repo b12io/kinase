@@ -1,8 +1,11 @@
 import get from 'lodash.get';
 import { createSelector } from 'reselect';
 
+export const schemaSelector = state => state.schema;
+export const mappingsSelector = state => state.mappings;
+
 export const currentFieldTypeSelector = createSelector(
-  state => state.schema,
+  schemaSelector,
   state => state.currentAnnotation,
   state => state.currentField,
   (schemas, currentAnnotation, currentField) => (
