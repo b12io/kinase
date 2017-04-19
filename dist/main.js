@@ -21864,16 +21864,60 @@ var AnnotatedItem = function (_React$Component) {
   }
 
   (0, _createClass3.default)(AnnotatedItem, [{
-    key: 'generateMappingFields',
-    value: function generateMappingFields(mapping, collectionIndex) {
+    key: 'getCollectionMapping',
+    value: function getCollectionMapping(collectionMapping, collectionIndex) {
       var _this2 = this;
+
+      var collectionHeader = _react2.default.createElement(
+        'div',
+        { className: _style2.default.annotatedItemHeader },
+        _react2.default.createElement(
+          'span',
+          null,
+          collectionIndex
+        ),
+        _react2.default.createElement(
+          'span',
+          { onClick: function onClick(event) {
+              return _this2.props.deleteCollectionMapping(event, collectionIndex);
+            } },
+          _react2.default.createElement(_delete2.default, null)
+        )
+      );
+      return _react2.default.createElement(
+        _rcCollapse2.default,
+        { className: _style2.default.mappingCollapse, accordion: false, key: collectionIndex },
+        _react2.default.createElement(
+          _rcCollapse2.default.Panel,
+          { header: collectionHeader },
+          this.getMappingFields(collectionMapping, collectionIndex)
+        )
+      );
+    }
+  }, {
+    key: 'getHeaderOptions',
+    value: function getHeaderOptions() {
+      if (this.props.schema.multiple) {
+        // Include add button for annotations that support multiple items
+        return _react2.default.createElement(
+          'span',
+          { onClick: this.props.addCollectionMapping },
+          _react2.default.createElement(_add2.default, null)
+        );
+      }
+      return null;
+    }
+  }, {
+    key: 'getMappingFields',
+    value: function getMappingFields(collectionMapping, collectionIndex) {
+      var _this3 = this;
 
       var fields = (0, _keys2.default)(this.props.schema.fields).map(function (fieldName) {
         return _react2.default.createElement(
           'li',
           { key: fieldName },
           _react2.default.createElement(_AnnotatedItemField2.default, {
-            annotationName: _this2.props.annotationName,
+            annotationName: _this3.props.annotationName,
             collectionIndex: collectionIndex,
             fieldName: fieldName
           })
@@ -21886,54 +21930,20 @@ var AnnotatedItem = function (_React$Component) {
       );
     }
   }, {
-    key: 'render',
-    value: function render() {
-      var _this3 = this;
-
-      var innerHtml = void 0;
+    key: 'getAllMappings',
+    value: function getAllMappings() {
       if (this.props.schema.multiple) {
-        var mappingHtml = this.props.mappings.map(function (mapping, collectionIndex) {
-          var collectionHeader = _react2.default.createElement(
-            'div',
-            { className: _style2.default.annotatedItemHeader },
-            _react2.default.createElement(
-              'span',
-              null,
-              collectionIndex
-            ),
-            _react2.default.createElement(
-              'span',
-              { onClick: function onClick(event) {
-                  return _this3.props.deleteCollectionMapping(event, collectionIndex);
-                } },
-              _react2.default.createElement(_delete2.default, null)
-            )
-          );
-          return _react2.default.createElement(
-            _rcCollapse2.default,
-            { className: _style2.default.mappingCollapse, accordion: false, key: collectionIndex },
-            _react2.default.createElement(
-              _rcCollapse2.default.Panel,
-              { header: collectionHeader },
-              _this3.generateMappingFields(mapping, collectionIndex)
-            )
-          );
-        });
-        innerHtml = _react2.default.createElement(
+        return _react2.default.createElement(
           'div',
           { className: _style2.default.collapseGroup },
-          mappingHtml
+          this.props.mappings.map(this.getCollectionMapping.bind(this))
         );
-      } else {
-        innerHtml = this.generateMappingFields(this.props.mappings[0], 0);
       }
-
-      var headerOptions = this.props.schema.multiple ? _react2.default.createElement(
-        'span',
-        { onClick: this.props.addCollectionMapping },
-        _react2.default.createElement(_add2.default, null)
-      ) : null;
-
+      return this.getMappingFields(this.props.mappings[0], 0);
+    }
+  }, {
+    key: 'render',
+    value: function render() {
       return _react2.default.createElement(
         'div',
         { className: _style2.default.annotatedItem },
@@ -21945,9 +21955,9 @@ var AnnotatedItem = function (_React$Component) {
             null,
             this.props.annotationName
           ),
-          headerOptions
+          this.getHeaderOptions()
         ),
-        innerHtml
+        this.getAllMappings()
       );
     }
   }]);

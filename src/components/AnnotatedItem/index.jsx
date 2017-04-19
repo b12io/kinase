@@ -15,7 +15,37 @@ import 'rc-collapse/assets/index.css';
 import styles from './style.scss';
 
 class AnnotatedItem extends React.Component {
-  generateMappingFields(mapping, collectionIndex) {
+  getCollectionMapping(collectionMapping, collectionIndex) {
+    const collectionHeader = (
+      <div className={styles.annotatedItemHeader}>
+        <span>{collectionIndex}</span>
+        <span onClick={event => this.props.deleteCollectionMapping(event, collectionIndex)}>
+          <MdDelete />
+        </span>
+      </div>
+    );
+    return (
+      <Collapse className={styles.mappingCollapse} accordion={false} key={collectionIndex}>
+        <Collapse.Panel header={collectionHeader}>
+          {this.getMappingFields(collectionMapping, collectionIndex)}
+        </Collapse.Panel>
+      </Collapse>
+    );
+  }
+
+  getHeaderOptions() {
+    if (this.props.schema.multiple) {
+      // Include add button for annotations that support multiple items
+      return (
+        <span onClick={this.props.addCollectionMapping}>
+          <MdAdd />
+        </span>
+      );
+    }
+    return null;
+  }
+
+  getMappingFields(collectionMapping, collectionIndex) {
     const fields = Object.keys(this.props.schema.fields).map(fieldName => (
       <li key={fieldName}>
         <AnnotatedItemField
@@ -30,48 +60,25 @@ class AnnotatedItem extends React.Component {
     );
   }
 
-  render() {
-    let innerHtml;
+  getAllMappings() {
     if (this.props.schema.multiple) {
-      const mappingHtml = this.props.mappings.map((mapping, collectionIndex) => {
-        const collectionHeader = (
-          <div className={styles.annotatedItemHeader}>
-            <span>{collectionIndex}</span>
-            <span onClick={event => this.props.deleteCollectionMapping(event, collectionIndex)}>
-              <MdDelete />
-            </span>
-          </div>
-        );
-        return (
-          <Collapse className={styles.mappingCollapse} accordion={false} key={collectionIndex}>
-            <Collapse.Panel header={collectionHeader}>
-              {this.generateMappingFields(mapping, collectionIndex)}
-            </Collapse.Panel>
-          </Collapse>
-        );
-      });
-      innerHtml = (
+      return (
         <div className={styles.collapseGroup}>
-          {mappingHtml}
+          {this.props.mappings.map(this.getCollectionMapping.bind(this))}
         </div>
       );
-    } else {
-      innerHtml =
-        this.generateMappingFields(this.props.mappings[0], 0);
     }
+    return this.getMappingFields(this.props.mappings[0], 0);
+  }
 
-    const headerOptions = (
-      this.props.schema.multiple
-      ? <span onClick={this.props.addCollectionMapping}><MdAdd /></span>
-      : null);
-
+  render() {
     return (
       <div className={styles.annotatedItem}>
         <div className={styles.annotatedItemHeader}>
           <span>{this.props.annotationName}</span>
-          {headerOptions}
+          {this.getHeaderOptions()}
         </div>
-        {innerHtml}
+        {this.getAllMappings()}
       </div>
     );
   }
