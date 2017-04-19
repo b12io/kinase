@@ -1,3 +1,4 @@
+import isNil from 'lodash.isnil';
 import { SELECT_ELEMENT } from 'redux/constants';
 import { updateField } from 'redux/proxyActions';
 
@@ -6,10 +7,17 @@ import { updateField } from 'redux/proxyActions';
 // https://github.com/tshaddix/react-chrome-redux/wiki/Advanced-Usage
 export default {
   [SELECT_ELEMENT]: action => (dispatch, getState) => {
-    const { currentAnnotation, currentField } = getState();
-    if (currentAnnotation && currentField) {
-      return dispatch(updateField(
-        currentAnnotation, currentField, action.content, action.selector));
+    const { currentAnnotation, currentIndex, currentField } = getState();
+    if (currentAnnotation && !isNil(currentIndex) && currentField) {
+      return dispatch(
+        updateField(
+          currentAnnotation,
+          currentIndex,
+          currentField,
+          action.content,
+          action.selector,
+        ),
+      );
     }
     return Promise.resolve();
   },

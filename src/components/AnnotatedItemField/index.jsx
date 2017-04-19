@@ -12,7 +12,7 @@ import styles from './style.scss';
 class AnnotatedItemField extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { value: '' };
+    this.state = { value: props.mapping.content || '' };
 
     this.handleChange = this.handleChange.bind(this);
     this.toggleCollapse = this.toggleCollapse.bind(this);
@@ -104,15 +104,21 @@ AnnotatedItemField.defaultProps = {
 
 export default connect(
   (state, ownProps) => ({
-    fieldType: state.schema[ownProps.annotationName][ownProps.fieldName],
+    fieldType: state.schema[ownProps.annotationName].fields[ownProps.fieldName],
     isCurrent: (
       state.currentAnnotation === ownProps.annotationName &&
+      state.currentIndex === ownProps.collectionIndex &&
       state.currentField === ownProps.fieldName),
-    mapping: state.mappings[ownProps.annotationName][ownProps.fieldName],
+    mapping: state.mappings[ownProps.annotationName][ownProps.collectionIndex][ownProps.fieldName],
   }),
   (dispatch, ownProps) => ({
-    resetFocus: () => dispatch(setCurrentField(null, null)),
+    resetFocus: () => dispatch(setCurrentField()),
     setFocus: () => dispatch(
-      setCurrentField(ownProps.annotationName, ownProps.fieldName)),
+      setCurrentField(
+        ownProps.annotationName,
+        ownProps.collectionIndex,
+        ownProps.fieldName,
+      ),
+    ),
   }),
 )(AnnotatedItemField);

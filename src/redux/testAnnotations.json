@@ -1,0 +1,19 @@
+{
+  "about": {
+    "fields": {
+      "description": "text"
+    }
+  },
+  "contact": {
+    "fields": {
+      "name": "text",
+      "photo": "image"
+    }
+  },
+  "friends": {
+    "multiple": true,
+    "fields": {
+      "name": "text"
+    }
+  }
+}

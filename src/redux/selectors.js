@@ -6,5 +6,5 @@ export const currentFieldTypeSelector = createSelector(
   state => state.currentAnnotation,
   state => state.currentField,
   (schemas, currentAnnotation, currentField) => (
-    get(schemas, [currentAnnotation, currentField])),
+    get(schemas, [currentAnnotation, 'fields', currentField])),
 );

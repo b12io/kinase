@@ -1,0 +1,8 @@
+%collapse-group {
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  & > *:not(:last-child) {
+    margin-bottom: 5px;
+  }
+}

@@ -7,7 +7,10 @@ module.exports = {
     'import/resolver': 'webpack',
   },
   rules: {
-    // TODO(jrbotros): Get better at accessibility!
-    'jsx-a11y/no-static-element-interactions': 0
+    // TODO(jrbotros): get better at accessibility!
+    'jsx-a11y/no-static-element-interactions': 0,
+
+    // TODO(jrbotros): assign collection items a unique identifier
+    'react/no-array-index-key': 0,
   }
 };

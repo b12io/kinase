@@ -1,4 +1,5 @@
 @import '~variables.scss';
+@import '~components/common.scss';
 
 .annotatedItemField {
   padding: 5px;
@@ -11,12 +12,7 @@
 }
 
 .fieldGroup {
-  padding: 5px 0;
-  display: flex;
-  flex-direction: column;
-  & > *:not(:last-child) {
-    margin-bottom: 5px;
-  }
+  @extend %collapse-group;
 }
 
 .mappingSourcePath {
