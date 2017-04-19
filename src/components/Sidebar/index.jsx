@@ -21,10 +21,10 @@ function Sidebar(props) {
 }
 
 Sidebar.propTypes = {
-  schema: PropTypes.objectOf(PropTypes.objectOf(PropTypes.string)),
-};
-Sidebar.defaultProps = {
-  schema: {},
+  schema: PropTypes.objectOf(PropTypes.shape({
+    multiple: PropTypes.bool,
+    fields: PropTypes.objectOf(PropTypes.string),
+  })).isRequired,
 };
 
 export default connect(

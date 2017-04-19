@@ -17,3 +17,9 @@
     padding: 0;
   }
 }
+
+:global(.rc-collapse-header) {
+  display: flex;
+  align-items: center;
+  padding: 0 15px;
+}

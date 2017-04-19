@@ -1,5 +1,19 @@
 @import '~variables.scss';
+@import '~components/common';
 
 .annotatedItem {
-  padding: 5px;
+  @extend %collapse-group;
+}
+
+.annotatedItemHeader {
+  display: flex;
+  flex: 1 0 auto;
+  line-indent: 0;
+  text-indent: 0;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.collapseGroup {
+  @extend %collapse-group;
 }
