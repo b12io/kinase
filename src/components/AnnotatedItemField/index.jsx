@@ -4,6 +4,7 @@ import Collapse from 'rc-collapse';
 import { connect } from 'react-redux';
 
 import ImageField from 'components/ImageField';
+import { schemaSelector } from 'redux/selectors';
 import { setCurrentField } from 'redux/proxyActions';
 
 import 'rc-collapse/assets/index.css';
@@ -104,7 +105,7 @@ AnnotatedItemField.defaultProps = {
 
 export default connect(
   (state, ownProps) => ({
-    fieldType: state.schema[ownProps.annotationName].fields[ownProps.fieldName],
+    fieldType: schemaSelector(state)[ownProps.annotationName].fields[ownProps.fieldName],
     isCurrent: (
       state.currentAnnotation === ownProps.annotationName &&
       state.currentIndex === ownProps.collectionIndex &&

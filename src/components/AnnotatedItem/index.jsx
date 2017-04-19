@@ -6,6 +6,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import AnnotatedItemField from 'components/AnnotatedItemField';
+import { schemaSelector } from 'redux/selectors';
 import {
   addCollectionMapping,
   deleteCollectionMapping,
@@ -102,7 +103,7 @@ AnnotatedItem.propTypes = {
 export default connect(
   (state, ownProps) => ({
     mappings: state.mappings[ownProps.annotationName],
-    schema: state.schema[ownProps.annotationName],
+    schema: schemaSelector(state)[ownProps.annotationName],
   }),
   (dispatch, ownProps) => ({
     addCollectionMapping: () => dispatch(addCollectionMapping(ownProps.annotationName)),
