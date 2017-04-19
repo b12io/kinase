@@ -24,7 +24,6 @@ $sidebar-width: 30vw;
   pointer-events: none;
 }
 
-.disableLink {
-  pointer-events: none;
-  cursor: default;
+.tentHighlightTarget {
+  cursor: cell;
 }
