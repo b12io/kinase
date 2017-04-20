@@ -1,25 +1,32 @@
 import mapValues from 'lodash.mapvalues';
 
-import annotatedItem from 'redux/reducers/annotatedItem';
-import { schemaSelector } from 'redux/selectors';
+import annotationContext from 'redux/reducers/annotationContext';
+import { isRejected } from 'redux/promiseHelpers';
 import {
   ADD_COLLECTION_MAPPING,
   DELETE_COLLECTION_MAPPING,
   LOAD_ANNOTATIONS,
+  SET_CONTEXT_KEY,
   SET_CURRENT_FIELD,
   UPDATE_FIELD,
 } from 'redux/constants';
 
+const defaultContextKey = 'tentDefault';
+
 const initialState = {
+  contexts: {
+    [defaultContextKey]: annotationContext(undefined, {}),
+  },
+  currentContextKey: defaultContextKey,
   currentAnnotation: null,
+  currentIndex: null,
   currentField: null,
   error: null,
-  mappings: {},
-  schema: {},
+  ready: false,
 };
 
 export default function main(state = initialState, action) {
-  if (action.error) {
+  if (isRejected(action)) {
     // If a promise payload is rejected, skip logic and return error state
     return {
       ...state,
@@ -28,36 +35,27 @@ export default function main(state = initialState, action) {
   }
 
   switch (action.type) {
-    case ADD_COLLECTION_MAPPING: {
+    case LOAD_ANNOTATIONS.FULFILLED: {
       return {
         ...state,
-        mappings: {
-          ...state.mappings,
-          [action.annotationName]: annotatedItem(
-            state.mappings[action.annotationName], {
-              ...action,
-              schema: schemaSelector(state)[action.annotationName],
-            }),
-        },
+        ready: true,
+        contexts: mapValues(
+          state.contexts, context => annotationContext(context, action)),
       };
     }
-    case DELETE_COLLECTION_MAPPING: {
+    case SET_CONTEXT_KEY: {
       return {
         ...state,
-        mappings: {
-          ...state.mappings,
-          [action.annotationName]: annotatedItem(
-            state.mappings[action.annotationName], action),
+        contexts: {
+          ...state.contexts,
+          [action.contextKey]: (
+            annotationContext(state.contexts[action.contextKey], action)
+          ),
         },
-      };
-    }
-    case LOAD_ANNOTATIONS: {
-      return {
-        schema: action.payload,
-        mappings: mapValues(action.payload,
-          annotationInfo => annotatedItem(undefined, {
-            schema: annotationInfo,
-          })),
+        currentContextKey: action.contextKey,
+        currentAnnotation: null,
+        currentIndex: null,
+        currentField: null,
       };
     }
     case SET_CURRENT_FIELD: {
@@ -68,16 +66,31 @@ export default function main(state = initialState, action) {
         currentField: action.fieldName,
       };
     }
+
+    // Passthrough actions
+    case ADD_COLLECTION_MAPPING:
+      return {
+        ...state,
+        contexts: {
+          ...state.contexts,
+          [state.currentContextKey]: (
+            annotationContext(state.contexts[state.currentContextKey], action)
+          ),
+        },
+      };
+    case DELETE_COLLECTION_MAPPING:
     case UPDATE_FIELD: {
       return {
         ...state,
-        mappings: {
-          ...state.mappings,
-          [action.annotationName]: annotatedItem(
-            state.mappings[action.annotationName], action),
+        contexts: {
+          ...state.contexts,
+          [state.currentContextKey]: (
+            annotationContext(state.contexts[state.currentContextKey], action)
+          ),
         },
       };
     }
+
     default: {
       return state;
     }

@@ -4,7 +4,8 @@ import Collapse from 'rc-collapse';
 import { connect } from 'react-redux';
 
 import ImageField from 'components/ImageField';
-import { schemaSelector } from 'redux/selectors';
+import { annotatedItemFieldType } from 'redux/reducers/annotatedItemField';
+import { currentContextSelector } from 'redux/selectors';
 import { setCurrentField } from 'redux/proxyActions';
 
 import 'rc-collapse/assets/index.css';
@@ -94,23 +95,17 @@ class AnnotatedItemField extends React.Component {
 AnnotatedItemField.propTypes = {
   fieldName: PropTypes.string.isRequired,
   fieldType: PropTypes.string.isRequired,
-  mapping: PropTypes.objectOf(PropTypes.string),
+  mapping: annotatedItemFieldType.isRequired,
   resetFocus: PropTypes.func.isRequired,
   setFocus: PropTypes.func.isRequired,
 };
 
-AnnotatedItemField.defaultProps = {
-  mapping: {},
-};
-
 export default connect(
   (state, ownProps) => ({
-    fieldType: schemaSelector(state)[ownProps.annotationName].fields[ownProps.fieldName],
-    isCurrent: (
-      state.currentAnnotation === ownProps.annotationName &&
-      state.currentIndex === ownProps.collectionIndex &&
-      state.currentField === ownProps.fieldName),
-    mapping: state.mappings[ownProps.annotationName][ownProps.collectionIndex][ownProps.fieldName],
+    fieldType: currentContextSelector(state)[
+      ownProps.annotationName].schema.fields[ownProps.fieldName],
+    mapping: currentContextSelector(state)[
+      ownProps.annotationName].collectionMappings[ownProps.collectionIndex][ownProps.fieldName],
   }),
   (dispatch, ownProps) => ({
     resetFocus: () => dispatch(setCurrentField()),

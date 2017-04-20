@@ -6,7 +6,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import AnnotatedItemField from 'components/AnnotatedItemField';
-import { schemaSelector } from 'redux/selectors';
+import { annotatedItemType } from 'redux/reducers/annotatedItem';
+import { currentContextSelector } from 'redux/selectors';
 import {
   addCollectionMapping,
   deleteCollectionMapping,
@@ -35,7 +36,7 @@ class AnnotatedItem extends React.Component {
   }
 
   getHeaderOptions() {
-    if (this.props.schema.multiple) {
+    if (this.props.item.schema.multiple) {
       // Include add button for annotations that support multiple items
       return (
         <span onClick={this.props.addCollectionMapping}>
@@ -47,7 +48,7 @@ class AnnotatedItem extends React.Component {
   }
 
   getMappingFields(collectionMapping, collectionIndex) {
-    const fields = Object.keys(this.props.schema.fields).map(fieldName => (
+    const fields = Object.keys(this.props.item.schema.fields).map(fieldName => (
       <li key={fieldName}>
         <AnnotatedItemField
           annotationName={this.props.annotationName}
@@ -62,14 +63,14 @@ class AnnotatedItem extends React.Component {
   }
 
   getAllMappings() {
-    if (this.props.schema.multiple) {
+    if (this.props.item.schema.multiple) {
       return (
         <div className={styles.collapseGroup}>
-          {this.props.mappings.map(this.getCollectionMapping.bind(this))}
+          {this.props.item.collectionMappings.map(this.getCollectionMapping.bind(this))}
         </div>
       );
     }
-    return this.getMappingFields(this.props.mappings[0], 0);
+    return this.getMappingFields(this.props.item.collectionMappings[0], 0);
   }
 
   render() {
@@ -89,21 +90,12 @@ AnnotatedItem.propTypes = {
   addCollectionMapping: PropTypes.func.isRequired,
   annotationName: PropTypes.string.isRequired,
   deleteCollectionMapping: PropTypes.func.isRequired,
-  mappings: PropTypes.arrayOf(PropTypes.objectOf(PropTypes.shape({
-    source: PropTypes.string,
-    content: PropTypes.string,
-    original: PropTypes.string,
-  }))).isRequired,
-  schema: PropTypes.shape({
-    multiple: PropTypes.bool,
-    fields: PropTypes.objectOf(PropTypes.string),
-  }).isRequired,
+  item: annotatedItemType.isRequired,
 };
 
 export default connect(
   (state, ownProps) => ({
-    mappings: state.mappings[ownProps.annotationName],
-    schema: schemaSelector(state)[ownProps.annotationName],
+    item: currentContextSelector(state)[ownProps.annotationName],
   }),
   (dispatch, ownProps) => ({
     addCollectionMapping: () => dispatch(addCollectionMapping(ownProps.annotationName)),

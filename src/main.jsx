@@ -11,7 +11,7 @@ import { Provider } from 'react-redux';
 import setupProxyStore from 'redux/proxyStore';
 import Highlighter from 'highlighter';
 import Sidebar from 'components/Sidebar';
-import { selectElement } from 'redux/proxyActions';
+import { loadAnnotations, selectElement } from 'redux/proxyActions';
 import { currentFieldTypeSelector } from 'redux/selectors';
 
 import styles from 'main.scss';
@@ -78,11 +78,14 @@ if (!document.querySelector(styles.tentMain)) {
       }
     });
 
-  store.ready().then(() => {
-    ReactDOM.render(
-      <Provider store={store}>
-        <Sidebar />
-      </Provider>,
-      reactRoot);
-  });
+  store.ready()
+    .then(() => store.dispatch(loadAnnotations()))
+    .then(() => {
+      ReactDOM.render(
+        <Provider store={store}>
+          <Sidebar />
+        </Provider>,
+        reactRoot,
+      );
+    });
 }

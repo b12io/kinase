@@ -1,23 +1,27 @@
-import isUndefined from 'lodash.isundefined';
+import PropTypes from 'prop-types';
 
 import { UPDATE_FIELD } from 'redux/constants';
 
-export default function annotatedItemField(state, action) {
-  if (isUndefined(state)) {
-    return {
-      source: null,
-      content: null,
-      original: null,
-    };
-  }
+const initialState = {
+  content: null,
+  original: null,
+  source: null,
+};
 
+export const annotatedItemFieldType = PropTypes.shape({
+  content: PropTypes.string,
+  original: PropTypes.string,
+  source: PropTypes.string,
+});
+
+export default function annotatedItemField(state = initialState, action) {
   switch (action.type) {
     case UPDATE_FIELD:
       return {
         ...state,
-        source: action.source,
         content: action.content,
         original: action.content,
+        source: action.source,
       };
     default:
       return state;

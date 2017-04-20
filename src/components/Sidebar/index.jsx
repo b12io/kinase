@@ -5,13 +5,14 @@ import { connect } from 'react-redux';
 
 import AnnotatedItem from 'components/AnnotatedItem';
 import { saveAnnotatedItems } from 'redux/proxyActions';
-import { schemaSelector } from 'redux/selectors';
+import { annotationContextType } from 'redux/reducers/annotationContext';
+import { currentContextSelector } from 'redux/selectors';
 
 import 'sweetalert2/dist/sweetalert2.css';
 import styles from './style.scss';
 
 function Sidebar(props) {
-  const annotatedItems = Object.keys(props.schema).map(annotationName => (
+  const annotatedItems = Object.keys(props.context).map(annotationName => (
     <li key={annotationName}>
       <AnnotatedItem annotationName={annotationName} />
     </li>
@@ -29,15 +30,12 @@ function Sidebar(props) {
 
 Sidebar.propTypes = {
   saveAnnotatedItems: PropTypes.func.isRequired,
-  schema: PropTypes.objectOf(PropTypes.shape({
-    multiple: PropTypes.bool,
-    fields: PropTypes.objectOf(PropTypes.string),
-  })).isRequired,
+  context: annotationContextType.isRequired,
 };
 
 export default connect(
   state => ({
-    schema: schemaSelector(state),
+    context: currentContextSelector(state),
   }),
   dispatch => ({
     saveAnnotatedItems: () => dispatch(saveAnnotatedItems()),
