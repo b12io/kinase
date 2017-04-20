@@ -79,6 +79,8 @@ if (!document.querySelector(styles.tentMain)) {
           if (!isNil(content)) {
             const selector = selectorGenerator.getSelector(event.target);
             store.dispatch(selectElement(selector, content));
+            event.preventDefault();
+            event.stopPropagation();
           }
         });
 

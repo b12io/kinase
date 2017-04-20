@@ -21464,10 +21464,6 @@ var _main2 = _interopRequireDefault(_main);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var preventLink = function preventLink(e) {
-  e.preventDefault();
-}; /* global document */
-
 var Highlighter = function () {
   function Highlighter() {
     (0, _classCallCheck3.default)(this, Highlighter);
@@ -21485,10 +21481,8 @@ var Highlighter = function () {
       this.element.style.display = 'block';
       this.element.style.width = target.offsetWidth + this.padding + 'px';
       this.element.style.height = target.offsetHeight + this.padding + 'px';
-      target.addEventListener('click', preventLink);
       if (!(0, _lodash2.default)(this.tether)) {
         this.tether.target.classList.remove(_main2.default.tentHighlightTarget);
-        this.tether.target.removeEventListener('click', preventLink);
         this.tether.destroy();
       }
       target.classList.add(_main2.default.tentHighlightTarget);
@@ -21501,7 +21495,7 @@ var Highlighter = function () {
     }
   }]);
   return Highlighter;
-}();
+}(); /* global document */
 
 exports.default = Highlighter;
 
@@ -25312,6 +25306,8 @@ if (!document.querySelector(_main2.default.tentMain)) {
       if (!(0, _lodash4.default)(content)) {
         var selector = selectorGenerator.getSelector(event.target);
         store.dispatch((0, _proxyActions.selectElement)(selector, content));
+        event.preventDefault();
+        event.stopPropagation();
       }
     });
 
