@@ -17,17 +17,21 @@ export const annotationContextType = PropTypes.objectOf(annotatedItemType);
 export default function annotationContext(state, action) {
   switch (action.type) {
     case LOAD_ANNOTATIONS.FULFILLED: {
-      if (isUndefined(state)) {
-        // State is being loaded for the first time
-        return mapValues(action.payload, schema => (
-          annotatedItem({ schema }, action)
-        ));
-      }
-      // Schema is being reloaded
-      return mapValues(action.payload, (schema, annotationName) => (
+      return mapValues(action.payload.schema, (schema, name) => {
+        // Get data already mapped, if any
+        let collectionMappings = action.payload.mappings[name];
+        if (collectionMappings && !schema.multiple) {
+          // Wrap singly-mapped content in array for consistent representation
+          collectionMappings = [collectionMappings];
+        }
+
+        if (isUndefined(state)) {
+          // State is being loaded for the first time
+          return annotatedItem({ schema, collectionMappings }, action);
+        }
         // Ensure annotations are only those found in the new schema
-        annotatedItem({ ...state[annotationName], schema }, action)
-      ));
+        return annotatedItem({ ...state[name], schema }, action);
+      });
     }
 
     // Passthrough actions
