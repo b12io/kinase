@@ -9077,9 +9077,13 @@ var _lodash = __webpack_require__(353);
 
 var _lodash2 = _interopRequireDefault(_lodash);
 
-var _lodash3 = __webpack_require__(50);
+var _lodash3 = __webpack_require__(354);
 
 var _lodash4 = _interopRequireDefault(_lodash3);
+
+var _lodash5 = __webpack_require__(50);
+
+var _lodash6 = _interopRequireDefault(_lodash5);
 
 var _propTypes = __webpack_require__(27);
 
@@ -9103,21 +9107,28 @@ var annotatedItemType = exports.annotatedItemType = _propTypes2.default.shape({
 
 function annotatedItem(state, action) {
   var newCollectionMapping = function newCollectionMapping() {
-    return (0, _lodash4.default)(state.schema.fields, function () {
+    return (0, _lodash6.default)(state.schema.fields, function () {
       return (0, _annotatedItemField2.default)(undefined, action);
     });
   };
 
   switch (action.type) {
-    /**
-     * Create new annotatedItemFields for schema if instantiated or changed
-     * NOTE(jrbotros): mappings from old schemas aren't deleted so user data
-     * isn't automatically blown away, so we'll need to filter the data
-     * before posting.
-     **/
     case _constants.LOAD_ANNOTATIONS.FULFILLED:
+      if ((0, _lodash4.default)(state.collectionMappings)) {
+        // State is being loaded for the first time
+        return (0, _extends4.default)({}, state, {
+          collectionMappings: [newCollectionMapping()]
+        });
+      }
+      // Schema is being reloaded
       return (0, _extends4.default)({}, state, {
-        collectionMappings: state.collectionMappings ? state.collectionMappings.map(newCollectionMapping) : [newCollectionMapping()]
+        collectionMappings: state.collectionMappings.map(
+        // Ensure all mappings contain only fields from new schema
+        function (collectionMapping) {
+          return (0, _lodash6.default)(state.schema.fields, function (fieldType, fieldName) {
+            return (0, _annotatedItemField2.default)(collectionMapping[fieldName], action);
+          });
+        })
       });
 
     case _constants.ADD_COLLECTION_MAPPING:
@@ -9175,6 +9186,7 @@ var _constants = __webpack_require__(22);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var initialState = {
+  // TODO(jrbotros): also store the URL for this selector
   content: null,
   original: null,
   source: null
@@ -9224,9 +9236,13 @@ var _extends4 = _interopRequireDefault(_extends3);
 
 exports.default = annotationContext;
 
-var _lodash = __webpack_require__(50);
+var _lodash = __webpack_require__(354);
 
 var _lodash2 = _interopRequireDefault(_lodash);
+
+var _lodash3 = __webpack_require__(50);
+
+var _lodash4 = _interopRequireDefault(_lodash3);
 
 var _propTypes = __webpack_require__(27);
 
@@ -9246,8 +9262,18 @@ function annotationContext(state, action) {
   switch (action.type) {
     case _constants.LOAD_ANNOTATIONS.FULFILLED:
       {
-        return (0, _lodash2.default)(action.payload, function (schema) {
-          return (0, _annotatedItem2.default)({ schema: schema }, action);
+        if ((0, _lodash2.default)(state)) {
+          // State is being loaded for the first time
+          return (0, _lodash4.default)(action.payload, function (schema) {
+            return (0, _annotatedItem2.default)({ schema: schema }, action);
+          });
+        }
+        // Schema is being reloaded
+        return (0, _lodash4.default)(action.payload, function (schema, annotationName) {
+          return (
+            // Ensure annotations are only those found in the new schema
+            (0, _annotatedItem2.default)((0, _extends4.default)({}, state[annotationName], { schema: schema }), action)
+          );
         });
       }
 
@@ -11176,7 +11202,42 @@ module.exports = cloneDeep;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(11), __webpack_require__(21)(module)))
 
 /***/ }),
-/* 354 */,
+/* 354 */
+/***/ (function(module, exports) {
+
+/**
+ * lodash 3.0.1 (Custom Build) <https://lodash.com/>
+ * Build: `lodash modern modularize exports="npm" -o ./`
+ * Copyright 2012-2015 The Dojo Foundation <http://dojofoundation.org/>
+ * Based on Underscore.js 1.8.3 <http://underscorejs.org/LICENSE>
+ * Copyright 2009-2015 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
+ * Available under MIT license <https://lodash.com/license>
+ */
+
+/**
+ * Checks if `value` is `undefined`.
+ *
+ * @static
+ * @memberOf _
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is `undefined`, else `false`.
+ * @example
+ *
+ * _.isUndefined(void 0);
+ * // => true
+ *
+ * _.isUndefined(null);
+ * // => false
+ */
+function isUndefined(value) {
+  return value === undefined;
+}
+
+module.exports = isUndefined;
+
+
+/***/ }),
 /* 355 */
 /***/ (function(module, exports, __webpack_require__) {
 

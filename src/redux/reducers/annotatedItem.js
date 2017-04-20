@@ -1,4 +1,5 @@
 import cloneDeep from 'lodash.clonedeep';
+import isUndefined from 'lodash.isundefined';
 import mapValues from 'lodash.mapvalues';
 import PropTypes from 'prop-types';
 
@@ -28,19 +29,22 @@ export default function annotatedItem(state, action) {
   ));
 
   switch (action.type) {
-    /**
-     * Create new annotatedItemFields for schema if instantiated or changed
-     * NOTE(jrbotros): mappings from old schemas aren't deleted so user data
-     * isn't automatically blown away, so we'll need to filter the data
-     * before posting.
-     **/
     case LOAD_ANNOTATIONS.FULFILLED:
+      if (isUndefined(state.collectionMappings)) {
+        // State is being loaded for the first time
+        return {
+          ...state,
+          collectionMappings: [newCollectionMapping()],
+        };
+      }
+      // Schema is being reloaded
       return {
         ...state,
-        collectionMappings: (
-          state.collectionMappings
-          ? state.collectionMappings.map(newCollectionMapping)
-          : [newCollectionMapping()]
+        collectionMappings: state.collectionMappings.map(
+          // Ensure all mappings contain only fields from new schema
+          collectionMapping => mapValues(state.schema.fields, (fieldType, fieldName) => (
+            annotatedItemField(collectionMapping[fieldName], action)
+          )),
         ),
       };
 

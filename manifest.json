@@ -14,7 +14,7 @@
     "default_icon": "icon.png"
   },
   "externally_connectable": {
-    "matches": ["*://*.b12.io/*"]
+    "matches": ["*://*/*"]
   },
   "permissions": [
     "activeTab",

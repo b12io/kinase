@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { UPDATE_FIELD } from 'redux/constants';
 
 const initialState = {
+  // TODO(jrbotros): also store the URL for this selector
   content: null,
   original: null,
   source: null,

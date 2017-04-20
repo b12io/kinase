@@ -1,3 +1,4 @@
+import isUndefined from 'lodash.isundefined';
 import mapValues from 'lodash.mapvalues';
 import PropTypes from 'prop-types';
 
@@ -16,8 +17,16 @@ export const annotationContextType = PropTypes.objectOf(annotatedItemType);
 export default function annotationContext(state, action) {
   switch (action.type) {
     case LOAD_ANNOTATIONS.FULFILLED: {
-      return mapValues(action.payload, schema => (
-        annotatedItem({ schema }, action)
+      if (isUndefined(state)) {
+        // State is being loaded for the first time
+        return mapValues(action.payload, schema => (
+          annotatedItem({ schema }, action)
+        ));
+      }
+      // Schema is being reloaded
+      return mapValues(action.payload, (schema, annotationName) => (
+        // Ensure annotations are only those found in the new schema
+        annotatedItem({ ...state[annotationName], schema }, action)
       ));
     }
 
