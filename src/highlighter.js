@@ -5,10 +5,6 @@ import Tether from 'tether';
 
 import styles from 'main.scss';
 
-const preventLink = (e) => {
-  e.preventDefault();
-};
-
 export default class Highlighter {
   constructor() {
     this.padding = 5;
@@ -22,10 +18,8 @@ export default class Highlighter {
     this.element.style.display = 'block';
     this.element.style.width = `${target.offsetWidth + this.padding}px`;
     this.element.style.height = `${target.offsetHeight + this.padding}px`;
-    target.addEventListener('click', preventLink);
     if (!isUndefined(this.tether)) {
       this.tether.target.classList.remove(styles.tentHighlightTarget);
-      this.tether.target.removeEventListener('click', preventLink);
       this.tether.destroy();
     }
     target.classList.add(styles.tentHighlightTarget);
