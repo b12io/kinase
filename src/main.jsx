@@ -62,25 +62,26 @@ if (!document.querySelector(styles.tentMain)) {
   reactRoot.style.all = 'initial';
 
   const highlighter = new Highlighter();
-  document.querySelector(`.${styles.tentMain}`)
-    .addEventListener('mouseover', (event) => {
-      if (getWrappedContent(event.target)) {
-        highlighter.highlight(event.target);
-      }
-    });
-
-  document.querySelector(`.${styles.tentMain}`)
-    .addEventListener('click', (event) => {
-      const content = getWrappedContent(event.target);
-      if (!isNil(content)) {
-        const selector = selectorGenerator.getSelector(event.target);
-        store.dispatch(selectElement(selector, content));
-      }
-    });
 
   store.ready()
     .then(() => store.dispatch(loadAnnotations()))
     .then(() => {
+      document.querySelector(`.${styles.tentMain}`)
+        .addEventListener('mouseover', (event) => {
+          if (getWrappedContent(event.target)) {
+            highlighter.highlight(event.target);
+          }
+        });
+
+      document.querySelector(`.${styles.tentMain}`)
+        .addEventListener('click', (event) => {
+          const content = getWrappedContent(event.target);
+          if (!isNil(content)) {
+            const selector = selectorGenerator.getSelector(event.target);
+            store.dispatch(selectElement(selector, content));
+          }
+        });
+
       ReactDOM.render(
         <Provider store={store}>
           <Sidebar />

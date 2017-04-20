@@ -31,7 +31,7 @@ export default function annotatedItem(state, action) {
   switch (action.type) {
     case LOAD_ANNOTATIONS.FULFILLED:
       if (isUndefined(state.collectionMappings)) {
-        // State is being loaded for the first time
+        // State is being loaded for the first time without pre-mapped content
         return {
           ...state,
           collectionMappings: [newCollectionMapping()],

@@ -1,19 +1,30 @@
 {
-  "about": {
-    "fields": {
-      "description": "text"
+  "schema": {
+    "about": {
+      "fields": {
+        "description": "text"
+      }
+    },
+    "contact": {
+      "fields": {
+        "name": "text",
+        "photo": "image"
+      }
+    },
+    "friends": {
+      "multiple": true,
+      "fields": {
+        "name": "text"
+      }
     }
   },
-  "contact": {
-    "fields": {
-      "name": "text",
-      "photo": "image"
-    }
-  },
-  "friends": {
-    "multiple": true,
-    "fields": {
-      "name": "text"
+  "mappings": {
+    "about": {
+      "description": {
+        "content": "About Us",
+        "original": "about us",
+        "source": "#h1"
+      }
     }
   }
 }
