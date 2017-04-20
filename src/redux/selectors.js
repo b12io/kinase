@@ -1,13 +1,30 @@
 import get from 'lodash.get';
 import { createSelector } from 'reselect';
 
-export const schemaSelector = state => state.schema;
-export const mappingsSelector = state => state.mappings;
+export const annotationContextsSelector = state => state.contexts;
+export const currentAnnotationSelector = state => state.currentAnnotation;
+export const currentIndexSelector = state => state.currentIndex;
+export const currentFieldSelector = state => state.currentField;
+export const readySelector = state => state.ready;
+
+export const currentContextKeySelector = state => state.currentContextKey;
+
+export const currentContextSelector = createSelector(
+  annotationContextsSelector,
+  currentContextKeySelector,
+  (contexts, currentContextKey) => get(contexts, currentContextKey),
+);
+
+export const currentAnnotatedItemSelector = createSelector(
+  currentContextSelector,
+  currentAnnotationSelector,
+  (context, annotationName) => context[annotationName],
+);
 
 export const currentFieldTypeSelector = createSelector(
-  schemaSelector,
-  state => state.currentAnnotation,
-  state => state.currentField,
-  (schemas, currentAnnotation, currentField) => (
-    get(schemas, [currentAnnotation, 'fields', currentField])),
+  currentAnnotatedItemSelector,
+  currentFieldSelector,
+  (currentAnnotatedItem, currentField) => (
+    get(currentAnnotatedItem, ['schema', 'fields', currentField])
+  ),
 );

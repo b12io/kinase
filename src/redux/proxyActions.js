@@ -4,6 +4,7 @@ import {
   LOAD_ANNOTATIONS_PROXY,
   SAVE_ANNOTATED_ITEMS_PROXY,
   SELECT_ELEMENT_PROXY,
+  SET_CONTEXT_KEY,
   SET_CURRENT_FIELD,
   UPDATE_FIELD,
 } from 'redux/constants';
@@ -40,6 +41,13 @@ export function selectElement(selector, content) {
     selector,
     content,
     type: SELECT_ELEMENT_PROXY,
+  };
+}
+
+export function setContextKey(contextKey) {
+  return {
+    contextKey,
+    type: SET_CONTEXT_KEY,
   };
 }
 

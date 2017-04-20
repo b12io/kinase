@@ -1,7 +1,5 @@
 import isNil from 'lodash.isnil';
-import request from 'superagent';
-import testAnnotations from 'redux/testAnnotations.json';
-import { getEndpoint, postEndpoint } from 'config';
+import { load, save } from 'api';
 import { updateField } from 'redux/proxyActions';
 import {
   LOAD_ANNOTATIONS,
@@ -15,20 +13,14 @@ import {
 // proxy store but carried out on the background page. Read more at:
 // https://github.com/tshaddix/react-chrome-redux/wiki/Advanced-Usage
 export default {
-  [LOAD_ANNOTATIONS_PROXY]: () => ({
-    type: LOAD_ANNOTATIONS,
-    payload: (
-        getEndpoint
-        ? request.get(getEndpoint)
-        : Promise.resolve(testAnnotations)),
+  [LOAD_ANNOTATIONS_PROXY]: () => (dispatch, getState) => dispatch({
+    type: LOAD_ANNOTATIONS.BASE,
+    payload: load(getState()),
   }),
 
-  [SAVE_ANNOTATED_ITEMS_PROXY]: () => (dispatch, getState) => ({
+  [SAVE_ANNOTATED_ITEMS_PROXY]: () => (dispatch, getState) => dispatch({
     type: SAVE_ANNOTATED_ITEMS,
-    payload: (
-        postEndpoint
-        ? request.post(postEndpoint).send(getState().mappings)
-        : Promise.resolve()),
+    payload: save(getState()),
   }),
 
   [SELECT_ELEMENT_PROXY]: action => (dispatch, getState) => {

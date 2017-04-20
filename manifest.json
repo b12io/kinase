@@ -13,9 +13,11 @@
     "default_title": "Tag Content",
     "default_icon": "icon.png"
   },
+  "externally_connectable": {
+    "matches": ["*://*/*"]
+  },
   "permissions": [
     "activeTab",
-    "http://*/*",
-    "https://*/*"
+    "*://*/*"
   ]
 }
