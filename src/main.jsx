@@ -78,7 +78,8 @@ if (!document.querySelector(styles.tentMain)) {
           const content = getWrappedContent(event.target);
           if (!isNil(content)) {
             const selector = selectorGenerator.getSelector(event.target);
-            store.dispatch(selectElement(selector, content));
+            // Append the content if the `cmd` or `windows` key is pressed
+            store.dispatch(selectElement(selector, content, event.metaKey));
             event.preventDefault();
             event.stopPropagation();
           }
