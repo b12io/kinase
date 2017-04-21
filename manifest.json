@@ -14,10 +14,14 @@
     "default_icon": "icon.png"
   },
   "externally_connectable": {
-    "matches": ["*://*/*"]
+    "matches": [
+      "http://*/*",
+      "https://*/*"
+    ]
   },
   "permissions": [
     "activeTab",
-    "*://*/*"
+    "http://*/*",
+    "https://*/*"
   ]
 }
