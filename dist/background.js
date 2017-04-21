@@ -3461,12 +3461,13 @@ function setCurrentField(annotationName, collectionIndex, fieldName) {
   };
 }
 
-function updateField(annotationName, collectionIndex, fieldName, content, source) {
+function updateField(annotationName, collectionIndex, fieldName, content, original, source) {
   return {
     annotationName: annotationName,
     collectionIndex: collectionIndex,
     fieldName: fieldName,
     content: content,
+    original: original,
     source: source,
     type: _constants.UPDATE_FIELD
   };
@@ -4900,8 +4901,8 @@ function annotatedItemField() {
     case _constants.UPDATE_FIELD:
       return (0, _extends3.default)({}, state, {
         content: action.content,
-        original: action.content,
-        source: action.source
+        original: action.original || state.original,
+        source: action.source || state.source
       });
     default:
       return state;
@@ -10905,7 +10906,7 @@ exports.default = (_LOAD_ANNOTATIONS_PRO = {}, (0, _defineProperty3.default)(_LO
         currentField = _getState.currentField;
 
     if (currentAnnotation && !(0, _lodash2.default)(currentIndex) && currentField) {
-      return dispatch((0, _proxyActions.updateField)(currentAnnotation, currentIndex, currentField, action.content, action.selector));
+      return dispatch((0, _proxyActions.updateField)(currentAnnotation, currentIndex, currentField, action.content, action.content, action.selector));
     }
     return _promise2.default.resolve();
   };

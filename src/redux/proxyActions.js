@@ -60,12 +60,13 @@ export function setCurrentField(annotationName, collectionIndex, fieldName) {
   };
 }
 
-export function updateField(annotationName, collectionIndex, fieldName, content, source) {
+export function updateField(annotationName, collectionIndex, fieldName, content, original, source) {
   return {
     annotationName,
     collectionIndex,
     fieldName,
     content,
+    original,
     source,
     type: UPDATE_FIELD,
   };

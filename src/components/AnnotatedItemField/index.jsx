@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 import ImageField from 'components/ImageField';
 import { annotatedItemFieldType } from 'redux/reducers/annotatedItemField';
 import { currentContextSelector } from 'redux/selectors';
-import { setCurrentField } from 'redux/proxyActions';
+import { setCurrentField, updateField } from 'redux/proxyActions';
 
 import 'rc-collapse/assets/index.css';
 import styles from './style.scss';
@@ -14,8 +14,6 @@ import styles from './style.scss';
 class AnnotatedItemField extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { value: props.mapping.content || '' };
-
     this.handleChange = this.handleChange.bind(this);
     this.toggleCollapse = this.toggleCollapse.bind(this);
   }
@@ -30,7 +28,7 @@ class AnnotatedItemField extends React.Component {
         return (
           <textarea
             type="text"
-            value={this.state.value}
+            value={this.props.mapping.content}
             onChange={this.handleChange}
             onFocus={this.props.setFocus}
           />
@@ -62,7 +60,7 @@ class AnnotatedItemField extends React.Component {
   }
 
   handleChange(event) {
-    this.setState({ value: event.target.value });
+    this.props.editField(event.target.value);
   }
 
   toggleCollapse(activeKeys) {
@@ -93,6 +91,7 @@ class AnnotatedItemField extends React.Component {
 }
 
 AnnotatedItemField.propTypes = {
+  editField: PropTypes.func.isRequired,
   fieldName: PropTypes.string.isRequired,
   fieldType: PropTypes.string.isRequired,
   mapping: annotatedItemFieldType.isRequired,
@@ -108,6 +107,14 @@ export default connect(
       ownProps.annotationName].collectionMappings[ownProps.collectionIndex][ownProps.fieldName],
   }),
   (dispatch, ownProps) => ({
+    editField: content => dispatch(
+      updateField(
+        ownProps.annotationName,
+        ownProps.collectionIndex,
+        ownProps.fieldName,
+        content,
+      ),
+    ),
     resetFocus: () => dispatch(setCurrentField()),
     setFocus: () => dispatch(
       setCurrentField(
