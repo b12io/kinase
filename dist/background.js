@@ -643,7 +643,7 @@ module.exports = $export;
 /***/ (function(module, exports, __webpack_require__) {
 
 var dP         = __webpack_require__(13)
-  , createDesc = __webpack_require__(34);
+  , createDesc = __webpack_require__(35);
 module.exports = __webpack_require__(16) ? function(object, key, value){
   return dP.f(object, key, createDesc(1, value));
 } : function(object, key, value){
@@ -661,7 +661,7 @@ module.exports = __webpack_require__(16) ? function(object, key, value){
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.UPDATE_FIELD = exports.SET_CURRENT_FIELD = exports.SET_CONTEXT_KEY = exports.SELECT_ELEMENT_PROXY = exports.LOAD_ANNOTATIONS_PROXY = exports.LOAD_ANNOTATIONS = exports.DELETE_COLLECTION_MAPPING = exports.CLEAR_ERROR = exports.ADD_COLLECTION_MAPPING = exports.PORT_NAME = undefined;
+exports.UPDATE_FIELD = exports.SET_CURRENT_FIELD = exports.SET_CONTEXT_KEY = exports.SELECT_ELEMENT_PROXY = exports.SAVE_ANNOTATED_ITEMS_PROXY = exports.SAVE_ANNOTATED_ITEMS = exports.LOAD_ANNOTATIONS_PROXY = exports.LOAD_ANNOTATIONS = exports.DELETE_COLLECTION_MAPPING = exports.CLEAR_ERROR = exports.ADD_COLLECTION_MAPPING = exports.PORT_NAME = undefined;
 
 var _promiseHelpers = __webpack_require__(104);
 
@@ -672,6 +672,8 @@ var CLEAR_ERROR = exports.CLEAR_ERROR = 'CLEAR_ERROR';
 var DELETE_COLLECTION_MAPPING = exports.DELETE_COLLECTION_MAPPING = 'DELETE_COLLECTION_MAPPING';
 var LOAD_ANNOTATIONS = exports.LOAD_ANNOTATIONS = (0, _promiseHelpers.promiseActionTypes)('LOAD_ANNOTATIONS');
 var LOAD_ANNOTATIONS_PROXY = exports.LOAD_ANNOTATIONS_PROXY = 'LOAD_ANNOTATIONS_PROXY';
+var SAVE_ANNOTATED_ITEMS = exports.SAVE_ANNOTATED_ITEMS = (0, _promiseHelpers.promiseActionTypes)('SAVE_ANNOTATED_ITEMS');
+var SAVE_ANNOTATED_ITEMS_PROXY = exports.SAVE_ANNOTATED_ITEMS_PROXY = 'SAVE_ANNOTATED_ITEMS_PROXY';
 var SELECT_ELEMENT_PROXY = exports.SELECT_ELEMENT_PROXY = 'SELECT_ELEMENT_PROXY';
 var SET_CONTEXT_KEY = exports.SET_CONTEXT_KEY = 'SET_CONTEXT_KEY';
 var SET_CURRENT_FIELD = exports.SET_CURRENT_FIELD = 'SET_CURRENT_FIELD';
@@ -818,45 +820,7 @@ module.exports = function(exec){
 };
 
 /***/ }),
-/* 31 */,
-/* 32 */,
-/* 33 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// 19.1.2.14 / 15.2.3.14 Object.keys(O)
-var $keys       = __webpack_require__(113)
-  , enumBugKeys = __webpack_require__(59);
-
-module.exports = Object.keys || function keys(O){
-  return $keys(O, enumBugKeys);
-};
-
-/***/ }),
-/* 34 */
-/***/ (function(module, exports) {
-
-module.exports = function(bitmap, value){
-  return {
-    enumerable  : !(bitmap & 1),
-    configurable: !(bitmap & 2),
-    writable    : !(bitmap & 4),
-    value       : value
-  };
-};
-
-/***/ }),
-/* 35 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// 7.1.13 ToObject(argument)
-var defined = __webpack_require__(46);
-module.exports = function(it){
-  return Object(defined(it));
-};
-
-/***/ }),
-/* 36 */,
-/* 37 */
+/* 31 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global, module) {/**
@@ -3143,6 +3107,44 @@ module.exports = mapValues;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(12), __webpack_require__(21)(module)))
 
 /***/ }),
+/* 32 */,
+/* 33 */,
+/* 34 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// 19.1.2.14 / 15.2.3.14 Object.keys(O)
+var $keys       = __webpack_require__(113)
+  , enumBugKeys = __webpack_require__(59);
+
+module.exports = Object.keys || function keys(O){
+  return $keys(O, enumBugKeys);
+};
+
+/***/ }),
+/* 35 */
+/***/ (function(module, exports) {
+
+module.exports = function(bitmap, value){
+  return {
+    enumerable  : !(bitmap & 1),
+    configurable: !(bitmap & 2),
+    writable    : !(bitmap & 4),
+    value       : value
+  };
+};
+
+/***/ }),
+/* 36 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// 7.1.13 ToObject(argument)
+var defined = __webpack_require__(46);
+module.exports = function(it){
+  return Object(defined(it));
+};
+
+/***/ }),
+/* 37 */,
 /* 38 */
 /***/ (function(module, exports) {
 
@@ -4719,7 +4721,7 @@ var _lodash = __webpack_require__(173);
 
 var _lodash2 = _interopRequireDefault(_lodash);
 
-var _lodash3 = __webpack_require__(37);
+var _lodash3 = __webpack_require__(31);
 
 var _lodash4 = _interopRequireDefault(_lodash3);
 
@@ -4784,7 +4786,7 @@ var _lodash3 = __webpack_require__(64);
 
 var _lodash4 = _interopRequireDefault(_lodash3);
 
-var _lodash5 = __webpack_require__(37);
+var _lodash5 = __webpack_require__(31);
 
 var _lodash6 = _interopRequireDefault(_lodash5);
 
@@ -4945,7 +4947,7 @@ module.exports = !__webpack_require__(16) && !__webpack_require__(30)(function()
 
 // 19.1.2.9 / 15.2.3.2 Object.getPrototypeOf(O)
 var has         = __webpack_require__(23)
-  , toObject    = __webpack_require__(35)
+  , toObject    = __webpack_require__(36)
   , IE_PROTO    = __webpack_require__(49)('IE_PROTO')
   , ObjectProto = Object.prototype;
 
@@ -5596,7 +5598,7 @@ var _lodash = __webpack_require__(64);
 
 var _lodash2 = _interopRequireDefault(_lodash);
 
-var _lodash3 = __webpack_require__(37);
+var _lodash3 = __webpack_require__(31);
 
 var _lodash4 = _interopRequireDefault(_lodash3);
 
@@ -5776,7 +5778,7 @@ module.exports = function(IS_INCLUDES){
 "use strict";
 
 var $defineProperty = __webpack_require__(13)
-  , createDesc      = __webpack_require__(34);
+  , createDesc      = __webpack_require__(35);
 
 module.exports = function(object, index, value){
   if(index in object)$defineProperty.f(object, index, createDesc(0, value));
@@ -5841,7 +5843,7 @@ module.exports = function(fn, args, that){
 "use strict";
 
 var create         = __webpack_require__(75)
-  , descriptor     = __webpack_require__(34)
+  , descriptor     = __webpack_require__(35)
   , setToStringTag = __webpack_require__(41)
   , IteratorPrototype = {};
 
@@ -5941,10 +5943,10 @@ module.exports = function(){
 "use strict";
 
 // 19.1.2.1 Object.assign(target, source, ...)
-var getKeys  = __webpack_require__(33)
+var getKeys  = __webpack_require__(34)
   , gOPS     = __webpack_require__(76)
   , pIE      = __webpack_require__(60)
-  , toObject = __webpack_require__(35)
+  , toObject = __webpack_require__(36)
   , IObject  = __webpack_require__(70)
   , $assign  = Object.assign;
 
@@ -5979,7 +5981,7 @@ module.exports = !$assign || __webpack_require__(30)(function(){
 
 var dP       = __webpack_require__(13)
   , anObject = __webpack_require__(15)
-  , getKeys  = __webpack_require__(33);
+  , getKeys  = __webpack_require__(34);
 
 module.exports = __webpack_require__(16) ? Object.defineProperties : function defineProperties(O, Properties){
   anObject(O);
@@ -6080,7 +6082,7 @@ module.exports = function(index, length){
 
 var ctx            = __webpack_require__(22)
   , $export        = __webpack_require__(17)
-  , toObject       = __webpack_require__(35)
+  , toObject       = __webpack_require__(36)
   , call           = __webpack_require__(72)
   , isArrayIter    = __webpack_require__(71)
   , toLength       = __webpack_require__(51)
@@ -10942,7 +10944,7 @@ var _defineProperty3 = _interopRequireDefault(_defineProperty2);
 
 exports.default = main;
 
-var _lodash = __webpack_require__(37);
+var _lodash = __webpack_require__(31);
 
 var _lodash2 = _interopRequireDefault(_lodash);
 
