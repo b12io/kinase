@@ -1,6 +1,7 @@
-import React from 'react';
-import PropTypes from 'prop-types';
 import Collapse from 'rc-collapse';
+import PropTypes from 'prop-types';
+import React from 'react';
+import ReactQuill from 'react-quill';
 import { connect } from 'react-redux';
 
 import ImageField from 'components/ImageField';
@@ -8,6 +9,7 @@ import { annotatedItemFieldType } from 'redux/reducers/annotatedItemField';
 import { currentContextSelector } from 'redux/selectors';
 import { setCurrentField, updateField } from 'redux/proxyActions';
 
+import 'react-quill/dist/quill.snow.css';
 import 'rc-collapse/assets/index.css';
 import styles from './style.scss';
 
@@ -15,6 +17,7 @@ class AnnotatedItemField extends React.Component {
   constructor(props) {
     super(props);
     this.handleChange = this.handleChange.bind(this);
+    this.handleRichTextChange = this.handleRichTextChange.bind(this);
     this.toggleCollapse = this.toggleCollapse.bind(this);
   }
 
@@ -24,7 +27,24 @@ class AnnotatedItemField extends React.Component {
 
   getField() {
     switch (this.props.fieldType) {
-      case 'text':
+      case 'rich-text': {
+        return (
+          <ReactQuill
+            theme="snow"
+            modules={{
+              toolbar: [
+                ['bold', 'italic', 'underline'],
+                [{ list: 'ordered' }, { list: 'bullet' }],
+                ['link'],
+                ['clean'],
+              ],
+            }}
+            value={this.state.value}
+            onChange={this.handleRichTextChange}
+          />
+        );
+      }
+      case 'text': {
         return (
           <textarea
             type="text"
@@ -33,7 +53,8 @@ class AnnotatedItemField extends React.Component {
             onFocus={this.props.setFocus}
           />
         );
-      case 'image':
+      }
+      case 'image': {
         return (
           <div onClick={this.props.setFocus}>
             <ImageField
@@ -42,8 +63,10 @@ class AnnotatedItemField extends React.Component {
             />
           </div>
         );
-      default:
+      }
+      default: {
         throw new Error('Invalid field type.');
+      }
     }
   }
 
@@ -61,6 +84,10 @@ class AnnotatedItemField extends React.Component {
 
   handleChange(event) {
     this.props.editField(event.target.value);
+  }
+
+  handleRichTextChange(value) {
+    this.setState({ value });
   }
 
   toggleCollapse(activeKeys) {

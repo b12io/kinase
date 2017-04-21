@@ -37,12 +37,16 @@ if (!document.querySelector(styles.tentMain)) {
 
   const getWrappedContent = (node) => {
     switch (currentFieldTypeSelector(store.getState())) {
-      case 'text':
+      case 'rich-text':
+      case 'text': {
         return getWrappedText(node);
-      case 'image':
+      }
+      case 'image': {
         return getWrappedImage(node);
-      default:
+      }
+      default: {
         return null;
+      }
     }
   };
 
