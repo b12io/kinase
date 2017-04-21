@@ -1,4 +1,5 @@
 import get from 'lodash.get';
+import mapValues from 'lodash.mapvalues';
 import { createSelector } from 'reselect';
 
 export const annotationContextsSelector = state => state.contexts;
@@ -27,4 +28,13 @@ export const currentFieldTypeSelector = createSelector(
   (currentAnnotatedItem, currentField) => (
     get(currentAnnotatedItem, ['schema', 'fields', currentField])
   ),
+);
+
+export const currentMappingsSelector = createSelector(
+  currentContextSelector,
+  context => mapValues(context, annotatedItem => (
+    annotatedItem.schema.multiple
+    ? annotatedItem.collectionMappings
+    : annotatedItem.collectionMappings[0]
+  )),
 );
