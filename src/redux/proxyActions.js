@@ -1,5 +1,6 @@
 import {
   ADD_COLLECTION_MAPPING,
+  CLEAR_ERROR,
   DELETE_COLLECTION_MAPPING,
   LOAD_ANNOTATIONS_PROXY,
   SAVE_ANNOTATED_ITEMS_PROXY,
@@ -13,6 +14,12 @@ export function addCollectionMapping(annotationName) {
   return {
     annotationName,
     type: ADD_COLLECTION_MAPPING,
+  };
+}
+
+export function clearError() {
+  return {
+    type: CLEAR_ERROR,
   };
 }
 

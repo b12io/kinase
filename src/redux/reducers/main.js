@@ -4,6 +4,7 @@ import annotationContext from 'redux/reducers/annotationContext';
 import { isRejected } from 'redux/promiseHelpers';
 import {
   ADD_COLLECTION_MAPPING,
+  CLEAR_ERROR,
   DELETE_COLLECTION_MAPPING,
   LOAD_ANNOTATIONS,
   SET_CONTEXT_KEY,
@@ -30,11 +31,17 @@ export default function main(state = initialState, action) {
     // If a promise payload is rejected, skip logic and return error state
     return {
       ...state,
-      error: 'Error loading annotations!',
+      error: true,
     };
   }
 
   switch (action.type) {
+    case CLEAR_ERROR: {
+      return {
+        ...state,
+        error: false,
+      };
+    }
     case LOAD_ANNOTATIONS.FULFILLED: {
       return {
         ...state,
