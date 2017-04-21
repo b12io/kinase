@@ -23,7 +23,7 @@
       "description": {
         "content": "About Us",
         "original": "about us",
-        "source": "#h1"
+        "sources": ["#h1"]
       }
     }
   }

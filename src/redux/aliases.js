@@ -31,9 +31,11 @@ export default {
           currentAnnotation,
           currentIndex,
           currentField,
-          action.content,
-          action.content,
-          action.selector,
+          {
+            content: action.content,
+            sources: [action.selector],
+          },
+          action.append,
         ),
       );
     }

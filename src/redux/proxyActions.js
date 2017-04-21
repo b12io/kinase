@@ -43,10 +43,11 @@ export function saveAnnotatedItems() {
   };
 }
 
-export function selectElement(selector, content) {
+export function selectElement(selector, content, append = false) {
   return {
     selector,
     content,
+    append,
     type: SELECT_ELEMENT_PROXY,
   };
 }
@@ -67,14 +68,15 @@ export function setCurrentField(annotationName, collectionIndex, fieldName) {
   };
 }
 
-export function updateField(annotationName, collectionIndex, fieldName, content, original, source) {
+export function updateField(
+  annotationName, collectionIndex, fieldName, mapping, append = false,
+) {
   return {
     annotationName,
     collectionIndex,
     fieldName,
-    content,
-    original,
-    source,
+    mapping,
+    append,
     type: UPDATE_FIELD,
   };
 }

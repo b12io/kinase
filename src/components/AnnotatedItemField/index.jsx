@@ -78,10 +78,10 @@ class AnnotatedItemField extends React.Component {
               {this.getField()}
             </div>
             <div className={styles.fieldGroup}>
-              <div className={styles.fieldLabel}>Source</div>
-              <div className={styles.mappingSourcePath}>
-                {this.props.mapping.source}
-              </div>
+              <div className={styles.fieldLabel}>Sources</div>
+              <ul className={styles.mappingSourcePath}>
+                {this.props.mapping.sources.map(source => <li>{source}</li>)}
+              </ul>
             </div>
           </Collapse.Panel>
         </Collapse>
