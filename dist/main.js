@@ -5878,12 +5878,13 @@ function setCurrentField(annotationName, collectionIndex, fieldName) {
   };
 }
 
-function updateField(annotationName, collectionIndex, fieldName, content, source) {
+function updateField(annotationName, collectionIndex, fieldName, content, original, source) {
   return {
     annotationName: annotationName,
     collectionIndex: collectionIndex,
     fieldName: fieldName,
     content: content,
+    original: original,
     source: source,
     type: _constants.UPDATE_FIELD
   };
@@ -8351,8 +8352,8 @@ function annotatedItemField() {
     case _constants.UPDATE_FIELD:
       return (0, _extends3.default)({}, state, {
         content: action.content,
-        original: action.content,
-        source: action.source
+        original: action.original || state.original,
+        source: action.source || state.source
       });
     default:
       return state;
@@ -24910,8 +24911,6 @@ var AnnotatedItemField = function (_React$Component) {
 
     var _this = (0, _possibleConstructorReturn3.default)(this, (AnnotatedItemField.__proto__ || (0, _getPrototypeOf2.default)(AnnotatedItemField)).call(this, props));
 
-    _this.state = { value: props.mapping.content || '' };
-
     _this.handleChange = _this.handleChange.bind(_this);
     _this.toggleCollapse = _this.toggleCollapse.bind(_this);
     return _this;
@@ -24929,7 +24928,7 @@ var AnnotatedItemField = function (_React$Component) {
         case 'text':
           return _react2.default.createElement('textarea', {
             type: 'text',
-            value: this.state.value,
+            value: this.props.mapping.content,
             onChange: this.handleChange,
             onFocus: this.props.setFocus
           });
@@ -24962,7 +24961,7 @@ var AnnotatedItemField = function (_React$Component) {
   }, {
     key: 'handleChange',
     value: function handleChange(event) {
-      this.setState({ value: event.target.value });
+      this.props.editField(event.target.value);
     }
   }, {
     key: 'toggleCollapse',
@@ -25015,6 +25014,7 @@ var AnnotatedItemField = function (_React$Component) {
 }(_react2.default.Component);
 
 AnnotatedItemField.propTypes = {
+  editField: _propTypes2.default.func.isRequired,
   fieldName: _propTypes2.default.string.isRequired,
   fieldType: _propTypes2.default.string.isRequired,
   mapping: _annotatedItemField.annotatedItemFieldType.isRequired,
@@ -25029,6 +25029,9 @@ exports.default = (0, _reactRedux.connect)(function (state, ownProps) {
   };
 }, function (dispatch, ownProps) {
   return {
+    editField: function editField(content) {
+      return dispatch((0, _proxyActions.updateField)(ownProps.annotationName, ownProps.collectionIndex, ownProps.fieldName, content));
+    },
     resetFocus: function resetFocus() {
       return dispatch((0, _proxyActions.setCurrentField)());
     },

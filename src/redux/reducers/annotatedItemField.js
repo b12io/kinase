@@ -21,8 +21,8 @@ export default function annotatedItemField(state = initialState, action) {
       return {
         ...state,
         content: action.content,
-        original: action.content,
-        source: action.source,
+        original: action.original || state.original,
+        source: action.source || state.source,
       };
     default:
       return state;

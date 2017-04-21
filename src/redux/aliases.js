@@ -32,6 +32,7 @@ export default {
           currentIndex,
           currentField,
           action.content,
+          action.content,
           action.selector,
         ),
       );
