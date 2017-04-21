@@ -39,7 +39,7 @@ class AnnotatedItemField extends React.Component {
                 ['clean'],
               ],
             }}
-            value={this.state.value}
+            value={this.props.mapping.content}
             onChange={this.handleRichTextChange}
           />
         );
@@ -87,7 +87,7 @@ class AnnotatedItemField extends React.Component {
   }
 
   handleRichTextChange(value) {
-    this.setState({ value });
+    this.props.editField(value);
   }
 
   toggleCollapse(activeKeys) {
