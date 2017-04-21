@@ -32,9 +32,6 @@ export const currentFieldTypeSelector = createSelector(
 
 export const currentMappingsSelector = createSelector(
   currentContextSelector,
-  context => mapValues(context, annotatedItem => (
-    annotatedItem.schema.multiple
-    ? annotatedItem.collectionMappings
-    : annotatedItem.collectionMappings[0]
-  )),
+  context => (
+    mapValues(context, annotatedItem => annotatedItem.collectionMappings)),
 );
