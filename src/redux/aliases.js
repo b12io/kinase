@@ -1,12 +1,17 @@
+import isEqual from 'lodash.isequal';
 import isNil from 'lodash.isnil';
+import pick from 'lodash.pick';
 import { load, save } from 'api';
 import { updateField } from 'redux/proxyActions';
+import { currentContextSelector } from 'redux/selectors';
 import {
   LOAD_ANNOTATIONS,
   LOAD_ANNOTATIONS_PROXY,
   SAVE_ANNOTATED_ITEMS,
   SAVE_ANNOTATED_ITEMS_PROXY,
   SELECT_ELEMENT_PROXY,
+  UPDATE_FIELD,
+  UPDATE_FIELD_PROXY,
 } from 'redux/constants';
 
 // NOTE: The `alias` middleware allows async actions to be triggered from the
@@ -40,5 +45,17 @@ export default {
       );
     }
     return Promise.resolve();
+  },
+
+  [UPDATE_FIELD_PROXY]: action => (dispatch, getState) => {
+    const currentMapping = currentContextSelector(getState())[
+      action.annotationName].collectionMappings[action.collectionIndex][action.fieldName];
+    if (!isEqual(action.mapping, pick(currentMapping, Object.keys(action.mapping)))) {
+      // Only fire action if something will change
+      dispatch({
+        ...action,
+        type: UPDATE_FIELD,
+      });
+    }
   },
 };

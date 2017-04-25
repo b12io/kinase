@@ -7,7 +7,7 @@ import {
   SELECT_ELEMENT_PROXY,
   SET_CONTEXT_KEY,
   SET_CURRENT_FIELD,
-  UPDATE_FIELD,
+  UPDATE_FIELD_PROXY,
 } from 'redux/constants';
 
 export function addCollectionMapping(annotationName) {
@@ -77,6 +77,6 @@ export function updateField(
     fieldName,
     mapping,
     append,
-    type: UPDATE_FIELD,
+    type: UPDATE_FIELD_PROXY,
   };
 }
