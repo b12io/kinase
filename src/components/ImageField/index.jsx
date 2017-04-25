@@ -1,4 +1,4 @@
-import isNil from 'lodash.isnil';
+import isUndefined from 'lodash.isundefined';
 import mapValues from 'lodash.mapvalues';
 import DropzoneComponent from 'react-dropzone-component';
 import PropTypes from 'prop-types';
@@ -15,8 +15,16 @@ export default class ImageField extends React.Component {
     const defaultEventHandlers = {
       init: (_dropzone) => {
         dropzone = _dropzone;
+        const originalAddedFile = dropzone.options.addedfile;
+        if (this.props.singleFile) {
+          dropzone.options.addedfile = (...args) => {
+            originalAddedFile.call(dropzone, ...args);
+            if (!isUndefined(dropzone.files[1])) {
+              dropzone.removeFile(dropzone.files[0]);
+            }
+          };
+        }
       },
-      addedfile: this.addFile.bind(this),
     };
     this.eventHandlers = {
       ...props.eventHandlers,
@@ -32,17 +40,9 @@ export default class ImageField extends React.Component {
   componentWillReceiveProps({ file }) {
     if (file) {
       dropzone.files.push(file); // file must be added manually
-      dropzone.emit('addedfile', file);
-      dropzone.emit('thumbnail', file, file.url);
-      dropzone.emit('complete', file);
-    }
-  }
-
-  addFile() {
-    if (this.props.singleFile) {
-      if (!isNil(dropzone.files[1])) {
-        dropzone.removeFile(dropzone.files[0]);
-      }
+      dropzone.options.addedfile.call(dropzone, file);
+      dropzone.options.thumbnail.call(dropzone, file, file.url);
+      dropzone.options.complete.call(dropzone, file, file.url);
     }
   }
 
