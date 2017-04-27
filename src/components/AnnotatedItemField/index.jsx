@@ -16,6 +16,7 @@ import styles from './style.scss';
 class AnnotatedItemField extends React.Component {
   constructor(props) {
     super(props);
+    this.changeFile = this.changeFile.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.handleRichTextChange = this.handleRichTextChange.bind(this);
     this.toggleCollapse = this.toggleCollapse.bind(this);
@@ -55,11 +56,13 @@ class AnnotatedItemField extends React.Component {
         );
       }
       case 'image': {
+        const mock = this.getMockFile();
         return (
           <div onClick={this.props.setFocus}>
             <ImageField
               singleFile
-              file={this.getMockFile()}
+              file={mock}
+              eventHandlers={{ addedfile: this.changeFile }}
             />
           </div>
         );
@@ -80,6 +83,10 @@ class AnnotatedItemField extends React.Component {
       };
     }
     return null;
+  }
+
+  changeFile(file) {
+    this.props.editField(file.url);
   }
 
   handleChange(event) {
@@ -107,7 +114,7 @@ class AnnotatedItemField extends React.Component {
             <div className={styles.fieldGroup}>
               <div className={styles.fieldLabel}>Sources</div>
               <ul className={styles.mappingSourcePath}>
-                {this.props.mapping.sources.map(source => <li>{source}</li>)}
+                {this.props.mapping.sources.map(source => <li key={source}>{source}</li>)}
               </ul>
             </div>
           </Collapse.Panel>
@@ -139,7 +146,7 @@ export default connect(
         ownProps.annotationName,
         ownProps.collectionIndex,
         ownProps.fieldName,
-        content,
+        { content },
       ),
     ),
     resetFocus: () => dispatch(setCurrentField()),

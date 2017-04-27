@@ -4,15 +4,15 @@ import { UPDATE_FIELD } from 'redux/constants';
 
 const initialState = {
   // TODO(jrbotros): also store the URL for this selector
-  content: null,
-  original: null,
+  content: '',
+  original: '',
   sources: [],
 };
 
 export const annotatedItemFieldType = PropTypes.shape({
-  content: PropTypes.string.isRequired,
-  original: PropTypes.string.isRequired,
-  sources: PropTypes.arrayOf(PropTypes.string).isRequired,
+  content: PropTypes.string,
+  original: PropTypes.string,
+  sources: PropTypes.arrayOf(PropTypes.string),
 });
 
 export default function annotatedItemField(state = initialState, action) {
@@ -30,7 +30,7 @@ export default function annotatedItemField(state = initialState, action) {
         ...state,
         content: action.mapping.content,
         original: action.mapping.content,
-        sources: action.mapping.sources,
+        sources: action.mapping.sources || [],
       };
     default:
       return state;

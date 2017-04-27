@@ -19,12 +19,7 @@ export default function annotationContext(state, action) {
     case LOAD_ANNOTATIONS.FULFILLED: {
       return mapValues(action.payload.schema, (schema, name) => {
         // Get data already mapped, if any
-        let collectionMappings = action.payload.mappings[name];
-        if (collectionMappings && !schema.multiple) {
-          // Wrap singly-mapped content in array for consistent representation
-          collectionMappings = [collectionMappings];
-        }
-
+        const collectionMappings = action.payload.mappings[name];
         if (isUndefined(state)) {
           // State is being loaded for the first time
           return annotatedItem({ schema, collectionMappings }, action);

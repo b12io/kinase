@@ -37,8 +37,19 @@ export default class ImageField extends React.Component {
     };
   }
 
-  componentWillReceiveProps({ file }) {
+  componentDidMount() {
+    this.loadInitialFile(this.props.file);
+  }
+
+  componentWillReceiveProps(nextProps) {
+    this.loadInitialFile(nextProps.file);
+  }
+
+  loadInitialFile(file) {
     if (file) {
+      if (dropzone.files.length && file.url === dropzone.files[0].url) {
+        return;
+      }
       dropzone.files.push(file); // file must be added manually
       dropzone.options.addedfile.call(dropzone, file);
       dropzone.options.thumbnail.call(dropzone, file, file.url);
