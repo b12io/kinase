@@ -1,5 +1,6 @@
 import get from 'lodash.get';
 import mapValues from 'lodash.mapvalues';
+import pickBy from 'lodash.pickby';
 import { createSelector } from 'reselect';
 
 export const annotationContextsSelector = state => state.contexts;
@@ -33,5 +34,7 @@ export const currentFieldTypeSelector = createSelector(
 export const currentMappingsSelector = createSelector(
   currentContextSelector,
   context => (
-    mapValues(context, annotatedItem => annotatedItem.collectionMappings)),
+    mapValues(
+      pickBy(context, annotatedItem => annotatedItem.updated),
+      annotatedItem => annotatedItem.collectionMappings)),
 );

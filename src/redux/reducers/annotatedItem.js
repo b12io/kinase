@@ -14,6 +14,7 @@ import {
 } from 'redux/constants';
 
 export const annotatedItemType = PropTypes.shape({
+  updated: PropTypes.bool,
   schema: PropTypes.shape({
     multiple: PropTypes.bool,
     fields: PropTypes.objectOf(PropTypes.string).isRequired,
@@ -51,6 +52,7 @@ export default function annotatedItem(state, action) {
     case ADD_COLLECTION_MAPPING: {
       return {
         ...state,
+        updated: true,
         collectionMappings: [
           ...state.collectionMappings,
           newCollectionMapping(),
@@ -61,7 +63,10 @@ export default function annotatedItem(state, action) {
     case DELETE_COLLECTION_MAPPING: {
       const newState = cloneDeep(state);
       newState.collectionMappings.splice(action.collectionIndex, 1);
-      return newState;
+      return {
+        ...newState,
+        updated: true,
+      };
     }
 
     case UPDATE_FIELD: {
@@ -73,7 +78,10 @@ export default function annotatedItem(state, action) {
             state.collectionMappings[action.collectionIndex][action.fieldName], action)
         ),
       };
-      return newState;
+      return {
+        ...newState,
+        updated: true,
+      };
     }
 
     default: {
