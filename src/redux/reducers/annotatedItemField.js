@@ -1,6 +1,7 @@
+import defaults from 'lodash.defaults';
 import PropTypes from 'prop-types';
 
-import { UPDATE_FIELD } from 'redux/constants';
+import { LOAD_ANNOTATIONS, UPDATE_FIELD } from 'redux/constants';
 
 const initialState = {
   // TODO(jrbotros): also store the URL for this selector
@@ -17,6 +18,8 @@ export const annotatedItemFieldType = PropTypes.shape({
 
 export default function annotatedItemField(state = initialState, action) {
   switch (action.type) {
+    case LOAD_ANNOTATIONS.FULFILLED:
+      return defaults(state, initialState);
     case UPDATE_FIELD:
       if (action.append) {
         return {
@@ -26,12 +29,12 @@ export default function annotatedItemField(state = initialState, action) {
           sources: [...state.sources, ...action.mapping.sources],
         };
       }
-      return {
+      return defaults({
         ...state,
         content: action.mapping.content,
         original: action.mapping.content,
-        sources: action.mapping.sources || [],
-      };
+        sources: action.mapping.sources,
+      }, initialState);
     default:
       return state;
   }
