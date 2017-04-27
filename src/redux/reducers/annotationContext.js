@@ -19,10 +19,12 @@ export default function annotationContext(state, action) {
     case LOAD_ANNOTATIONS.FULFILLED: {
       return mapValues(action.payload.schema, (schema, name) => {
         // Get data already mapped, if any
-        const collectionMappings = action.payload.mappings[name];
         if (isUndefined(state)) {
           // State is being loaded for the first time
-          return annotatedItem({ schema, collectionMappings }, action);
+          return annotatedItem({
+            schema,
+            collectionMappings: action.payload.mappings[name],
+          }, action);
         }
         // Ensure annotations are only those found in the new schema
         return annotatedItem({ ...state[name], schema }, action);

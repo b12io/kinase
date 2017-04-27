@@ -19,12 +19,12 @@
     }
   },
   "mappings": {
-    "about": {
+    "about": [{
       "description": {
         "content": "About Us",
         "original": "about us",
         "sources": ["#h1"]
       }
-    }
+    }]
   }
 }
