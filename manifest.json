@@ -15,8 +15,7 @@
   },
   "externally_connectable": {
     "matches": [
-      "http://*/*",
-      "https://*/*"
+      "*://*.b12.io/*"
     ]
   },
   "permissions": [
