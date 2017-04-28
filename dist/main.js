@@ -43344,8 +43344,6 @@ var _style2 = _interopRequireDefault(_style);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var dropzone = void 0;
-
 var ImageField = function (_React$Component) {
   (0, _inherits3.default)(ImageField, _React$Component);
 
@@ -43356,17 +43354,17 @@ var ImageField = function (_React$Component) {
 
     var defaultEventHandlers = {
       init: function init(_dropzone) {
-        dropzone = _dropzone;
-        var originalAddedFile = dropzone.options.addedfile;
+        _this.dropzone = _dropzone;
+        var originalAddedFile = _this.dropzone.options.addedfile;
         if (_this.props.singleFile) {
-          dropzone.options.addedfile = function () {
+          _this.dropzone.options.addedfile = function () {
             for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
               args[_key] = arguments[_key];
             }
 
-            originalAddedFile.call.apply(originalAddedFile, [dropzone].concat(args));
-            if (!(0, _lodash2.default)(dropzone.files[1])) {
-              dropzone.removeFile(dropzone.files[0]);
+            originalAddedFile.call.apply(originalAddedFile, [_this.dropzone].concat(args));
+            if (!(0, _lodash2.default)(_this.dropzone.files[1])) {
+              _this.dropzone.removeFile(_this.dropzone.files[0]);
             }
           };
         }
@@ -43399,13 +43397,13 @@ var ImageField = function (_React$Component) {
     key: 'loadInitialFile',
     value: function loadInitialFile(file) {
       if (file) {
-        if (dropzone.files.length && file.url === dropzone.files[0].url) {
+        if (this.dropzone.files.length && file.url === this.dropzone.files[0].url) {
           return;
         }
-        dropzone.files.push(file); // file must be added manually
-        dropzone.options.addedfile.call(dropzone, file);
-        dropzone.options.thumbnail.call(dropzone, file, file.url);
-        dropzone.options.complete.call(dropzone, file, file.url);
+        this.dropzone.files.push(file); // file must be added manually
+        this.dropzone.options.addedfile.call(this.dropzone, file);
+        this.dropzone.options.thumbnail.call(this.dropzone, file, file.url);
+        this.dropzone.options.complete.call(this.dropzone, file, file.url);
       }
     }
   }, {
