@@ -3,7 +3,10 @@
 
   "name": "Tent",
   "description": "Tent is an extension for Google Chrome allowing users to map web content to a list of annotations.",
-  "version": "1.0",
+  "version": "0.1.0",
+  "icons": {
+    "128": "icon.png"
+  },
   "background": {
     "scripts": [
       "dist/background.js"
