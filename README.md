@@ -21,3 +21,6 @@ Make sure you configure [`externally_connectable`](https://developer.chrome.com/
 You can get your `EXTENSION_ID` [from the Chrome store](https://developer.chrome.com/webstore/publish#get-the-app-id) once you've published your extension, or [generate your own](http://stackoverflow.com/questions/23873623/obtaining-chrome-extension-id-for-development) for development purposes only.
 
 **By default, all mapped content is stored in a default context, so if you don't need to switch contexts you can ignore the concept entirely.**
+
+## Publishing
+Create the extension zipfile with `yarn package` and follow the web store [instructions](https://developer.chrome.com/webstore/publish). If you want to upload a new extension zipfile, you'll need to bump the version accordingly with `yarn package -- (patch|minor|major)`.
