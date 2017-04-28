@@ -18,7 +18,6 @@
       "*://*.b12.io/*"
     ]
   },
-  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAvTCKVVd2gLysNjnNajAP65ByHxOJA6Lfaajeowa5ih//qYORrLJqNFfXNeZcw4NZsQdHNSNY/+QZDb5NWxFioO2hQvnZdgsdv7otOMKuCjBvB0NTSCnu6DzjNiqEl0+TNciK6p3ABuhnE842WeZrJF1tToln7Q6cPkSu/zsCIaI8LZ2n+yDvKzEruJN76L9oqUT73W4jxRL2arnkYH701wLhgaFC2Wh00/UdGZcky2TMzq22D+VIHd4JXwPBH6Oc7gEY0uyqDxfrEh4oS+5hCYw5qdkKhcQKR97qIlWdRi7EYP5HLtgvMT0cmNTMk9vP/B6iWTL4mUxiXSl/nGF+owIDAQAB",
   "permissions": [
     "activeTab",
     "http://*/*",
