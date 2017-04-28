@@ -8,19 +8,18 @@ import 'dropzone/dist/dropzone.css';
 import 'react-dropzone-component/styles/filepicker.css';
 import styles from './style.scss';
 
-let dropzone;
 export default class ImageField extends React.Component {
   constructor(props) {
     super(props);
     const defaultEventHandlers = {
-      init: (_dropzone) => {
-        dropzone = _dropzone;
-        const originalAddedFile = dropzone.options.addedfile;
+      init: (dropzone) => {
+        this.dropzone = dropzone;
+        const originalAddedFile = this.dropzone.options.addedfile;
         if (this.props.singleFile) {
-          dropzone.options.addedfile = (...args) => {
-            originalAddedFile.call(dropzone, ...args);
-            if (!isUndefined(dropzone.files[1])) {
-              dropzone.removeFile(dropzone.files[0]);
+          this.dropzone.options.addedfile = (...args) => {
+            originalAddedFile.call(this.dropzone, ...args);
+            if (!isUndefined(this.dropzone.files[1])) {
+              this.dropzone.removeFile(this.dropzone.files[0]);
             }
           };
         }
@@ -47,13 +46,13 @@ export default class ImageField extends React.Component {
 
   loadInitialFile(file) {
     if (file) {
-      if (dropzone.files.length && file.url === dropzone.files[0].url) {
+      if (this.dropzone.files.length && file.url === this.dropzone.files[0].url) {
         return;
       }
-      dropzone.files.push(file); // file must be added manually
-      dropzone.options.addedfile.call(dropzone, file);
-      dropzone.options.thumbnail.call(dropzone, file, file.url);
-      dropzone.options.complete.call(dropzone, file, file.url);
+      this.dropzone.files.push(file); // file must be added manually
+      this.dropzone.options.addedfile.call(this.dropzone, file);
+      this.dropzone.options.thumbnail.call(this.dropzone, file, file.url);
+      this.dropzone.options.complete.call(this.dropzone, file, file.url);
     }
   }
 
