@@ -19,11 +19,5 @@ then
   node scripts/bump-version.js $1
 fi
 
-echo 'Removing node modules...'
-rm -rf node_modules/
-
 echo 'Zipping files...'
-zip -qr package.zip .
-
-echo 'Reinstalling dependencies...'
-yarn >/dev/null
+git archive --format zip --output package.zip HEAD
