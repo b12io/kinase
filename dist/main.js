@@ -39568,7 +39568,7 @@ var _selectors = __webpack_require__(67);
 
 __webpack_require__(582);
 
-var _style = __webpack_require__(578);
+var _style = __webpack_require__(577);
 
 var _style2 = _interopRequireDefault(_style);
 
@@ -43078,15 +43078,19 @@ var _react = __webpack_require__(9);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactQuill = __webpack_require__(549);
-
-var _reactQuill2 = _interopRequireDefault(_reactQuill);
-
 var _reactRedux = __webpack_require__(106);
 
-var _ImageField = __webpack_require__(333);
+var _ImageField = __webpack_require__(591);
 
 var _ImageField2 = _interopRequireDefault(_ImageField);
+
+var _TextField = __webpack_require__(593);
+
+var _TextField2 = _interopRequireDefault(_TextField);
+
+var _RichTextField = __webpack_require__(592);
+
+var _RichTextField2 = _interopRequireDefault(_RichTextField);
 
 var _annotatedItemField = __webpack_require__(109);
 
@@ -43130,36 +43134,20 @@ var AnnotatedItemField = function (_React$Component) {
       switch (this.props.fieldType) {
         case 'rich-text':
           {
-            return _react2.default.createElement(_reactQuill2.default, {
-              theme: 'snow',
-              modules: {
-                toolbar: [['bold', 'italic', 'underline'], [{ list: 'ordered' }, { list: 'bullet' }], ['link'], ['clean']]
-              },
-              value: this.props.mapping.content,
-              onChange: this.handleRichTextChange
-            });
+            return _react2.default.createElement(_RichTextField2.default, { value: this.props.mapping.content, onChange: this.props.editField });
           }
         case 'text':
           {
-            return _react2.default.createElement('textarea', {
-              type: 'text',
-              value: this.props.mapping.content,
-              onChange: this.handleChange,
-              onFocus: this.props.setFocus
-            });
+            return _react2.default.createElement(_TextField2.default, { value: this.props.mapping.content, onChange: this.props.editField });
           }
         case 'image':
           {
             var mock = this.getMockFile();
-            return _react2.default.createElement(
-              'div',
-              { onClick: this.props.setFocus },
-              _react2.default.createElement(_ImageField2.default, {
-                singleFile: true,
-                file: mock,
-                eventHandlers: { addedfile: this.changeFile }
-              })
-            );
+            return _react2.default.createElement(_ImageField2.default, {
+              singleFile: true,
+              file: mock,
+              eventHandlers: { addedfile: this.changeFile }
+            });
           }
         default:
           {
@@ -43221,7 +43209,11 @@ var AnnotatedItemField = function (_React$Component) {
                 { className: _style2.default.fieldLabel },
                 'Content'
               ),
-              this.getField()
+              _react2.default.createElement(
+                'div',
+                { onClick: this.props.setFocus },
+                this.getField()
+              )
             ),
             _react2.default.createElement(
               'div',
@@ -43280,168 +43272,7 @@ exports.default = (0, _reactRedux.connect)(function (state, ownProps) {
 })(AnnotatedItemField);
 
 /***/ }),
-/* 333 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _extends2 = __webpack_require__(24);
-
-var _extends3 = _interopRequireDefault(_extends2);
-
-var _getPrototypeOf = __webpack_require__(150);
-
-var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
-
-var _classCallCheck2 = __webpack_require__(113);
-
-var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-
-var _createClass2 = __webpack_require__(114);
-
-var _createClass3 = _interopRequireDefault(_createClass2);
-
-var _possibleConstructorReturn2 = __webpack_require__(152);
-
-var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-
-var _inherits2 = __webpack_require__(151);
-
-var _inherits3 = _interopRequireDefault(_inherits2);
-
-var _lodash = __webpack_require__(59);
-
-var _lodash2 = _interopRequireDefault(_lodash);
-
-var _lodash3 = __webpack_require__(31);
-
-var _lodash4 = _interopRequireDefault(_lodash3);
-
-var _reactDropzoneComponent = __webpack_require__(544);
-
-var _reactDropzoneComponent2 = _interopRequireDefault(_reactDropzoneComponent);
-
-var _propTypes = __webpack_require__(11);
-
-var _propTypes2 = _interopRequireDefault(_propTypes);
-
-var _react = __webpack_require__(9);
-
-var _react2 = _interopRequireDefault(_react);
-
-__webpack_require__(579);
-
-__webpack_require__(580);
-
-var _style = __webpack_require__(577);
-
-var _style2 = _interopRequireDefault(_style);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var ImageField = function (_React$Component) {
-  (0, _inherits3.default)(ImageField, _React$Component);
-
-  function ImageField(props) {
-    (0, _classCallCheck3.default)(this, ImageField);
-
-    var _this = (0, _possibleConstructorReturn3.default)(this, (ImageField.__proto__ || (0, _getPrototypeOf2.default)(ImageField)).call(this, props));
-
-    var defaultEventHandlers = {
-      init: function init(_dropzone) {
-        _this.dropzone = _dropzone;
-        var originalAddedFile = _this.dropzone.options.addedfile;
-        if (_this.props.singleFile) {
-          _this.dropzone.options.addedfile = function () {
-            for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-              args[_key] = arguments[_key];
-            }
-
-            originalAddedFile.call.apply(originalAddedFile, [_this.dropzone].concat(args));
-            if (!(0, _lodash2.default)(_this.dropzone.files[1])) {
-              _this.dropzone.removeFile(_this.dropzone.files[0]);
-            }
-          };
-        }
-      }
-    };
-    _this.eventHandlers = (0, _extends3.default)({}, props.eventHandlers, (0, _lodash4.default)(defaultEventHandlers, function (handler, name) {
-      return function () {
-        handler.apply(undefined, arguments);
-        if (props.eventHandlers[name]) {
-          var _props$eventHandlers;
-
-          (_props$eventHandlers = props.eventHandlers)[name].apply(_props$eventHandlers, arguments);
-        }
-      };
-    }));
-    return _this;
-  }
-
-  (0, _createClass3.default)(ImageField, [{
-    key: 'componentDidMount',
-    value: function componentDidMount() {
-      this.loadInitialFile(this.props.file);
-    }
-  }, {
-    key: 'componentWillReceiveProps',
-    value: function componentWillReceiveProps(nextProps) {
-      this.loadInitialFile(nextProps.file);
-    }
-  }, {
-    key: 'loadInitialFile',
-    value: function loadInitialFile(file) {
-      if (file) {
-        if (this.dropzone.files.length && file.url === this.dropzone.files[0].url) {
-          return;
-        }
-        this.dropzone.files.push(file); // file must be added manually
-        this.dropzone.options.addedfile.call(this.dropzone, file);
-        this.dropzone.options.thumbnail.call(this.dropzone, file, file.url);
-        this.dropzone.options.complete.call(this.dropzone, file, file.url);
-      }
-    }
-  }, {
-    key: 'render',
-    value: function render() {
-      return _react2.default.createElement(
-        'span',
-        { className: _style2.default.imageField },
-        _react2.default.createElement(_reactDropzoneComponent2.default, {
-          config: { postUrl: 'no-url' },
-          djsConfig: { clickable: false },
-          eventHandlers: this.eventHandlers
-        })
-      );
-    }
-  }]);
-  return ImageField;
-}(_react2.default.Component);
-
-exports.default = ImageField;
-
-
-ImageField.propTypes = {
-  eventHandlers: _propTypes2.default.objectOf(_propTypes2.default.func),
-  file: _propTypes2.default.shape({
-    url: _propTypes2.default.string.isRequired,
-    type: _propTypes2.default.string,
-    size: _propTypes2.default.number.isRequired
-  }),
-  singleFile: _propTypes2.default.bool
-};
-ImageField.defaultProps = {
-  eventHandlers: {},
-  singleFile: false,
-  file: null
-};
-
-/***/ }),
+/* 333 */,
 /* 334 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -44614,22 +44445,6 @@ exports = module.exports = __webpack_require__(38)(undefined);
 
 
 // module
-exports.push([module.i, ".style__imageField___1PTZ1 .dropzone {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  padding: 0; }\n  .style__imageField___1PTZ1 .dropzone.dz-started {\n    border: 0; }\n  .style__imageField___1PTZ1 .dropzone .dz-preview {\n    width: 100%;\n    height: 100%;\n    margin: 0;\n    background: transparent;\n    border-radius: 3px; }\n    .style__imageField___1PTZ1 .dropzone .dz-preview .dz-details {\n      top: 50%;\n      transform: translateY(-50%); }\n    .style__imageField___1PTZ1 .dropzone .dz-preview .dz-image {\n      width: 100%;\n      height: auto;\n      border-radius: 3px; }\n      .style__imageField___1PTZ1 .dropzone .dz-preview .dz-image img {\n        width: 100%;\n        height: auto; }\n", ""]);
-
-// exports
-exports.locals = {
-	"imageField": "style__imageField___1PTZ1"
-};
-
-/***/ }),
-/* 367 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(38)(undefined);
-// imports
-
-
-// module
 exports.push([module.i, ".style__sidebar___QGmwG {\n  position: relative;\n  color: #333;\n  padding: 15px; }\n  .style__sidebar___QGmwG header {\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n    border-bottom: 1px solid #333;\n    font-size: 1.5em;\n    margin-bottom: 15px; }\n  .style__sidebar___QGmwG ul, .style__sidebar___QGmwG li {\n    list-style: none;\n    margin: 0;\n    padding: 0; }\n\n.rc-collapse-header {\n  display: flex;\n  align-items: center;\n  padding: 0 15px; }\n", ""]);
 
 // exports
@@ -44638,6 +44453,7 @@ exports.locals = {
 };
 
 /***/ }),
+/* 367 */,
 /* 368 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -63816,32 +63632,7 @@ if(false) {
 }
 
 /***/ }),
-/* 578 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(367);
-if(typeof content === 'string') content = [[module.i, content, '']];
-// add the styles to the DOM
-var update = __webpack_require__(40)(content, {"attrs":{"class":"bundled-styles"}});
-if(content.locals) module.exports = content.locals;
-// Hot Module Replacement
-if(false) {
-	// When the styles change, update the <style> tags
-	if(!content.locals) {
-		module.hot.accept("!!../../../node_modules/css-loader/index.js??ref--2-1!../../../node_modules/sass-loader/lib/loader.js!./style.scss", function() {
-			var newContent = require("!!../../../node_modules/css-loader/index.js??ref--2-1!../../../node_modules/sass-loader/lib/loader.js!./style.scss");
-			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-			update(newContent);
-		});
-	}
-	// When the module is disposed, remove the <style> tags
-	module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
+/* 578 */,
 /* 579 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -67382,6 +67173,845 @@ module.exports = function() {
 module.exports = __webpack_amd_options__;
 
 /* WEBPACK VAR INJECTION */}.call(exports, {}))
+
+/***/ }),
+/* 587 */,
+/* 588 */,
+/* 589 */
+/***/ (function(module, exports, __webpack_require__) {
+
+/* WEBPACK VAR INJECTION */(function(global) {/**
+ * lodash (Custom Build) <https://lodash.com/>
+ * Build: `lodash modularize exports="npm" -o ./`
+ * Copyright jQuery Foundation and other contributors <https://jquery.org/>
+ * Released under MIT license <https://lodash.com/license>
+ * Based on Underscore.js 1.8.3 <http://underscorejs.org/LICENSE>
+ * Copyright Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
+ */
+
+/** Used as the `TypeError` message for "Functions" methods. */
+var FUNC_ERROR_TEXT = 'Expected a function';
+
+/** Used as references for various `Number` constants. */
+var NAN = 0 / 0;
+
+/** `Object#toString` result references. */
+var symbolTag = '[object Symbol]';
+
+/** Used to match leading and trailing whitespace. */
+var reTrim = /^\s+|\s+$/g;
+
+/** Used to detect bad signed hexadecimal string values. */
+var reIsBadHex = /^[-+]0x[0-9a-f]+$/i;
+
+/** Used to detect binary string values. */
+var reIsBinary = /^0b[01]+$/i;
+
+/** Used to detect octal string values. */
+var reIsOctal = /^0o[0-7]+$/i;
+
+/** Built-in method references without a dependency on `root`. */
+var freeParseInt = parseInt;
+
+/** Detect free variable `global` from Node.js. */
+var freeGlobal = typeof global == 'object' && global && global.Object === Object && global;
+
+/** Detect free variable `self`. */
+var freeSelf = typeof self == 'object' && self && self.Object === Object && self;
+
+/** Used as a reference to the global object. */
+var root = freeGlobal || freeSelf || Function('return this')();
+
+/** Used for built-in method references. */
+var objectProto = Object.prototype;
+
+/**
+ * Used to resolve the
+ * [`toStringTag`](http://ecma-international.org/ecma-262/7.0/#sec-object.prototype.tostring)
+ * of values.
+ */
+var objectToString = objectProto.toString;
+
+/* Built-in method references for those with the same name as other `lodash` methods. */
+var nativeMax = Math.max,
+    nativeMin = Math.min;
+
+/**
+ * Gets the timestamp of the number of milliseconds that have elapsed since
+ * the Unix epoch (1 January 1970 00:00:00 UTC).
+ *
+ * @static
+ * @memberOf _
+ * @since 2.4.0
+ * @category Date
+ * @returns {number} Returns the timestamp.
+ * @example
+ *
+ * _.defer(function(stamp) {
+ *   console.log(_.now() - stamp);
+ * }, _.now());
+ * // => Logs the number of milliseconds it took for the deferred invocation.
+ */
+var now = function() {
+  return root.Date.now();
+};
+
+/**
+ * Creates a debounced function that delays invoking `func` until after `wait`
+ * milliseconds have elapsed since the last time the debounced function was
+ * invoked. The debounced function comes with a `cancel` method to cancel
+ * delayed `func` invocations and a `flush` method to immediately invoke them.
+ * Provide `options` to indicate whether `func` should be invoked on the
+ * leading and/or trailing edge of the `wait` timeout. The `func` is invoked
+ * with the last arguments provided to the debounced function. Subsequent
+ * calls to the debounced function return the result of the last `func`
+ * invocation.
+ *
+ * **Note:** If `leading` and `trailing` options are `true`, `func` is
+ * invoked on the trailing edge of the timeout only if the debounced function
+ * is invoked more than once during the `wait` timeout.
+ *
+ * If `wait` is `0` and `leading` is `false`, `func` invocation is deferred
+ * until to the next tick, similar to `setTimeout` with a timeout of `0`.
+ *
+ * See [David Corbacho's article](https://css-tricks.com/debouncing-throttling-explained-examples/)
+ * for details over the differences between `_.debounce` and `_.throttle`.
+ *
+ * @static
+ * @memberOf _
+ * @since 0.1.0
+ * @category Function
+ * @param {Function} func The function to debounce.
+ * @param {number} [wait=0] The number of milliseconds to delay.
+ * @param {Object} [options={}] The options object.
+ * @param {boolean} [options.leading=false]
+ *  Specify invoking on the leading edge of the timeout.
+ * @param {number} [options.maxWait]
+ *  The maximum time `func` is allowed to be delayed before it's invoked.
+ * @param {boolean} [options.trailing=true]
+ *  Specify invoking on the trailing edge of the timeout.
+ * @returns {Function} Returns the new debounced function.
+ * @example
+ *
+ * // Avoid costly calculations while the window size is in flux.
+ * jQuery(window).on('resize', _.debounce(calculateLayout, 150));
+ *
+ * // Invoke `sendMail` when clicked, debouncing subsequent calls.
+ * jQuery(element).on('click', _.debounce(sendMail, 300, {
+ *   'leading': true,
+ *   'trailing': false
+ * }));
+ *
+ * // Ensure `batchLog` is invoked once after 1 second of debounced calls.
+ * var debounced = _.debounce(batchLog, 250, { 'maxWait': 1000 });
+ * var source = new EventSource('/stream');
+ * jQuery(source).on('message', debounced);
+ *
+ * // Cancel the trailing debounced invocation.
+ * jQuery(window).on('popstate', debounced.cancel);
+ */
+function debounce(func, wait, options) {
+  var lastArgs,
+      lastThis,
+      maxWait,
+      result,
+      timerId,
+      lastCallTime,
+      lastInvokeTime = 0,
+      leading = false,
+      maxing = false,
+      trailing = true;
+
+  if (typeof func != 'function') {
+    throw new TypeError(FUNC_ERROR_TEXT);
+  }
+  wait = toNumber(wait) || 0;
+  if (isObject(options)) {
+    leading = !!options.leading;
+    maxing = 'maxWait' in options;
+    maxWait = maxing ? nativeMax(toNumber(options.maxWait) || 0, wait) : maxWait;
+    trailing = 'trailing' in options ? !!options.trailing : trailing;
+  }
+
+  function invokeFunc(time) {
+    var args = lastArgs,
+        thisArg = lastThis;
+
+    lastArgs = lastThis = undefined;
+    lastInvokeTime = time;
+    result = func.apply(thisArg, args);
+    return result;
+  }
+
+  function leadingEdge(time) {
+    // Reset any `maxWait` timer.
+    lastInvokeTime = time;
+    // Start the timer for the trailing edge.
+    timerId = setTimeout(timerExpired, wait);
+    // Invoke the leading edge.
+    return leading ? invokeFunc(time) : result;
+  }
+
+  function remainingWait(time) {
+    var timeSinceLastCall = time - lastCallTime,
+        timeSinceLastInvoke = time - lastInvokeTime,
+        result = wait - timeSinceLastCall;
+
+    return maxing ? nativeMin(result, maxWait - timeSinceLastInvoke) : result;
+  }
+
+  function shouldInvoke(time) {
+    var timeSinceLastCall = time - lastCallTime,
+        timeSinceLastInvoke = time - lastInvokeTime;
+
+    // Either this is the first call, activity has stopped and we're at the
+    // trailing edge, the system time has gone backwards and we're treating
+    // it as the trailing edge, or we've hit the `maxWait` limit.
+    return (lastCallTime === undefined || (timeSinceLastCall >= wait) ||
+      (timeSinceLastCall < 0) || (maxing && timeSinceLastInvoke >= maxWait));
+  }
+
+  function timerExpired() {
+    var time = now();
+    if (shouldInvoke(time)) {
+      return trailingEdge(time);
+    }
+    // Restart the timer.
+    timerId = setTimeout(timerExpired, remainingWait(time));
+  }
+
+  function trailingEdge(time) {
+    timerId = undefined;
+
+    // Only invoke if we have `lastArgs` which means `func` has been
+    // debounced at least once.
+    if (trailing && lastArgs) {
+      return invokeFunc(time);
+    }
+    lastArgs = lastThis = undefined;
+    return result;
+  }
+
+  function cancel() {
+    if (timerId !== undefined) {
+      clearTimeout(timerId);
+    }
+    lastInvokeTime = 0;
+    lastArgs = lastCallTime = lastThis = timerId = undefined;
+  }
+
+  function flush() {
+    return timerId === undefined ? result : trailingEdge(now());
+  }
+
+  function debounced() {
+    var time = now(),
+        isInvoking = shouldInvoke(time);
+
+    lastArgs = arguments;
+    lastThis = this;
+    lastCallTime = time;
+
+    if (isInvoking) {
+      if (timerId === undefined) {
+        return leadingEdge(lastCallTime);
+      }
+      if (maxing) {
+        // Handle invocations in a tight loop.
+        timerId = setTimeout(timerExpired, wait);
+        return invokeFunc(lastCallTime);
+      }
+    }
+    if (timerId === undefined) {
+      timerId = setTimeout(timerExpired, wait);
+    }
+    return result;
+  }
+  debounced.cancel = cancel;
+  debounced.flush = flush;
+  return debounced;
+}
+
+/**
+ * Checks if `value` is the
+ * [language type](http://www.ecma-international.org/ecma-262/7.0/#sec-ecmascript-language-types)
+ * of `Object`. (e.g. arrays, functions, objects, regexes, `new Number(0)`, and `new String('')`)
+ *
+ * @static
+ * @memberOf _
+ * @since 0.1.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is an object, else `false`.
+ * @example
+ *
+ * _.isObject({});
+ * // => true
+ *
+ * _.isObject([1, 2, 3]);
+ * // => true
+ *
+ * _.isObject(_.noop);
+ * // => true
+ *
+ * _.isObject(null);
+ * // => false
+ */
+function isObject(value) {
+  var type = typeof value;
+  return !!value && (type == 'object' || type == 'function');
+}
+
+/**
+ * Checks if `value` is object-like. A value is object-like if it's not `null`
+ * and has a `typeof` result of "object".
+ *
+ * @static
+ * @memberOf _
+ * @since 4.0.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is object-like, else `false`.
+ * @example
+ *
+ * _.isObjectLike({});
+ * // => true
+ *
+ * _.isObjectLike([1, 2, 3]);
+ * // => true
+ *
+ * _.isObjectLike(_.noop);
+ * // => false
+ *
+ * _.isObjectLike(null);
+ * // => false
+ */
+function isObjectLike(value) {
+  return !!value && typeof value == 'object';
+}
+
+/**
+ * Checks if `value` is classified as a `Symbol` primitive or object.
+ *
+ * @static
+ * @memberOf _
+ * @since 4.0.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is a symbol, else `false`.
+ * @example
+ *
+ * _.isSymbol(Symbol.iterator);
+ * // => true
+ *
+ * _.isSymbol('abc');
+ * // => false
+ */
+function isSymbol(value) {
+  return typeof value == 'symbol' ||
+    (isObjectLike(value) && objectToString.call(value) == symbolTag);
+}
+
+/**
+ * Converts `value` to a number.
+ *
+ * @static
+ * @memberOf _
+ * @since 4.0.0
+ * @category Lang
+ * @param {*} value The value to process.
+ * @returns {number} Returns the number.
+ * @example
+ *
+ * _.toNumber(3.2);
+ * // => 3.2
+ *
+ * _.toNumber(Number.MIN_VALUE);
+ * // => 5e-324
+ *
+ * _.toNumber(Infinity);
+ * // => Infinity
+ *
+ * _.toNumber('3.2');
+ * // => 3.2
+ */
+function toNumber(value) {
+  if (typeof value == 'number') {
+    return value;
+  }
+  if (isSymbol(value)) {
+    return NAN;
+  }
+  if (isObject(value)) {
+    var other = typeof value.valueOf == 'function' ? value.valueOf() : value;
+    value = isObject(other) ? (other + '') : other;
+  }
+  if (typeof value != 'string') {
+    return value === 0 ? value : +value;
+  }
+  value = value.replace(reTrim, '');
+  var isBinary = reIsBinary.test(value);
+  return (isBinary || reIsOctal.test(value))
+    ? freeParseInt(value.slice(2), isBinary ? 2 : 8)
+    : (reIsBadHex.test(value) ? NAN : +value);
+}
+
+module.exports = debounce;
+
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(8)))
+
+/***/ }),
+/* 590 */,
+/* 591 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _extends2 = __webpack_require__(24);
+
+var _extends3 = _interopRequireDefault(_extends2);
+
+var _getPrototypeOf = __webpack_require__(150);
+
+var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
+
+var _classCallCheck2 = __webpack_require__(113);
+
+var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
+
+var _createClass2 = __webpack_require__(114);
+
+var _createClass3 = _interopRequireDefault(_createClass2);
+
+var _possibleConstructorReturn2 = __webpack_require__(152);
+
+var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
+
+var _inherits2 = __webpack_require__(151);
+
+var _inherits3 = _interopRequireDefault(_inherits2);
+
+var _lodash = __webpack_require__(59);
+
+var _lodash2 = _interopRequireDefault(_lodash);
+
+var _lodash3 = __webpack_require__(31);
+
+var _lodash4 = _interopRequireDefault(_lodash3);
+
+var _reactDropzoneComponent = __webpack_require__(544);
+
+var _reactDropzoneComponent2 = _interopRequireDefault(_reactDropzoneComponent);
+
+var _propTypes = __webpack_require__(11);
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _react = __webpack_require__(9);
+
+var _react2 = _interopRequireDefault(_react);
+
+__webpack_require__(579);
+
+__webpack_require__(580);
+
+var _style = __webpack_require__(595);
+
+var _style2 = _interopRequireDefault(_style);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var ImageField = function (_React$Component) {
+  (0, _inherits3.default)(ImageField, _React$Component);
+
+  function ImageField(props) {
+    (0, _classCallCheck3.default)(this, ImageField);
+
+    var _this = (0, _possibleConstructorReturn3.default)(this, (ImageField.__proto__ || (0, _getPrototypeOf2.default)(ImageField)).call(this, props));
+
+    var defaultEventHandlers = {
+      init: function init(dropzone) {
+        _this.dropzone = dropzone;
+        var originalAddedFile = _this.dropzone.options.addedfile;
+        if (_this.props.singleFile) {
+          _this.dropzone.options.addedfile = function () {
+            for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+              args[_key] = arguments[_key];
+            }
+
+            originalAddedFile.call.apply(originalAddedFile, [_this.dropzone].concat(args));
+            if (!(0, _lodash2.default)(_this.dropzone.files[1])) {
+              _this.dropzone.removeFile(_this.dropzone.files[0]);
+            }
+          };
+        }
+      }
+    };
+    _this.eventHandlers = (0, _extends3.default)({}, props.eventHandlers, (0, _lodash4.default)(defaultEventHandlers, function (handler, name) {
+      return function () {
+        handler.apply(undefined, arguments);
+        if (props.eventHandlers[name]) {
+          var _props$eventHandlers;
+
+          (_props$eventHandlers = props.eventHandlers)[name].apply(_props$eventHandlers, arguments);
+        }
+      };
+    }));
+    return _this;
+  }
+
+  (0, _createClass3.default)(ImageField, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      this.loadInitialFile(this.props.file);
+    }
+  }, {
+    key: 'componentWillReceiveProps',
+    value: function componentWillReceiveProps(nextProps) {
+      this.loadInitialFile(nextProps.file);
+    }
+  }, {
+    key: 'loadInitialFile',
+    value: function loadInitialFile(file) {
+      if (file) {
+        if (this.dropzone.files.length && file.url === this.dropzone.files[0].url) {
+          return;
+        }
+        this.dropzone.files.push(file); // file must be added manually
+        this.dropzone.options.addedfile.call(this.dropzone, file);
+        this.dropzone.options.thumbnail.call(this.dropzone, file, file.url);
+        this.dropzone.options.complete.call(this.dropzone, file, file.url);
+      }
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      return _react2.default.createElement(
+        'span',
+        { className: _style2.default.imageField },
+        _react2.default.createElement(_reactDropzoneComponent2.default, {
+          config: { postUrl: 'no-url' },
+          djsConfig: { clickable: false },
+          eventHandlers: this.eventHandlers
+        })
+      );
+    }
+  }]);
+  return ImageField;
+}(_react2.default.Component);
+
+exports.default = ImageField;
+
+
+ImageField.propTypes = {
+  eventHandlers: _propTypes2.default.objectOf(_propTypes2.default.func),
+  file: _propTypes2.default.shape({
+    url: _propTypes2.default.string.isRequired,
+    type: _propTypes2.default.string,
+    size: _propTypes2.default.number.isRequired
+  }),
+  singleFile: _propTypes2.default.bool
+};
+ImageField.defaultProps = {
+  eventHandlers: {},
+  singleFile: false,
+  file: null
+};
+
+/***/ }),
+/* 592 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _getPrototypeOf = __webpack_require__(150);
+
+var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
+
+var _classCallCheck2 = __webpack_require__(113);
+
+var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
+
+var _createClass2 = __webpack_require__(114);
+
+var _createClass3 = _interopRequireDefault(_createClass2);
+
+var _possibleConstructorReturn2 = __webpack_require__(152);
+
+var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
+
+var _inherits2 = __webpack_require__(151);
+
+var _inherits3 = _interopRequireDefault(_inherits2);
+
+var _lodash = __webpack_require__(589);
+
+var _lodash2 = _interopRequireDefault(_lodash);
+
+var _propTypes = __webpack_require__(11);
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _react = __webpack_require__(9);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactQuill = __webpack_require__(549);
+
+var _reactQuill2 = _interopRequireDefault(_reactQuill);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var RichTextField = function (_React$Component) {
+  (0, _inherits3.default)(RichTextField, _React$Component);
+
+  function RichTextField(props) {
+    (0, _classCallCheck3.default)(this, RichTextField);
+
+    var _this = (0, _possibleConstructorReturn3.default)(this, (RichTextField.__proto__ || (0, _getPrototypeOf2.default)(RichTextField)).call(this, props));
+
+    _this.state = { value: _this.props.value };
+    _this.onChangeDebounced = (0, _lodash2.default)(function (value) {
+      return _this.props.onChange(value);
+    }, 500, {
+      leading: true,
+      trailing: true
+    });
+    return _this;
+  }
+
+  (0, _createClass3.default)(RichTextField, [{
+    key: 'componentWillReceiveProps',
+    value: function componentWillReceiveProps(_ref) {
+      var value = _ref.value;
+
+      this.setState({ value: value });
+    }
+  }, {
+    key: 'updateData',
+    value: function updateData(value) {
+      var _this2 = this;
+
+      var debounced = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
+
+      this.setState({ value: value }, function () {
+        if (debounced) {
+          _this2.onChangeDebounced(value);
+        } else {
+          _this2.props.onChange(value);
+        }
+      });
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var _this3 = this;
+
+      return _react2.default.createElement(
+        'div',
+        { onBlur: function onBlur() {
+            return _this3.updateData(_this3.state.value);
+          } },
+        _react2.default.createElement(_reactQuill2.default, {
+          modules: {
+            toolbar: [['bold', 'italic', 'underline'], [{ list: 'ordered' }, { list: 'bullet' }], ['link'], ['clean']]
+          },
+          onChange: function onChange(value) {
+            return _this3.updateData(value, true);
+          },
+          theme: 'snow',
+          value: this.state.value
+        })
+      );
+    }
+  }]);
+  return RichTextField;
+}(_react2.default.Component);
+
+exports.default = RichTextField;
+
+
+RichTextField.propTypes = {
+  onChange: _propTypes2.default.func,
+  value: _propTypes2.default.string
+};
+RichTextField.defaultProps = {
+  onChange: function onChange() {
+    return undefined;
+  },
+  value: ''
+};
+
+/***/ }),
+/* 593 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _getPrototypeOf = __webpack_require__(150);
+
+var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
+
+var _classCallCheck2 = __webpack_require__(113);
+
+var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
+
+var _createClass2 = __webpack_require__(114);
+
+var _createClass3 = _interopRequireDefault(_createClass2);
+
+var _possibleConstructorReturn2 = __webpack_require__(152);
+
+var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
+
+var _inherits2 = __webpack_require__(151);
+
+var _inherits3 = _interopRequireDefault(_inherits2);
+
+var _lodash = __webpack_require__(589);
+
+var _lodash2 = _interopRequireDefault(_lodash);
+
+var _propTypes = __webpack_require__(11);
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _react = __webpack_require__(9);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var TextField = function (_React$Component) {
+  (0, _inherits3.default)(TextField, _React$Component);
+
+  function TextField(props) {
+    (0, _classCallCheck3.default)(this, TextField);
+
+    var _this = (0, _possibleConstructorReturn3.default)(this, (TextField.__proto__ || (0, _getPrototypeOf2.default)(TextField)).call(this, props));
+
+    _this.state = { value: _this.props.value };
+    _this.onChangeDebounced = (0, _lodash2.default)(function (value) {
+      return _this.props.onChange(value);
+    }, 500, {
+      leading: true,
+      trailing: true
+    });
+    return _this;
+  }
+
+  (0, _createClass3.default)(TextField, [{
+    key: 'componentWillReceiveProps',
+    value: function componentWillReceiveProps(_ref) {
+      var value = _ref.value;
+
+      this.setState({ value: value });
+    }
+  }, {
+    key: 'updateData',
+    value: function updateData(value) {
+      var _this2 = this;
+
+      var debounced = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
+
+      this.setState({ value: value }, function () {
+        if (debounced) {
+          _this2.onChangeDebounced(value);
+        } else {
+          _this2.props.onChange(value);
+        }
+      });
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var _this3 = this;
+
+      return _react2.default.createElement('textarea', {
+        onBlur: function onBlur() {
+          return _this3.updateData(_this3.state.value);
+        },
+        onChange: function onChange(event) {
+          return _this3.updateData(event.target.value, true);
+        },
+        type: 'text',
+        value: this.state.value
+      });
+    }
+  }]);
+  return TextField;
+}(_react2.default.Component);
+
+exports.default = TextField;
+
+
+TextField.propTypes = {
+  onChange: _propTypes2.default.func,
+  value: _propTypes2.default.string
+};
+TextField.defaultProps = {
+  onChange: function onChange() {
+    return undefined;
+  },
+  value: ''
+};
+
+/***/ }),
+/* 594 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(38)(undefined);
+// imports
+
+
+// module
+exports.push([module.i, ".style__imageField___3rbkN .dropzone {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  padding: 0; }\n  .style__imageField___3rbkN .dropzone.dz-started {\n    border: 0; }\n  .style__imageField___3rbkN .dropzone .dz-preview {\n    width: 100%;\n    height: 100%;\n    margin: 0;\n    background: transparent;\n    border-radius: 3px; }\n    .style__imageField___3rbkN .dropzone .dz-preview .dz-details {\n      top: 50%;\n      transform: translateY(-50%); }\n    .style__imageField___3rbkN .dropzone .dz-preview .dz-image {\n      width: 100%;\n      height: auto;\n      border-radius: 3px; }\n      .style__imageField___3rbkN .dropzone .dz-preview .dz-image img {\n        width: 100%;\n        height: auto; }\n", ""]);
+
+// exports
+exports.locals = {
+	"imageField": "style__imageField___3rbkN"
+};
+
+/***/ }),
+/* 595 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(594);
+if(typeof content === 'string') content = [[module.i, content, '']];
+// add the styles to the DOM
+var update = __webpack_require__(40)(content, {"attrs":{"class":"bundled-styles"}});
+if(content.locals) module.exports = content.locals;
+// Hot Module Replacement
+if(false) {
+	// When the styles change, update the <style> tags
+	if(!content.locals) {
+		module.hot.accept("!!../../../node_modules/css-loader/index.js??ref--2-1!../../../node_modules/sass-loader/lib/loader.js!./style.scss", function() {
+			var newContent = require("!!../../../node_modules/css-loader/index.js??ref--2-1!../../../node_modules/sass-loader/lib/loader.js!./style.scss");
+			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+			update(newContent);
+		});
+	}
+	// When the module is disposed, remove the <style> tags
+	module.hot.dispose(function() { update(); });
+}
 
 /***/ })
 /******/ ]);

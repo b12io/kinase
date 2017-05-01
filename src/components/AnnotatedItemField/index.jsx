@@ -1,10 +1,11 @@
 import Collapse from 'rc-collapse';
 import PropTypes from 'prop-types';
 import React from 'react';
-import ReactQuill from 'react-quill';
 import { connect } from 'react-redux';
 
-import ImageField from 'components/ImageField';
+import ImageField from 'forms/ImageField';
+import TextField from 'forms/TextField';
+import RichTextField from 'forms/RichTextField';
 import { annotatedItemFieldType } from 'redux/reducers/annotatedItemField';
 import { currentContextSelector } from 'redux/selectors';
 import { setCurrentField, updateField } from 'redux/proxyActions';
@@ -30,41 +31,22 @@ class AnnotatedItemField extends React.Component {
     switch (this.props.fieldType) {
       case 'rich-text': {
         return (
-          <ReactQuill
-            theme="snow"
-            modules={{
-              toolbar: [
-                ['bold', 'italic', 'underline'],
-                [{ list: 'ordered' }, { list: 'bullet' }],
-                ['link'],
-                ['clean'],
-              ],
-            }}
-            value={this.props.mapping.content}
-            onChange={this.handleRichTextChange}
-          />
+          <RichTextField value={this.props.mapping.content} onChange={this.props.editField} />
         );
       }
       case 'text': {
         return (
-          <textarea
-            type="text"
-            value={this.props.mapping.content}
-            onChange={this.handleChange}
-            onFocus={this.props.setFocus}
-          />
+          <TextField value={this.props.mapping.content} onChange={this.props.editField} />
         );
       }
       case 'image': {
         const mock = this.getMockFile();
         return (
-          <div onClick={this.props.setFocus}>
-            <ImageField
-              singleFile
-              file={mock}
-              eventHandlers={{ addedfile: this.changeFile }}
-            />
-          </div>
+          <ImageField
+            singleFile
+            file={mock}
+            eventHandlers={{ addedfile: this.changeFile }}
+          />
         );
       }
       default: {
@@ -109,7 +91,9 @@ class AnnotatedItemField extends React.Component {
           <Collapse.Panel header={this.props.fieldName}>
             <div className={styles.fieldGroup}>
               <div className={styles.fieldLabel}>Content</div>
-              {this.getField()}
+              <div onClick={this.props.setFocus}>
+                {this.getField()}
+              </div>
             </div>
             <div className={styles.fieldGroup}>
               <div className={styles.fieldLabel}>Sources</div>
