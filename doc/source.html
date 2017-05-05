@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="">
+  <title data-ice="title">Source</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  <script src="script/manual.js"></script>
+</head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+</header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/highlighter.js~Highlighter.html">Highlighter</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-load">load</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-save">save</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-store">store</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="#redux">redux</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-isRejected">isRejected</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-promiseActionTypes">promiseActionTypes</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-addCollectionMapping">addCollectionMapping</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-clearError">clearError</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-deleteCollectionMapping">deleteCollectionMapping</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-loadAnnotations">loadAnnotations</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-saveAnnotatedItems">saveAnnotatedItems</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-selectElement">selectElement</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-setContextKey">setContextKey</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-setCurrentField">setCurrentField</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-updateField">updateField</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-setupProxyStore">setupProxyStore</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-annotationContextsSelector">annotationContextsSelector</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-currentAnnotationSelector">currentAnnotationSelector</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-currentContextKeySelector">currentContextKeySelector</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-currentFieldSelector">currentFieldSelector</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-currentIndexSelector">currentIndexSelector</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-readySelector">readySelector</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-ADD_COLLECTION_MAPPING">ADD_COLLECTION_MAPPING</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-CLEAR_ERROR">CLEAR_ERROR</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-DELETE_COLLECTION_MAPPING">DELETE_COLLECTION_MAPPING</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-LOAD_ANNOTATIONS">LOAD_ANNOTATIONS</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-LOAD_ANNOTATIONS_PROXY">LOAD_ANNOTATIONS_PROXY</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-PORT_NAME">PORT_NAME</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SAVE_ANNOTATED_ITEMS">SAVE_ANNOTATED_ITEMS</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SAVE_ANNOTATED_ITEMS_PROXY">SAVE_ANNOTATED_ITEMS_PROXY</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SELECT_ELEMENT_PROXY">SELECT_ELEMENT_PROXY</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SET_CONTEXT_KEY">SET_CONTEXT_KEY</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SET_CURRENT_FIELD">SET_CURRENT_FIELD</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-UPDATE_FIELD">UPDATE_FIELD</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-UPDATE_FIELD_PROXY">UPDATE_FIELD_PROXY</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-promiseTypeSuffixes">promiseTypeSuffixes</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-currentAnnotatedItemSelector">currentAnnotatedItemSelector</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-currentContextSelector">currentContextSelector</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-currentFieldTypeSelector">currentFieldTypeSelector</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-currentMappingsSelector">currentMappingsSelector</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="#redux-reducers">redux/reducers</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-annotatedItem">annotatedItem</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-annotatedItemField">annotatedItemField</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-annotationContext">annotationContext</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-main">main</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-annotatedItemType">annotatedItemType</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-annotatedItemFieldType">annotatedItemFieldType</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-annotationContextType">annotationContextType</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><h1>Source <img data-ice="coverageBadge" src="./badge.svg"><span data-ice="totalCoverageCount" class="total-coverage-count">0/57</span></h1>
+
+<table class="files-summary" data-ice="files" data-use-coverage="true">
+  <thead>
+    <tr>
+      <td>File</td>
+      <td>Identifier</td>
+      <td class="coverage">Document</td>
+      <td style="display: none;">Size</td>
+      <td style="display: none;">Lines</td>
+      <td style="display: none;">Updated</td>
+    </tr>
+  </thead>
+  <tbody>
+    
+  <tr data-ice="file">
+      <td data-ice="filePath"><span><a href="file/src/api.js.html#errorLines=3,7">src/api.js</a></span></td>
+      <td data-ice="identifier" class="identifiers"><span><a href="function/index.html#static-function-load">load</a></span>
+<span><a href="function/index.html#static-function-save">save</a></span></td>
+      <td class="coverage"><span data-ice="coverage">0 %</span><span data-ice="coverageCount" class="coverage-count">0/2</span></td>
+      <td style="display: none;" data-ice="size">185 byte</td>
+      <td style="display: none;" data-ice="lines">9</td>
+      <td style="display: none;" data-ice="updated">2017-05-06 15:52:58 (UTC)</td>
+    </tr>
+<tr data-ice="file">
+      <td data-ice="filePath"><span><a href="file/src/background.js.html#errorLines=13">src/background.js</a></span></td>
+      <td data-ice="identifier" class="identifiers"><span><a href="variable/index.html#static-variable-store">store</a></span></td>
+      <td class="coverage"><span data-ice="coverage">0 %</span><span data-ice="coverageCount" class="coverage-count">0/1</span></td>
+      <td style="display: none;" data-ice="size">921 byte</td>
+      <td style="display: none;" data-ice="lines">36</td>
+      <td style="display: none;" data-ice="updated">2017-05-06 15:49:44 (UTC)</td>
+    </tr>
+<tr data-ice="file">
+      <td data-ice="filePath"><span><a href="file/src/config.js.html">src/config.js</a></span></td>
+      <td data-ice="identifier" class="identifiers">-</td>
+      <td class="coverage"><span data-ice="coverage">-</span></td>
+      <td style="display: none;" data-ice="size">0 byte</td>
+      
+      <td style="display: none;" data-ice="updated">2017-04-05 20:39:04 (UTC)</td>
+    </tr>
+<tr data-ice="file">
+      <td data-ice="filePath"><span><a href="file/src/highlighter.js.html#errorLines=10,11,17,26,8,9">src/highlighter.js</a></span></td>
+      <td data-ice="identifier" class="identifiers"><span><a href="class/src/highlighter.js~Highlighter.html">Highlighter</a></span></td>
+      <td class="coverage"><span data-ice="coverage">0 %</span><span data-ice="coverageCount" class="coverage-count">0/6</span></td>
+      <td style="display: none;" data-ice="size">983 byte</td>
+      <td style="display: none;" data-ice="lines">33</td>
+      <td style="display: none;" data-ice="updated">2017-04-06 04:05:47 (UTC)</td>
+    </tr>
+<tr data-ice="file">
+      <td data-ice="filePath"><span><a href="file/src/redux/aliases.js.html">src/redux/aliases.js</a></span></td>
+      <td data-ice="identifier" class="identifiers">-</td>
+      <td class="coverage"><span data-ice="coverage">-</span></td>
+      <td style="display: none;" data-ice="size">1916 byte</td>
+      <td style="display: none;" data-ice="lines">61</td>
+      <td style="display: none;" data-ice="updated">2017-04-03 19:20:10 (UTC)</td>
+    </tr>
+<tr data-ice="file">
+      <td data-ice="filePath"><span><a href="file/src/redux/constants.js.html#errorLines=10,11,12,13,14,15,16,3,5,6,7,8,9">src/redux/constants.js</a></span></td>
+      <td data-ice="identifier" class="identifiers"><span><a href="variable/index.html#static-variable-ADD_COLLECTION_MAPPING">ADD_COLLECTION_MAPPING</a></span>
+<span><a href="variable/index.html#static-variable-CLEAR_ERROR">CLEAR_ERROR</a></span>
+<span><a href="variable/index.html#static-variable-DELETE_COLLECTION_MAPPING">DELETE_COLLECTION_MAPPING</a></span>
+<span><a href="variable/index.html#static-variable-LOAD_ANNOTATIONS">LOAD_ANNOTATIONS</a></span>
+<span><a href="variable/index.html#static-variable-LOAD_ANNOTATIONS_PROXY">LOAD_ANNOTATIONS_PROXY</a></span>
+<span><a href="variable/index.html#static-variable-PORT_NAME">PORT_NAME</a></span>
+<span><a href="variable/index.html#static-variable-SAVE_ANNOTATED_ITEMS">SAVE_ANNOTATED_ITEMS</a></span>
+<span><a href="variable/index.html#static-variable-SAVE_ANNOTATED_ITEMS_PROXY">SAVE_ANNOTATED_ITEMS_PROXY</a></span>
+<span><a href="variable/index.html#static-variable-SELECT_ELEMENT_PROXY">SELECT_ELEMENT_PROXY</a></span>
+<span><a href="variable/index.html#static-variable-SET_CONTEXT_KEY">SET_CONTEXT_KEY</a></span>
+<span><a href="variable/index.html#static-variable-SET_CURRENT_FIELD">SET_CURRENT_FIELD</a></span>
+<span><a href="variable/index.html#static-variable-UPDATE_FIELD">UPDATE_FIELD</a></span>
+<span><a href="variable/index.html#static-variable-UPDATE_FIELD_PROXY">UPDATE_FIELD_PROXY</a></span></td>
+      <td class="coverage"><span data-ice="coverage">0 %</span><span data-ice="coverageCount" class="coverage-count">0/13</span></td>
+      <td style="display: none;" data-ice="size">822 byte</td>
+      <td style="display: none;" data-ice="lines">16</td>
+      <td style="display: none;" data-ice="updated">2017-04-03 19:20:10 (UTC)</td>
+    </tr>
+<tr data-ice="file">
+      <td data-ice="filePath"><span><a href="file/src/redux/promiseHelpers.js.html#errorLines=14,19,6,7,8">src/redux/promiseHelpers.js</a></span></td>
+      <td data-ice="identifier" class="identifiers"><span><a href="function/index.html#static-function-isRejected">isRejected</a></span>
+<span><a href="function/index.html#static-function-promiseActionTypes">promiseActionTypes</a></span>
+<span><a href="variable/index.html#static-variable-promiseTypeSuffixes">promiseTypeSuffixes</a></span></td>
+      <td class="coverage"><span data-ice="coverage">0 %</span><span data-ice="coverageCount" class="coverage-count">0/5</span></td>
+      <td style="display: none;" data-ice="size">636 byte</td>
+      <td style="display: none;" data-ice="lines">20</td>
+      <td style="display: none;" data-ice="updated">2017-04-05 20:39:04 (UTC)</td>
+    </tr>
+<tr data-ice="file">
+      <td data-ice="filePath"><span><a href="file/src/redux/proxyActions.js.html#errorLines=13,20,26,34,40,46,55,62,71">src/redux/proxyActions.js</a></span></td>
+      <td data-ice="identifier" class="identifiers"><span><a href="function/index.html#static-function-addCollectionMapping">addCollectionMapping</a></span>
+<span><a href="function/index.html#static-function-clearError">clearError</a></span>
+<span><a href="function/index.html#static-function-deleteCollectionMapping">deleteCollectionMapping</a></span>
+<span><a href="function/index.html#static-function-loadAnnotations">loadAnnotations</a></span>
+<span><a href="function/index.html#static-function-saveAnnotatedItems">saveAnnotatedItems</a></span>
+<span><a href="function/index.html#static-function-selectElement">selectElement</a></span>
+<span><a href="function/index.html#static-function-setContextKey">setContextKey</a></span>
+<span><a href="function/index.html#static-function-setCurrentField">setCurrentField</a></span>
+<span><a href="function/index.html#static-function-updateField">updateField</a></span></td>
+      <td class="coverage"><span data-ice="coverage">0 %</span><span data-ice="coverageCount" class="coverage-count">0/9</span></td>
+      <td style="display: none;" data-ice="size">1484 byte</td>
+      <td style="display: none;" data-ice="lines">82</td>
+      <td style="display: none;" data-ice="updated">2017-04-03 19:20:10 (UTC)</td>
+    </tr>
+<tr data-ice="file">
+      <td data-ice="filePath"><span><a href="file/src/redux/proxyStore.js.html#errorLines=7">src/redux/proxyStore.js</a></span></td>
+      <td data-ice="identifier" class="identifiers"><span><a href="function/index.html#static-function-setupProxyStore">setupProxyStore</a></span></td>
+      <td class="coverage"><span data-ice="coverage">0 %</span><span data-ice="coverageCount" class="coverage-count">0/1</span></td>
+      <td style="display: none;" data-ice="size">515 byte</td>
+      <td style="display: none;" data-ice="lines">22</td>
+      <td style="display: none;" data-ice="updated">2017-04-06 18:33:00 (UTC)</td>
+    </tr>
+<tr data-ice="file">
+      <td data-ice="filePath"><span><a href="file/src/redux/reducers/annotatedItem.js.html#errorLines=16,27">src/redux/reducers/annotatedItem.js</a></span></td>
+      <td data-ice="identifier" class="identifiers"><span><a href="function/index.html#static-function-annotatedItem">annotatedItem</a></span>
+<span><a href="variable/index.html#static-variable-annotatedItemType">annotatedItemType</a></span></td>
+      <td class="coverage"><span data-ice="coverage">0 %</span><span data-ice="coverageCount" class="coverage-count">0/2</span></td>
+      <td style="display: none;" data-ice="size">2512 byte</td>
+      <td style="display: none;" data-ice="lines">91</td>
+      <td style="display: none;" data-ice="updated">2017-05-06 15:49:44 (UTC)</td>
+    </tr>
+<tr data-ice="file">
+      <td data-ice="filePath"><span><a href="file/src/redux/reducers/annotatedItemField.js.html#errorLines=13,19,6">src/redux/reducers/annotatedItemField.js</a></span></td>
+      <td data-ice="identifier" class="identifiers"><span><a href="function/index.html#static-function-annotatedItemField">annotatedItemField</a></span>
+<span><a href="variable/index.html#static-variable-annotatedItemFieldType">annotatedItemFieldType</a></span></td>
+      <td class="coverage"><span data-ice="coverage">0 %</span><span data-ice="coverageCount" class="coverage-count">0/3</span></td>
+      <td style="display: none;" data-ice="size">1159 byte</td>
+      <td style="display: none;" data-ice="lines">41</td>
+      <td style="display: none;" data-ice="updated">2017-05-06 15:49:44 (UTC)</td>
+    </tr>
+<tr data-ice="file">
+      <td data-ice="filePath"><span><a href="file/src/redux/reducers/annotationContext.js.html#errorLines=15,17">src/redux/reducers/annotationContext.js</a></span></td>
+      <td data-ice="identifier" class="identifiers"><span><a href="function/index.html#static-function-annotationContext">annotationContext</a></span>
+<span><a href="variable/index.html#static-variable-annotationContextType">annotationContextType</a></span></td>
+      <td class="coverage"><span data-ice="coverage">0 %</span><span data-ice="coverageCount" class="coverage-count">0/2</span></td>
+      <td style="display: none;" data-ice="size">1358 byte</td>
+      <td style="display: none;" data-ice="lines">50</td>
+      <td style="display: none;" data-ice="updated">2017-05-06 15:49:44 (UTC)</td>
+    </tr>
+<tr data-ice="file">
+      <td data-ice="filePath"><span><a href="file/src/redux/reducers/main.js.html#errorLines=15,17,29">src/redux/reducers/main.js</a></span></td>
+      <td data-ice="identifier" class="identifiers"><span><a href="function/index.html#static-function-main">main</a></span></td>
+      <td class="coverage"><span data-ice="coverage">0 %</span><span data-ice="coverageCount" class="coverage-count">0/3</span></td>
+      <td style="display: none;" data-ice="size">2431 byte</td>
+      <td style="display: none;" data-ice="lines">105</td>
+      <td style="display: none;" data-ice="updated">2017-04-05 18:04:08 (UTC)</td>
+    </tr>
+<tr data-ice="file">
+      <td data-ice="filePath"><span><a href="file/src/redux/selectors.js.html#errorLines=10,12,14,20,26,34,6,7,8,9">src/redux/selectors.js</a></span></td>
+      <td data-ice="identifier" class="identifiers"><span><a href="function/index.html#static-function-annotationContextsSelector">annotationContextsSelector</a></span>
+<span><a href="variable/index.html#static-variable-currentAnnotatedItemSelector">currentAnnotatedItemSelector</a></span>
+<span><a href="function/index.html#static-function-currentAnnotationSelector">currentAnnotationSelector</a></span>
+<span><a href="function/index.html#static-function-currentContextKeySelector">currentContextKeySelector</a></span>
+<span><a href="variable/index.html#static-variable-currentContextSelector">currentContextSelector</a></span>
+<span><a href="function/index.html#static-function-currentFieldSelector">currentFieldSelector</a></span>
+<span><a href="variable/index.html#static-variable-currentFieldTypeSelector">currentFieldTypeSelector</a></span>
+<span><a href="function/index.html#static-function-currentIndexSelector">currentIndexSelector</a></span>
+<span><a href="variable/index.html#static-variable-currentMappingsSelector">currentMappingsSelector</a></span>
+<span><a href="function/index.html#static-function-readySelector">readySelector</a></span></td>
+      <td class="coverage"><span data-ice="coverage">0 %</span><span data-ice="coverageCount" class="coverage-count">0/10</span></td>
+      <td style="display: none;" data-ice="size">1380 byte</td>
+      <td style="display: none;" data-ice="lines">40</td>
+      <td style="display: none;" data-ice="updated">2017-05-06 15:49:44 (UTC)</td>
+    </tr>
+</tbody>
+</table>
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.0.0-alpha.3)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>
