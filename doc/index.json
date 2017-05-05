@@ -1,0 +1,2455 @@
+[
+  {
+    "__docId__": 1,
+    "kind": "external",
+    "name": "Infinity",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Infinity",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Infinity",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 2,
+    "kind": "external",
+    "name": "NaN",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/NaN",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~NaN",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 3,
+    "kind": "external",
+    "name": "undefined",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~undefined",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 4,
+    "kind": "external",
+    "name": "null",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/null",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~null",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 5,
+    "kind": "external",
+    "name": "Object",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Object",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 6,
+    "kind": "external",
+    "name": "object",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~object",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 7,
+    "kind": "external",
+    "name": "Function",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Function",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 8,
+    "kind": "external",
+    "name": "function",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~function",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 9,
+    "kind": "external",
+    "name": "Boolean",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Boolean",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 10,
+    "kind": "external",
+    "name": "boolean",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~boolean",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 11,
+    "kind": "external",
+    "name": "Symbol",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Symbol",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 12,
+    "kind": "external",
+    "name": "Error",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Error",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 13,
+    "kind": "external",
+    "name": "EvalError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/EvalError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~EvalError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 14,
+    "kind": "external",
+    "name": "InternalError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/InternalError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~InternalError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 15,
+    "kind": "external",
+    "name": "RangeError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RangeError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~RangeError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 16,
+    "kind": "external",
+    "name": "ReferenceError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ReferenceError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~ReferenceError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 17,
+    "kind": "external",
+    "name": "SyntaxError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SyntaxError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~SyntaxError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 18,
+    "kind": "external",
+    "name": "TypeError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypeError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~TypeError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 19,
+    "kind": "external",
+    "name": "URIError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/URIError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~URIError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 20,
+    "kind": "external",
+    "name": "Number",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Number",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 21,
+    "kind": "external",
+    "name": "number",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~number",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 22,
+    "kind": "external",
+    "name": "Date",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Date",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 23,
+    "kind": "external",
+    "name": "String",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~String",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 24,
+    "kind": "external",
+    "name": "string",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~string",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 25,
+    "kind": "external",
+    "name": "RegExp",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~RegExp",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 26,
+    "kind": "external",
+    "name": "Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 27,
+    "kind": "external",
+    "name": "Int8Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int8Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Int8Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 28,
+    "kind": "external",
+    "name": "Uint8Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Uint8Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 29,
+    "kind": "external",
+    "name": "Uint8ClampedArray",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8ClampedArray",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Uint8ClampedArray",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 30,
+    "kind": "external",
+    "name": "Int16Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int16Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Int16Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 31,
+    "kind": "external",
+    "name": "Uint16Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint16Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Uint16Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 32,
+    "kind": "external",
+    "name": "Int32Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int32Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Int32Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 33,
+    "kind": "external",
+    "name": "Uint32Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint32Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Uint32Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 34,
+    "kind": "external",
+    "name": "Float32Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float32Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Float32Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 35,
+    "kind": "external",
+    "name": "Float64Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float64Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Float64Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 36,
+    "kind": "external",
+    "name": "Map",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Map",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 37,
+    "kind": "external",
+    "name": "Set",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Set",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 38,
+    "kind": "external",
+    "name": "WeakMap",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakMap",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~WeakMap",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 39,
+    "kind": "external",
+    "name": "WeakSet",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakSet",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~WeakSet",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 40,
+    "kind": "external",
+    "name": "ArrayBuffer",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~ArrayBuffer",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 41,
+    "kind": "external",
+    "name": "DataView",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~DataView",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 42,
+    "kind": "external",
+    "name": "JSON",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~JSON",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 43,
+    "kind": "external",
+    "name": "Promise",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Promise",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 44,
+    "kind": "external",
+    "name": "Generator",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Generator",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Generator",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 45,
+    "kind": "external",
+    "name": "GeneratorFunction",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/GeneratorFunction",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~GeneratorFunction",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 46,
+    "kind": "external",
+    "name": "Reflect",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Reflect",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Reflect",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 47,
+    "kind": "external",
+    "name": "Proxy",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Proxy",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 48,
+    "kind": "file",
+    "name": "src/api.js",
+    "content": "import testAnnotations from 'redux/testAnnotations.json';\n\nexport function load() {\n  return Promise.resolve(testAnnotations);\n}\n\nexport function save() {\n  return Promise.resolve();\n}\n",
+    "static": true,
+    "longname": "/Users/jrbotros/development/b12/tent/src/api.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 49,
+    "kind": "function",
+    "name": "load",
+    "memberof": "src/api.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/api.js~load",
+    "access": "public",
+    "export": true,
+    "importPath": "./src/api.js",
+    "importStyle": "{load}",
+    "description": null,
+    "lineNumber": 3,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "params": [],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 50,
+    "kind": "function",
+    "name": "save",
+    "memberof": "src/api.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/api.js~save",
+    "access": "public",
+    "export": true,
+    "importPath": "./src/api.js",
+    "importStyle": "{save}",
+    "description": null,
+    "lineNumber": 7,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "params": [],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 51,
+    "kind": "file",
+    "name": "src/background.js",
+    "content": "/* global chrome */\n\nimport promiseMiddleware from 'redux-promise-middleware';\nimport thunk from 'redux-thunk';\nimport { createStore, applyMiddleware } from 'redux';\nimport { alias, wrapStore } from 'react-chrome-redux';\n\nimport aliases from 'redux/aliases';\nimport main from 'redux/reducers/main';\nimport { promiseTypeSuffixes, PORT_NAME } from 'redux/constants';\nimport { setContextKey } from 'redux/proxyActions';\n\nconst store = createStore(\n  main,\n  applyMiddleware(\n    alias(aliases),\n    thunk,\n    promiseMiddleware({\n      promiseTypeSuffixes,\n    }),\n  ),\n);\nwrapStore(store, { portName: PORT_NAME });\nexport default store;\n\nchrome.runtime.onMessageExternal.addListener((request) => {\n  if (request.data.contextKey) {\n    store.dispatch(setContextKey(request.data.contextKey));\n  }\n});\n\nchrome.browserAction.onClicked.addListener(() => {\n  chrome.tabs.executeScript(null, {\n    file: 'dist/main.js',\n  });\n});\n",
+    "static": true,
+    "longname": "/Users/jrbotros/development/b12/tent/src/background.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 52,
+    "kind": "variable",
+    "name": "store",
+    "memberof": "src/background.js",
+    "static": true,
+    "longname": "src/background.js~store",
+    "access": "public",
+    "export": true,
+    "importPath": "./src/background.js",
+    "importStyle": "store",
+    "description": null,
+    "lineNumber": 13,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 53,
+    "kind": "file",
+    "name": "src/config.js",
+    "content": "",
+    "static": true,
+    "longname": "/Users/jrbotros/development/b12/tent/src/config.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 54,
+    "kind": "file",
+    "name": "src/highlighter.js",
+    "content": "/* global document */\n\nimport isUndefined from 'lodash.isundefined';\nimport Tether from 'tether';\n\nimport styles from 'main.scss';\n\nexport default class Highlighter {\n  constructor() {\n    this.padding = 5;\n    this.element = document.createElement('div');\n    this.element.setAttribute('class', styles.tentHighlight);\n    this.element.style.display = 'none';\n    document.body.appendChild(this.element);\n  }\n\n  highlight(target) {\n    this.element.style.display = 'block';\n    this.element.style.width = `${target.offsetWidth + this.padding}px`;\n    this.element.style.height = `${target.offsetHeight + this.padding}px`;\n    if (!isUndefined(this.tether)) {\n      this.tether.target.classList.remove(styles.tentHighlightTarget);\n      this.tether.destroy();\n    }\n    target.classList.add(styles.tentHighlightTarget);\n    this.tether = new Tether({\n      target,\n      element: this.element,\n      attachment: 'center middle',\n      targetAttachment: 'center middle',\n    });\n  }\n}\n",
+    "static": true,
+    "longname": "/Users/jrbotros/development/b12/tent/src/highlighter.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 55,
+    "kind": "class",
+    "name": "Highlighter",
+    "memberof": "src/highlighter.js",
+    "static": true,
+    "longname": "src/highlighter.js~Highlighter",
+    "access": "public",
+    "export": true,
+    "importPath": "./src/highlighter.js",
+    "importStyle": "Highlighter",
+    "description": null,
+    "lineNumber": 8,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "interface": false
+  },
+  {
+    "__docId__": 56,
+    "kind": "constructor",
+    "name": "constructor",
+    "memberof": "src/highlighter.js~Highlighter",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/highlighter.js~Highlighter#constructor",
+    "access": "public",
+    "description": null,
+    "lineNumber": 9,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "params": []
+  },
+  {
+    "__docId__": 57,
+    "kind": "member",
+    "name": "padding",
+    "memberof": "src/highlighter.js~Highlighter",
+    "static": false,
+    "longname": "src/highlighter.js~Highlighter#padding",
+    "access": "public",
+    "description": null,
+    "lineNumber": 10,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "type": {
+      "types": [
+        "number"
+      ]
+    }
+  },
+  {
+    "__docId__": 58,
+    "kind": "member",
+    "name": "element",
+    "memberof": "src/highlighter.js~Highlighter",
+    "static": false,
+    "longname": "src/highlighter.js~Highlighter#element",
+    "access": "public",
+    "description": null,
+    "lineNumber": 11,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 59,
+    "kind": "method",
+    "name": "highlight",
+    "memberof": "src/highlighter.js~Highlighter",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/highlighter.js~Highlighter#highlight",
+    "access": "public",
+    "description": null,
+    "lineNumber": 17,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "params": [
+      {
+        "name": "target",
+        "types": [
+          "*"
+        ]
+      }
+    ]
+  },
+  {
+    "__docId__": 60,
+    "kind": "member",
+    "name": "tether",
+    "memberof": "src/highlighter.js~Highlighter",
+    "static": false,
+    "longname": "src/highlighter.js~Highlighter#tether",
+    "access": "public",
+    "description": null,
+    "lineNumber": 26,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 61,
+    "kind": "file",
+    "name": "src/redux/aliases.js",
+    "content": "import isEqual from 'lodash.isequal';\nimport isNil from 'lodash.isnil';\nimport pick from 'lodash.pick';\nimport { load, save } from 'api';\nimport { updateField } from 'redux/proxyActions';\nimport { currentContextSelector } from 'redux/selectors';\nimport {\n  LOAD_ANNOTATIONS,\n  LOAD_ANNOTATIONS_PROXY,\n  SAVE_ANNOTATED_ITEMS,\n  SAVE_ANNOTATED_ITEMS_PROXY,\n  SELECT_ELEMENT_PROXY,\n  UPDATE_FIELD,\n  UPDATE_FIELD_PROXY,\n} from 'redux/constants';\n\n// NOTE: The `alias` middleware allows async actions to be triggered from the\n// proxy store but carried out on the background page. Read more at:\n// https://github.com/tshaddix/react-chrome-redux/wiki/Advanced-Usage\nexport default {\n  [LOAD_ANNOTATIONS_PROXY]: () => (dispatch, getState) => dispatch({\n    type: LOAD_ANNOTATIONS.BASE,\n    payload: load(getState()),\n  }),\n\n  [SAVE_ANNOTATED_ITEMS_PROXY]: () => (dispatch, getState) => dispatch({\n    type: SAVE_ANNOTATED_ITEMS,\n    payload: save(getState()),\n  }),\n\n  [SELECT_ELEMENT_PROXY]: action => (dispatch, getState) => {\n    const { currentAnnotation, currentIndex, currentField } = getState();\n    if (currentAnnotation && !isNil(currentIndex) && currentField) {\n      return dispatch(\n        updateField(\n          currentAnnotation,\n          currentIndex,\n          currentField,\n          {\n            content: action.content,\n            sources: [action.selector],\n          },\n          action.append,\n        ),\n      );\n    }\n    return Promise.resolve();\n  },\n\n  [UPDATE_FIELD_PROXY]: action => (dispatch, getState) => {\n    const currentMapping = currentContextSelector(getState())[\n      action.annotationName].collectionMappings[action.collectionIndex][action.fieldName];\n    if (!isEqual(action.mapping, pick(currentMapping, Object.keys(action.mapping)))) {\n      // Only fire action if something will change\n      dispatch({\n        ...action,\n        type: UPDATE_FIELD,\n      });\n    }\n  },\n};\n",
+    "static": true,
+    "longname": "/Users/jrbotros/development/b12/tent/src/redux/aliases.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 62,
+    "kind": "file",
+    "name": "src/redux/constants.js",
+    "content": "import { promiseActionTypes } from 'redux/promiseHelpers';\n\nexport const PORT_NAME = 'TENT';\n\nexport const ADD_COLLECTION_MAPPING = 'ADD_COLLECTION_MAPPING';\nexport const CLEAR_ERROR = 'CLEAR_ERROR';\nexport const DELETE_COLLECTION_MAPPING = 'DELETE_COLLECTION_MAPPING';\nexport const LOAD_ANNOTATIONS = promiseActionTypes('LOAD_ANNOTATIONS');\nexport const LOAD_ANNOTATIONS_PROXY = 'LOAD_ANNOTATIONS_PROXY';\nexport const SAVE_ANNOTATED_ITEMS = promiseActionTypes('SAVE_ANNOTATED_ITEMS');\nexport const SAVE_ANNOTATED_ITEMS_PROXY = 'SAVE_ANNOTATED_ITEMS_PROXY';\nexport const SELECT_ELEMENT_PROXY = 'SELECT_ELEMENT_PROXY';\nexport const SET_CONTEXT_KEY = 'SET_CONTEXT_KEY';\nexport const SET_CURRENT_FIELD = 'SET_CURRENT_FIELD';\nexport const UPDATE_FIELD = 'UPDATE_FIELD';\nexport const UPDATE_FIELD_PROXY = 'UPDATE_FIELD_PROXY';\n",
+    "static": true,
+    "longname": "/Users/jrbotros/development/b12/tent/src/redux/constants.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 63,
+    "kind": "variable",
+    "name": "PORT_NAME",
+    "memberof": "src/redux/constants.js",
+    "static": true,
+    "longname": "src/redux/constants.js~PORT_NAME",
+    "access": "public",
+    "export": true,
+    "importPath": "./src/redux/constants.js",
+    "importStyle": "{PORT_NAME}",
+    "description": null,
+    "lineNumber": 3,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "type": {
+      "types": [
+        "string"
+      ]
+    }
+  },
+  {
+    "__docId__": 64,
+    "kind": "variable",
+    "name": "ADD_COLLECTION_MAPPING",
+    "memberof": "src/redux/constants.js",
+    "static": true,
+    "longname": "src/redux/constants.js~ADD_COLLECTION_MAPPING",
+    "access": "public",
+    "export": true,
+    "importPath": "./src/redux/constants.js",
+    "importStyle": "{ADD_COLLECTION_MAPPING}",
+    "description": null,
+    "lineNumber": 5,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "type": {
+      "types": [
+        "string"
+      ]
+    }
+  },
+  {
+    "__docId__": 65,
+    "kind": "variable",
+    "name": "CLEAR_ERROR",
+    "memberof": "src/redux/constants.js",
+    "static": true,
+    "longname": "src/redux/constants.js~CLEAR_ERROR",
+    "access": "public",
+    "export": true,
+    "importPath": "./src/redux/constants.js",
+    "importStyle": "{CLEAR_ERROR}",
+    "description": null,
+    "lineNumber": 6,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "type": {
+      "types": [
+        "string"
+      ]
+    }
+  },
+  {
+    "__docId__": 66,
+    "kind": "variable",
+    "name": "DELETE_COLLECTION_MAPPING",
+    "memberof": "src/redux/constants.js",
+    "static": true,
+    "longname": "src/redux/constants.js~DELETE_COLLECTION_MAPPING",
+    "access": "public",
+    "export": true,
+    "importPath": "./src/redux/constants.js",
+    "importStyle": "{DELETE_COLLECTION_MAPPING}",
+    "description": null,
+    "lineNumber": 7,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "type": {
+      "types": [
+        "string"
+      ]
+    }
+  },
+  {
+    "__docId__": 67,
+    "kind": "variable",
+    "name": "LOAD_ANNOTATIONS",
+    "memberof": "src/redux/constants.js",
+    "static": true,
+    "longname": "src/redux/constants.js~LOAD_ANNOTATIONS",
+    "access": "public",
+    "export": true,
+    "importPath": "./src/redux/constants.js",
+    "importStyle": "{LOAD_ANNOTATIONS}",
+    "description": null,
+    "lineNumber": 8,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 68,
+    "kind": "variable",
+    "name": "LOAD_ANNOTATIONS_PROXY",
+    "memberof": "src/redux/constants.js",
+    "static": true,
+    "longname": "src/redux/constants.js~LOAD_ANNOTATIONS_PROXY",
+    "access": "public",
+    "export": true,
+    "importPath": "./src/redux/constants.js",
+    "importStyle": "{LOAD_ANNOTATIONS_PROXY}",
+    "description": null,
+    "lineNumber": 9,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "type": {
+      "types": [
+        "string"
+      ]
+    }
+  },
+  {
+    "__docId__": 69,
+    "kind": "variable",
+    "name": "SAVE_ANNOTATED_ITEMS",
+    "memberof": "src/redux/constants.js",
+    "static": true,
+    "longname": "src/redux/constants.js~SAVE_ANNOTATED_ITEMS",
+    "access": "public",
+    "export": true,
+    "importPath": "./src/redux/constants.js",
+    "importStyle": "{SAVE_ANNOTATED_ITEMS}",
+    "description": null,
+    "lineNumber": 10,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 70,
+    "kind": "variable",
+    "name": "SAVE_ANNOTATED_ITEMS_PROXY",
+    "memberof": "src/redux/constants.js",
+    "static": true,
+    "longname": "src/redux/constants.js~SAVE_ANNOTATED_ITEMS_PROXY",
+    "access": "public",
+    "export": true,
+    "importPath": "./src/redux/constants.js",
+    "importStyle": "{SAVE_ANNOTATED_ITEMS_PROXY}",
+    "description": null,
+    "lineNumber": 11,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "type": {
+      "types": [
+        "string"
+      ]
+    }
+  },
+  {
+    "__docId__": 71,
+    "kind": "variable",
+    "name": "SELECT_ELEMENT_PROXY",
+    "memberof": "src/redux/constants.js",
+    "static": true,
+    "longname": "src/redux/constants.js~SELECT_ELEMENT_PROXY",
+    "access": "public",
+    "export": true,
+    "importPath": "./src/redux/constants.js",
+    "importStyle": "{SELECT_ELEMENT_PROXY}",
+    "description": null,
+    "lineNumber": 12,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "type": {
+      "types": [
+        "string"
+      ]
+    }
+  },
+  {
+    "__docId__": 72,
+    "kind": "variable",
+    "name": "SET_CONTEXT_KEY",
+    "memberof": "src/redux/constants.js",
+    "static": true,
+    "longname": "src/redux/constants.js~SET_CONTEXT_KEY",
+    "access": "public",
+    "export": true,
+    "importPath": "./src/redux/constants.js",
+    "importStyle": "{SET_CONTEXT_KEY}",
+    "description": null,
+    "lineNumber": 13,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "type": {
+      "types": [
+        "string"
+      ]
+    }
+  },
+  {
+    "__docId__": 73,
+    "kind": "variable",
+    "name": "SET_CURRENT_FIELD",
+    "memberof": "src/redux/constants.js",
+    "static": true,
+    "longname": "src/redux/constants.js~SET_CURRENT_FIELD",
+    "access": "public",
+    "export": true,
+    "importPath": "./src/redux/constants.js",
+    "importStyle": "{SET_CURRENT_FIELD}",
+    "description": null,
+    "lineNumber": 14,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "type": {
+      "types": [
+        "string"
+      ]
+    }
+  },
+  {
+    "__docId__": 74,
+    "kind": "variable",
+    "name": "UPDATE_FIELD",
+    "memberof": "src/redux/constants.js",
+    "static": true,
+    "longname": "src/redux/constants.js~UPDATE_FIELD",
+    "access": "public",
+    "export": true,
+    "importPath": "./src/redux/constants.js",
+    "importStyle": "{UPDATE_FIELD}",
+    "description": null,
+    "lineNumber": 15,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "type": {
+      "types": [
+        "string"
+      ]
+    }
+  },
+  {
+    "__docId__": 75,
+    "kind": "variable",
+    "name": "UPDATE_FIELD_PROXY",
+    "memberof": "src/redux/constants.js",
+    "static": true,
+    "longname": "src/redux/constants.js~UPDATE_FIELD_PROXY",
+    "access": "public",
+    "export": true,
+    "importPath": "./src/redux/constants.js",
+    "importStyle": "{UPDATE_FIELD_PROXY}",
+    "description": null,
+    "lineNumber": 16,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "type": {
+      "types": [
+        "string"
+      ]
+    }
+  },
+  {
+    "__docId__": 76,
+    "kind": "file",
+    "name": "src/redux/promiseHelpers.js",
+    "content": "import endsWith from 'lodash.endswith';\nimport mapValues from 'lodash.mapvalues';\n\n// TODO(jrbotros): remove this when we can import from package\n// https://github.com/pburtchaell/redux-promise-middleware/issues/143\nexport const promiseTypeSuffixes = ['PENDING', 'FULFILLED', 'REJECTED'];\nconst [PENDING, FULFILLED, REJECTED] = promiseTypeSuffixes;\nconst promiseTypes = {\n  PENDING,\n  FULFILLED,\n  REJECTED,\n};\n\nexport const promiseActionTypes = baseType => ({\n  ...mapValues(promiseTypes, suffix => `${baseType}_${suffix}`),\n  BASE: baseType,\n});\n\nexport const isRejected = action => (\n  endsWith(action.type, promiseTypes.REJECTED));\n",
+    "static": true,
+    "longname": "/Users/jrbotros/development/b12/tent/src/redux/promiseHelpers.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 77,
+    "kind": "variable",
+    "name": "promiseTypeSuffixes",
+    "memberof": "src/redux/promiseHelpers.js",
+    "static": true,
+    "longname": "src/redux/promiseHelpers.js~promiseTypeSuffixes",
+    "access": "public",
+    "export": true,
+    "importPath": "./src/redux/promiseHelpers.js",
+    "importStyle": "{promiseTypeSuffixes}",
+    "description": null,
+    "lineNumber": 6,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "type": {
+      "types": [
+        "string[]"
+      ]
+    }
+  },
+  {
+    "__docId__": 78,
+    "kind": "variable",
+    "name": "PENDING",
+    "memberof": "src/redux/promiseHelpers.js",
+    "static": true,
+    "longname": "src/redux/promiseHelpers.js~PENDING",
+    "access": "public",
+    "export": false,
+    "importPath": "./src/redux/promiseHelpers.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 7,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "type": {
+      "types": [
+        "*"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 79,
+    "kind": "variable",
+    "name": "promiseTypes",
+    "memberof": "src/redux/promiseHelpers.js",
+    "static": true,
+    "longname": "src/redux/promiseHelpers.js~promiseTypes",
+    "access": "public",
+    "export": false,
+    "importPath": "./src/redux/promiseHelpers.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 8,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "type": {
+      "types": [
+        "{\"PENDING\": *, \"FULFILLED\": *, \"REJECTED\": *}"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 80,
+    "kind": "function",
+    "name": "promiseActionTypes",
+    "memberof": "src/redux/promiseHelpers.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/redux/promiseHelpers.js~promiseActionTypes",
+    "access": "public",
+    "export": true,
+    "importPath": "./src/redux/promiseHelpers.js",
+    "importStyle": "{promiseActionTypes}",
+    "description": null,
+    "lineNumber": 14,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "params": [
+      {
+        "name": "baseType",
+        "types": [
+          "*"
+        ]
+      }
+    ]
+  },
+  {
+    "__docId__": 81,
+    "kind": "function",
+    "name": "isRejected",
+    "memberof": "src/redux/promiseHelpers.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/redux/promiseHelpers.js~isRejected",
+    "access": "public",
+    "export": true,
+    "importPath": "./src/redux/promiseHelpers.js",
+    "importStyle": "{isRejected}",
+    "description": null,
+    "lineNumber": 19,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "params": [
+      {
+        "name": "action",
+        "types": [
+          "*"
+        ]
+      }
+    ]
+  },
+  {
+    "__docId__": 82,
+    "kind": "file",
+    "name": "src/redux/proxyActions.js",
+    "content": "import {\n  ADD_COLLECTION_MAPPING,\n  CLEAR_ERROR,\n  DELETE_COLLECTION_MAPPING,\n  LOAD_ANNOTATIONS_PROXY,\n  SAVE_ANNOTATED_ITEMS_PROXY,\n  SELECT_ELEMENT_PROXY,\n  SET_CONTEXT_KEY,\n  SET_CURRENT_FIELD,\n  UPDATE_FIELD_PROXY,\n} from 'redux/constants';\n\nexport function addCollectionMapping(annotationName) {\n  return {\n    annotationName,\n    type: ADD_COLLECTION_MAPPING,\n  };\n}\n\nexport function clearError() {\n  return {\n    type: CLEAR_ERROR,\n  };\n}\n\nexport function deleteCollectionMapping(annotationName, collectionIndex) {\n  return {\n    annotationName,\n    collectionIndex,\n    type: DELETE_COLLECTION_MAPPING,\n  };\n}\n\nexport function loadAnnotations() {\n  return {\n    type: LOAD_ANNOTATIONS_PROXY,\n  };\n}\n\nexport function saveAnnotatedItems() {\n  return {\n    type: SAVE_ANNOTATED_ITEMS_PROXY,\n  };\n}\n\nexport function selectElement(selector, content, append = false) {\n  return {\n    selector,\n    content,\n    append,\n    type: SELECT_ELEMENT_PROXY,\n  };\n}\n\nexport function setContextKey(contextKey) {\n  return {\n    contextKey,\n    type: SET_CONTEXT_KEY,\n  };\n}\n\nexport function setCurrentField(annotationName, collectionIndex, fieldName) {\n  return {\n    annotationName,\n    collectionIndex,\n    fieldName,\n    type: SET_CURRENT_FIELD,\n  };\n}\n\nexport function updateField(\n  annotationName, collectionIndex, fieldName, mapping, append = false,\n) {\n  return {\n    annotationName,\n    collectionIndex,\n    fieldName,\n    mapping,\n    append,\n    type: UPDATE_FIELD_PROXY,\n  };\n}\n",
+    "static": true,
+    "longname": "/Users/jrbotros/development/b12/tent/src/redux/proxyActions.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 83,
+    "kind": "function",
+    "name": "addCollectionMapping",
+    "memberof": "src/redux/proxyActions.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/redux/proxyActions.js~addCollectionMapping",
+    "access": "public",
+    "export": true,
+    "importPath": "./src/redux/proxyActions.js",
+    "importStyle": "{addCollectionMapping}",
+    "description": null,
+    "lineNumber": 13,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "params": [
+      {
+        "name": "annotationName",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "{\"annotationName\": *, \"type\": *}"
+      ]
+    }
+  },
+  {
+    "__docId__": 84,
+    "kind": "function",
+    "name": "clearError",
+    "memberof": "src/redux/proxyActions.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/redux/proxyActions.js~clearError",
+    "access": "public",
+    "export": true,
+    "importPath": "./src/redux/proxyActions.js",
+    "importStyle": "{clearError}",
+    "description": null,
+    "lineNumber": 20,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "params": [],
+    "return": {
+      "types": [
+        "{\"type\": *}"
+      ]
+    }
+  },
+  {
+    "__docId__": 85,
+    "kind": "function",
+    "name": "deleteCollectionMapping",
+    "memberof": "src/redux/proxyActions.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/redux/proxyActions.js~deleteCollectionMapping",
+    "access": "public",
+    "export": true,
+    "importPath": "./src/redux/proxyActions.js",
+    "importStyle": "{deleteCollectionMapping}",
+    "description": null,
+    "lineNumber": 26,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "params": [
+      {
+        "name": "annotationName",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "collectionIndex",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "{\"annotationName\": *, \"collectionIndex\": *, \"type\": *}"
+      ]
+    }
+  },
+  {
+    "__docId__": 86,
+    "kind": "function",
+    "name": "loadAnnotations",
+    "memberof": "src/redux/proxyActions.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/redux/proxyActions.js~loadAnnotations",
+    "access": "public",
+    "export": true,
+    "importPath": "./src/redux/proxyActions.js",
+    "importStyle": "{loadAnnotations}",
+    "description": null,
+    "lineNumber": 34,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "params": [],
+    "return": {
+      "types": [
+        "{\"type\": *}"
+      ]
+    }
+  },
+  {
+    "__docId__": 87,
+    "kind": "function",
+    "name": "saveAnnotatedItems",
+    "memberof": "src/redux/proxyActions.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/redux/proxyActions.js~saveAnnotatedItems",
+    "access": "public",
+    "export": true,
+    "importPath": "./src/redux/proxyActions.js",
+    "importStyle": "{saveAnnotatedItems}",
+    "description": null,
+    "lineNumber": 40,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "params": [],
+    "return": {
+      "types": [
+        "{\"type\": *}"
+      ]
+    }
+  },
+  {
+    "__docId__": 88,
+    "kind": "function",
+    "name": "selectElement",
+    "memberof": "src/redux/proxyActions.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/redux/proxyActions.js~selectElement",
+    "access": "public",
+    "export": true,
+    "importPath": "./src/redux/proxyActions.js",
+    "importStyle": "{selectElement}",
+    "description": null,
+    "lineNumber": 46,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "params": [
+      {
+        "name": "selector",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "content",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "append",
+        "optional": true,
+        "types": [
+          "boolean"
+        ],
+        "defaultRaw": false,
+        "defaultValue": "false"
+      }
+    ],
+    "return": {
+      "types": [
+        "{\"selector\": *, \"content\": *, \"append\": *, \"type\": *}"
+      ]
+    }
+  },
+  {
+    "__docId__": 89,
+    "kind": "function",
+    "name": "setContextKey",
+    "memberof": "src/redux/proxyActions.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/redux/proxyActions.js~setContextKey",
+    "access": "public",
+    "export": true,
+    "importPath": "./src/redux/proxyActions.js",
+    "importStyle": "{setContextKey}",
+    "description": null,
+    "lineNumber": 55,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "params": [
+      {
+        "name": "contextKey",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "{\"contextKey\": *, \"type\": *}"
+      ]
+    }
+  },
+  {
+    "__docId__": 90,
+    "kind": "function",
+    "name": "setCurrentField",
+    "memberof": "src/redux/proxyActions.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/redux/proxyActions.js~setCurrentField",
+    "access": "public",
+    "export": true,
+    "importPath": "./src/redux/proxyActions.js",
+    "importStyle": "{setCurrentField}",
+    "description": null,
+    "lineNumber": 62,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "params": [
+      {
+        "name": "annotationName",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "collectionIndex",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "fieldName",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "{\"annotationName\": *, \"collectionIndex\": *, \"fieldName\": *, \"type\": *}"
+      ]
+    }
+  },
+  {
+    "__docId__": 91,
+    "kind": "function",
+    "name": "updateField",
+    "memberof": "src/redux/proxyActions.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/redux/proxyActions.js~updateField",
+    "access": "public",
+    "export": true,
+    "importPath": "./src/redux/proxyActions.js",
+    "importStyle": "{updateField}",
+    "description": null,
+    "lineNumber": 71,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "params": [
+      {
+        "name": "annotationName",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "collectionIndex",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "fieldName",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "mapping",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "append",
+        "optional": true,
+        "types": [
+          "boolean"
+        ],
+        "defaultRaw": false,
+        "defaultValue": "false"
+      }
+    ],
+    "return": {
+      "types": [
+        "{\"annotationName\": *, \"collectionIndex\": *, \"fieldName\": *, \"mapping\": *, \"append\": *, \"type\": *}"
+      ]
+    }
+  },
+  {
+    "__docId__": 92,
+    "kind": "file",
+    "name": "src/redux/proxyStore.js",
+    "content": "import swal from 'sweetalert2';\nimport { Store } from 'react-chrome-redux';\n\nimport { PORT_NAME } from 'redux/constants';\nimport { clearError } from 'redux/proxyActions';\n\nexport default function setupProxyStore() {\n  const store = new Store({\n    portName: PORT_NAME,\n  });\n\n  store.subscribe(() => {\n    // Generic error handler\n    const state = store.getState();\n    if (state.error) {\n      swal('Oops...', 'An error occurred 😭', 'error');\n      store.dispatch(clearError());\n    }\n  });\n\n  return store;\n}\n",
+    "static": true,
+    "longname": "/Users/jrbotros/development/b12/tent/src/redux/proxyStore.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 93,
+    "kind": "function",
+    "name": "setupProxyStore",
+    "memberof": "src/redux/proxyStore.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/redux/proxyStore.js~setupProxyStore",
+    "access": "public",
+    "export": true,
+    "importPath": "./src/redux/proxyStore.js",
+    "importStyle": "setupProxyStore",
+    "description": null,
+    "lineNumber": 7,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "params": [],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 94,
+    "kind": "file",
+    "name": "src/redux/reducers/annotatedItem.js",
+    "content": "import cloneDeep from 'lodash.clonedeep';\nimport isUndefined from 'lodash.isundefined';\nimport mapValues from 'lodash.mapvalues';\nimport PropTypes from 'prop-types';\n\nimport annotatedItemField, {\n  annotatedItemFieldType,\n} from 'redux/reducers/annotatedItemField';\nimport {\n  ADD_COLLECTION_MAPPING,\n  DELETE_COLLECTION_MAPPING,\n  LOAD_ANNOTATIONS,\n  UPDATE_FIELD,\n} from 'redux/constants';\n\nexport const annotatedItemType = PropTypes.shape({\n  updated: PropTypes.bool,\n  schema: PropTypes.shape({\n    multiple: PropTypes.bool,\n    fields: PropTypes.objectOf(PropTypes.string).isRequired,\n  }).isRequired,\n  collectionMappings: PropTypes.arrayOf(\n    PropTypes.objectOf(annotatedItemFieldType),\n  ).isRequired,\n});\n\nexport default function annotatedItem(state, action) {\n  const newCollectionMapping = () => mapValues(state.schema.fields, () => (\n    annotatedItemField(undefined, action)\n  ));\n\n  switch (action.type) {\n    case LOAD_ANNOTATIONS.FULFILLED:\n      if (isUndefined(state.collectionMappings)) {\n        // State is being loaded for the first time without pre-mapped content\n        return {\n          ...state,\n          collectionMappings: [newCollectionMapping()],\n        };\n      }\n      // Schema is being reloaded\n      return {\n        ...state,\n        collectionMappings: state.collectionMappings.map(\n          // Ensure all mappings contain only fields from new schema\n          collectionMapping => mapValues(state.schema.fields, (fieldType, fieldName) => (\n            annotatedItemField(collectionMapping[fieldName], action)\n          )),\n        ),\n      };\n\n    case ADD_COLLECTION_MAPPING: {\n      return {\n        ...state,\n        updated: true,\n        collectionMappings: [\n          ...state.collectionMappings,\n          newCollectionMapping(),\n        ],\n      };\n    }\n\n    case DELETE_COLLECTION_MAPPING: {\n      const newState = cloneDeep(state);\n      newState.collectionMappings.splice(action.collectionIndex, 1);\n      return {\n        ...newState,\n        updated: true,\n      };\n    }\n\n    case UPDATE_FIELD: {\n      const newState = cloneDeep(state);\n      newState.collectionMappings[action.collectionIndex] = {\n        ...state.collectionMappings[action.collectionIndex],\n        [action.fieldName]: (\n          annotatedItemField(\n            state.collectionMappings[action.collectionIndex][action.fieldName], action)\n        ),\n      };\n      return {\n        ...newState,\n        updated: true,\n      };\n    }\n\n    default: {\n      return state;\n    }\n  }\n}\n",
+    "static": true,
+    "longname": "/Users/jrbotros/development/b12/tent/src/redux/reducers/annotatedItem.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 95,
+    "kind": "variable",
+    "name": "annotatedItemType",
+    "memberof": "src/redux/reducers/annotatedItem.js",
+    "static": true,
+    "longname": "src/redux/reducers/annotatedItem.js~annotatedItemType",
+    "access": "public",
+    "export": true,
+    "importPath": "./src/redux/reducers/annotatedItem.js",
+    "importStyle": "{annotatedItemType}",
+    "description": null,
+    "lineNumber": 16,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 96,
+    "kind": "function",
+    "name": "annotatedItem",
+    "memberof": "src/redux/reducers/annotatedItem.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/redux/reducers/annotatedItem.js~annotatedItem",
+    "access": "public",
+    "export": true,
+    "importPath": "./src/redux/reducers/annotatedItem.js",
+    "importStyle": "annotatedItem",
+    "description": null,
+    "lineNumber": 27,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "params": [
+      {
+        "name": "state",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "action",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 97,
+    "kind": "file",
+    "name": "src/redux/reducers/annotatedItemField.js",
+    "content": "import defaults from 'lodash.defaults';\nimport PropTypes from 'prop-types';\n\nimport { LOAD_ANNOTATIONS, UPDATE_FIELD } from 'redux/constants';\n\nconst initialState = {\n  // TODO(jrbotros): also store the URL for this selector\n  content: '',\n  original: '',\n  sources: [],\n};\n\nexport const annotatedItemFieldType = PropTypes.shape({\n  content: PropTypes.string,\n  original: PropTypes.string,\n  sources: PropTypes.arrayOf(PropTypes.string),\n});\n\nexport default function annotatedItemField(state = initialState, action) {\n  switch (action.type) {\n    case LOAD_ANNOTATIONS.FULFILLED:\n      return defaults(state, initialState);\n    case UPDATE_FIELD:\n      if (action.append) {\n        return {\n          ...state,\n          content: `${state.content}\\n${action.mapping.content}`,\n          original: `${state.original}\\n${action.mapping.content}`,\n          sources: [...state.sources, ...action.mapping.sources],\n        };\n      }\n      return defaults({\n        ...state,\n        content: action.mapping.content,\n        original: action.mapping.content,\n        sources: action.mapping.sources,\n      }, initialState);\n    default:\n      return state;\n  }\n}\n",
+    "static": true,
+    "longname": "/Users/jrbotros/development/b12/tent/src/redux/reducers/annotatedItemField.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 98,
+    "kind": "variable",
+    "name": "initialState",
+    "memberof": "src/redux/reducers/annotatedItemField.js",
+    "static": true,
+    "longname": "src/redux/reducers/annotatedItemField.js~initialState",
+    "access": "public",
+    "export": false,
+    "importPath": "./src/redux/reducers/annotatedItemField.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 6,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "type": {
+      "types": [
+        "{\"content\": *, \"original\": *, \"sources\": *}"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 99,
+    "kind": "variable",
+    "name": "annotatedItemFieldType",
+    "memberof": "src/redux/reducers/annotatedItemField.js",
+    "static": true,
+    "longname": "src/redux/reducers/annotatedItemField.js~annotatedItemFieldType",
+    "access": "public",
+    "export": true,
+    "importPath": "./src/redux/reducers/annotatedItemField.js",
+    "importStyle": "{annotatedItemFieldType}",
+    "description": null,
+    "lineNumber": 13,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 100,
+    "kind": "function",
+    "name": "annotatedItemField",
+    "memberof": "src/redux/reducers/annotatedItemField.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/redux/reducers/annotatedItemField.js~annotatedItemField",
+    "access": "public",
+    "export": true,
+    "importPath": "./src/redux/reducers/annotatedItemField.js",
+    "importStyle": "annotatedItemField",
+    "description": null,
+    "lineNumber": 19,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "params": [
+      {
+        "name": "state",
+        "optional": true,
+        "types": [
+          "*"
+        ],
+        "defaultRaw": "initialState",
+        "defaultValue": "initialState"
+      },
+      {
+        "name": "action",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 101,
+    "kind": "file",
+    "name": "src/redux/reducers/annotationContext.js",
+    "content": "import isUndefined from 'lodash.isundefined';\nimport mapValues from 'lodash.mapvalues';\nimport PropTypes from 'prop-types';\n\nimport annotatedItem, {\n  annotatedItemType,\n} from 'redux/reducers/annotatedItem';\nimport {\n  ADD_COLLECTION_MAPPING,\n  DELETE_COLLECTION_MAPPING,\n  LOAD_ANNOTATIONS,\n  UPDATE_FIELD,\n} from 'redux/constants';\n\nexport const annotationContextType = PropTypes.objectOf(annotatedItemType);\n\nexport default function annotationContext(state, action) {\n  switch (action.type) {\n    case LOAD_ANNOTATIONS.FULFILLED: {\n      return mapValues(action.payload.schema, (schema, name) => {\n        // Get data already mapped, if any\n        if (isUndefined(state)) {\n          // State is being loaded for the first time\n          return annotatedItem({\n            schema,\n            collectionMappings: action.payload.mappings[name],\n          }, action);\n        }\n        // Ensure annotations are only those found in the new schema\n        return annotatedItem({ ...state[name], schema }, action);\n      });\n    }\n\n    // Passthrough actions\n    case ADD_COLLECTION_MAPPING:\n    case DELETE_COLLECTION_MAPPING:\n    case UPDATE_FIELD: {\n      return {\n        ...state,\n        [action.annotationName]: (\n          annotatedItem(state[action.annotationName], action)\n        ),\n      };\n    }\n\n    default: {\n      return state;\n    }\n  }\n}\n",
+    "static": true,
+    "longname": "/Users/jrbotros/development/b12/tent/src/redux/reducers/annotationContext.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 102,
+    "kind": "variable",
+    "name": "annotationContextType",
+    "memberof": "src/redux/reducers/annotationContext.js",
+    "static": true,
+    "longname": "src/redux/reducers/annotationContext.js~annotationContextType",
+    "access": "public",
+    "export": true,
+    "importPath": "./src/redux/reducers/annotationContext.js",
+    "importStyle": "{annotationContextType}",
+    "description": null,
+    "lineNumber": 15,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 103,
+    "kind": "function",
+    "name": "annotationContext",
+    "memberof": "src/redux/reducers/annotationContext.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/redux/reducers/annotationContext.js~annotationContext",
+    "access": "public",
+    "export": true,
+    "importPath": "./src/redux/reducers/annotationContext.js",
+    "importStyle": "annotationContext",
+    "description": null,
+    "lineNumber": 17,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "params": [
+      {
+        "name": "state",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "action",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 104,
+    "kind": "file",
+    "name": "src/redux/reducers/main.js",
+    "content": "import mapValues from 'lodash.mapvalues';\n\nimport annotationContext from 'redux/reducers/annotationContext';\nimport { isRejected } from 'redux/promiseHelpers';\nimport {\n  ADD_COLLECTION_MAPPING,\n  CLEAR_ERROR,\n  DELETE_COLLECTION_MAPPING,\n  LOAD_ANNOTATIONS,\n  SET_CONTEXT_KEY,\n  SET_CURRENT_FIELD,\n  UPDATE_FIELD,\n} from 'redux/constants';\n\nconst defaultContextKey = 'tentDefault';\n\nconst initialState = {\n  contexts: {\n    [defaultContextKey]: annotationContext(undefined, {}),\n  },\n  currentContextKey: defaultContextKey,\n  currentAnnotation: null,\n  currentIndex: null,\n  currentField: null,\n  error: null,\n  ready: false,\n};\n\nexport default function main(state = initialState, action) {\n  if (isRejected(action)) {\n    // If a promise payload is rejected, skip logic and return error state\n    return {\n      ...state,\n      error: true,\n    };\n  }\n\n  switch (action.type) {\n    case CLEAR_ERROR: {\n      return {\n        ...state,\n        error: false,\n      };\n    }\n    case LOAD_ANNOTATIONS.FULFILLED: {\n      return {\n        ...state,\n        ready: true,\n        contexts: mapValues(\n          state.contexts, context => annotationContext(context, action)),\n      };\n    }\n    case SET_CONTEXT_KEY: {\n      return {\n        ...state,\n        contexts: {\n          ...state.contexts,\n          [action.contextKey]: (\n            annotationContext(state.contexts[action.contextKey], action)\n          ),\n        },\n        currentContextKey: action.contextKey,\n        currentAnnotation: null,\n        currentIndex: null,\n        currentField: null,\n      };\n    }\n    case SET_CURRENT_FIELD: {\n      return {\n        ...state,\n        currentAnnotation: action.annotationName,\n        currentIndex: action.collectionIndex,\n        currentField: action.fieldName,\n      };\n    }\n\n    // Passthrough actions\n    case ADD_COLLECTION_MAPPING:\n      return {\n        ...state,\n        contexts: {\n          ...state.contexts,\n          [state.currentContextKey]: (\n            annotationContext(state.contexts[state.currentContextKey], action)\n          ),\n        },\n      };\n    case DELETE_COLLECTION_MAPPING:\n    case UPDATE_FIELD: {\n      return {\n        ...state,\n        contexts: {\n          ...state.contexts,\n          [state.currentContextKey]: (\n            annotationContext(state.contexts[state.currentContextKey], action)\n          ),\n        },\n      };\n    }\n\n    default: {\n      return state;\n    }\n  }\n}\n",
+    "static": true,
+    "longname": "/Users/jrbotros/development/b12/tent/src/redux/reducers/main.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 105,
+    "kind": "variable",
+    "name": "defaultContextKey",
+    "memberof": "src/redux/reducers/main.js",
+    "static": true,
+    "longname": "src/redux/reducers/main.js~defaultContextKey",
+    "access": "public",
+    "export": false,
+    "importPath": "./src/redux/reducers/main.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 15,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "type": {
+      "types": [
+        "string"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 106,
+    "kind": "variable",
+    "name": "initialState",
+    "memberof": "src/redux/reducers/main.js",
+    "static": true,
+    "longname": "src/redux/reducers/main.js~initialState",
+    "access": "public",
+    "export": false,
+    "importPath": "./src/redux/reducers/main.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 17,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "type": {
+      "types": [
+        "{\"contexts\": *, \"currentContextKey\": *, \"currentAnnotation\": *, \"currentIndex\": *, \"currentField\": *, \"error\": *, \"ready\": *}"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 107,
+    "kind": "function",
+    "name": "main",
+    "memberof": "src/redux/reducers/main.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/redux/reducers/main.js~main",
+    "access": "public",
+    "export": true,
+    "importPath": "./src/redux/reducers/main.js",
+    "importStyle": "main",
+    "description": null,
+    "lineNumber": 29,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "params": [
+      {
+        "name": "state",
+        "optional": true,
+        "types": [
+          "*"
+        ],
+        "defaultRaw": "initialState",
+        "defaultValue": "initialState"
+      },
+      {
+        "name": "action",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 108,
+    "kind": "file",
+    "name": "src/redux/selectors.js",
+    "content": "import get from 'lodash.get';\nimport mapValues from 'lodash.mapvalues';\nimport pickBy from 'lodash.pickby';\nimport { createSelector } from 'reselect';\n\nexport const annotationContextsSelector = state => state.contexts;\nexport const currentAnnotationSelector = state => state.currentAnnotation;\nexport const currentIndexSelector = state => state.currentIndex;\nexport const currentFieldSelector = state => state.currentField;\nexport const readySelector = state => state.ready;\n\nexport const currentContextKeySelector = state => state.currentContextKey;\n\nexport const currentContextSelector = createSelector(\n  annotationContextsSelector,\n  currentContextKeySelector,\n  (contexts, currentContextKey) => get(contexts, currentContextKey),\n);\n\nexport const currentAnnotatedItemSelector = createSelector(\n  currentContextSelector,\n  currentAnnotationSelector,\n  (context, annotationName) => context[annotationName],\n);\n\nexport const currentFieldTypeSelector = createSelector(\n  currentAnnotatedItemSelector,\n  currentFieldSelector,\n  (currentAnnotatedItem, currentField) => (\n    get(currentAnnotatedItem, ['schema', 'fields', currentField])\n  ),\n);\n\nexport const currentMappingsSelector = createSelector(\n  currentContextSelector,\n  context => (\n    mapValues(\n      pickBy(context, annotatedItem => annotatedItem.updated),\n      annotatedItem => annotatedItem.collectionMappings)),\n);\n",
+    "static": true,
+    "longname": "/Users/jrbotros/development/b12/tent/src/redux/selectors.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 109,
+    "kind": "function",
+    "name": "annotationContextsSelector",
+    "memberof": "src/redux/selectors.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/redux/selectors.js~annotationContextsSelector",
+    "access": "public",
+    "export": true,
+    "importPath": "./src/redux/selectors.js",
+    "importStyle": "{annotationContextsSelector}",
+    "description": null,
+    "lineNumber": 6,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "params": [
+      {
+        "name": "state",
+        "types": [
+          "*"
+        ]
+      }
+    ]
+  },
+  {
+    "__docId__": 110,
+    "kind": "function",
+    "name": "currentAnnotationSelector",
+    "memberof": "src/redux/selectors.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/redux/selectors.js~currentAnnotationSelector",
+    "access": "public",
+    "export": true,
+    "importPath": "./src/redux/selectors.js",
+    "importStyle": "{currentAnnotationSelector}",
+    "description": null,
+    "lineNumber": 7,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "params": [
+      {
+        "name": "state",
+        "types": [
+          "*"
+        ]
+      }
+    ]
+  },
+  {
+    "__docId__": 111,
+    "kind": "function",
+    "name": "currentIndexSelector",
+    "memberof": "src/redux/selectors.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/redux/selectors.js~currentIndexSelector",
+    "access": "public",
+    "export": true,
+    "importPath": "./src/redux/selectors.js",
+    "importStyle": "{currentIndexSelector}",
+    "description": null,
+    "lineNumber": 8,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "params": [
+      {
+        "name": "state",
+        "types": [
+          "*"
+        ]
+      }
+    ]
+  },
+  {
+    "__docId__": 112,
+    "kind": "function",
+    "name": "currentFieldSelector",
+    "memberof": "src/redux/selectors.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/redux/selectors.js~currentFieldSelector",
+    "access": "public",
+    "export": true,
+    "importPath": "./src/redux/selectors.js",
+    "importStyle": "{currentFieldSelector}",
+    "description": null,
+    "lineNumber": 9,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "params": [
+      {
+        "name": "state",
+        "types": [
+          "*"
+        ]
+      }
+    ]
+  },
+  {
+    "__docId__": 113,
+    "kind": "function",
+    "name": "readySelector",
+    "memberof": "src/redux/selectors.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/redux/selectors.js~readySelector",
+    "access": "public",
+    "export": true,
+    "importPath": "./src/redux/selectors.js",
+    "importStyle": "{readySelector}",
+    "description": null,
+    "lineNumber": 10,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "params": [
+      {
+        "name": "state",
+        "types": [
+          "*"
+        ]
+      }
+    ]
+  },
+  {
+    "__docId__": 114,
+    "kind": "function",
+    "name": "currentContextKeySelector",
+    "memberof": "src/redux/selectors.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/redux/selectors.js~currentContextKeySelector",
+    "access": "public",
+    "export": true,
+    "importPath": "./src/redux/selectors.js",
+    "importStyle": "{currentContextKeySelector}",
+    "description": null,
+    "lineNumber": 12,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "params": [
+      {
+        "name": "state",
+        "types": [
+          "*"
+        ]
+      }
+    ]
+  },
+  {
+    "__docId__": 115,
+    "kind": "variable",
+    "name": "currentContextSelector",
+    "memberof": "src/redux/selectors.js",
+    "static": true,
+    "longname": "src/redux/selectors.js~currentContextSelector",
+    "access": "public",
+    "export": true,
+    "importPath": "./src/redux/selectors.js",
+    "importStyle": "{currentContextSelector}",
+    "description": null,
+    "lineNumber": 14,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 116,
+    "kind": "variable",
+    "name": "currentAnnotatedItemSelector",
+    "memberof": "src/redux/selectors.js",
+    "static": true,
+    "longname": "src/redux/selectors.js~currentAnnotatedItemSelector",
+    "access": "public",
+    "export": true,
+    "importPath": "./src/redux/selectors.js",
+    "importStyle": "{currentAnnotatedItemSelector}",
+    "description": null,
+    "lineNumber": 20,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 117,
+    "kind": "variable",
+    "name": "currentFieldTypeSelector",
+    "memberof": "src/redux/selectors.js",
+    "static": true,
+    "longname": "src/redux/selectors.js~currentFieldTypeSelector",
+    "access": "public",
+    "export": true,
+    "importPath": "./src/redux/selectors.js",
+    "importStyle": "{currentFieldTypeSelector}",
+    "description": null,
+    "lineNumber": 26,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 118,
+    "kind": "variable",
+    "name": "currentMappingsSelector",
+    "memberof": "src/redux/selectors.js",
+    "static": true,
+    "longname": "src/redux/selectors.js~currentMappingsSelector",
+    "access": "public",
+    "export": true,
+    "importPath": "./src/redux/selectors.js",
+    "importStyle": "{currentMappingsSelector}",
+    "description": null,
+    "lineNumber": 34,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "kind": "index",
+    "content": "# Tent\nTent is an extension for Google Chrome allowing users to map web content to a list of annotations.\n\n## Contexts\nIn Tent, content mapped to the provided annotations is grouped together in a context. This context is keyed by an arbitrary string in the redux state, and might represent a specific user tagging content in the extension or a project that content is being tagged for.\n\nTo switch contexts from another extension or webpage (e.g., if a user first reads an instruction page, you can set the project context from there), you can send a message to the extension with:\n\n```\nchrome.runtime.sendMessage(\n  EXTENSION_ID, {\n    data: {\n      contextKey: 'project-1234',\n    },\n  },\n);\n```\n\nMake sure you configure [`externally_connectable`](https://developer.chrome.com/extensions/manifest/externally_connectable) in `manifest.json` to accept messages from the sender extension or web page.\n\nYou can get your `EXTENSION_ID` [from the Chrome store](https://developer.chrome.com/webstore/publish#get-the-app-id) once you've published your extension, or [generate your own](http://stackoverflow.com/questions/23873623/obtaining-chrome-extension-id-for-development) for development purposes only.\n\n**By default, all mapped content is stored in a default context, so if you don't need to switch contexts you can ignore the concept entirely.**\n\n## Publishing\nCreate the extension zipfile with `yarn package` and follow the web store [instructions](https://developer.chrome.com/webstore/publish). If you want to upload a new extension zipfile, you'll need to bump the version accordingly with `yarn package -- (patch|minor|major)`.\n",
+    "longname": "/Users/jrbotros/development/b12/tent/README.md",
+    "name": "./README.md",
+    "static": true,
+    "access": "public"
+  },
+  {
+    "kind": "packageJSON",
+    "content": "{\n  \"scripts\": {\n    \"package\": \"bash scripts/package.sh\",\n    \"docs\": \"esdoc\"\n  },\n  \"devDependencies\": {\n    \"babel-core\": \"6.24.1\",\n    \"babel-loader\": \"6.4.1\",\n    \"babel-plugin-transform-object-rest-spread\": \"6.23.0\",\n    \"babel-plugin-transform-runtime\": \"6.23.0\",\n    \"babel-preset-es2015\": \"6.24.1\",\n    \"babel-preset-react\": \"6.24.1\",\n    \"css-loader\": \"0.28.0\",\n    \"esdoc\": \"1.0.0\",\n    \"esdoc-ecmascript-proposal-plugin\": \"0.0.2\",\n    \"esdoc-standard-plugin\": \"0.0.2\",\n    \"eslint\": \"3.19.0\",\n    \"eslint-config-airbnb\": \"14.1.0\",\n    \"eslint-import-resolver-webpack\": \"0.8.1\",\n    \"eslint-loader\": \"1.7.1\",\n    \"eslint-plugin-import\": \"2.2.0\",\n    \"eslint-plugin-jsx-a11y\": \"4.0.0\",\n    \"eslint-plugin-node\": \"4.2.2\",\n    \"eslint-plugin-promise\": \"3.5.0\",\n    \"eslint-plugin-react\": \"6.10.3\",\n    \"node-sass\": \"4.5.2\",\n    \"sass-loader\": \"6.0.3\",\n    \"semver\": \"5.3.0\",\n    \"style-loader\": \"0.16.1\",\n    \"webpack\": \"2.3.3\"\n  },\n  \"dependencies\": {\n    \"css-selector-generator\": \"1.0.2\",\n    \"dropzone\": \"4.3.0\",\n    \"lodash.clonedeep\": \"4.5.0\",\n    \"lodash.debounce\": \"4.0.8\",\n    \"lodash.defaults\": \"4.2.0\",\n    \"lodash.endswith\": \"4.2.1\",\n    \"lodash.filter\": \"4.6.0\",\n    \"lodash.get\": \"4.4.2\",\n    \"lodash.isequal\": \"4.5.0\",\n    \"lodash.isnil\": \"4.0.0\",\n    \"lodash.isundefined\": \"3.0.1\",\n    \"lodash.mapvalues\": \"4.6.0\",\n    \"lodash.pick\": \"4.4.0\",\n    \"lodash.pickby\": \"4.6.0\",\n    \"lodash.trim\": \"4.5.1\",\n    \"prop-types\": \"15.5.8\",\n    \"rc-collapse\": \"1.7.0\",\n    \"react\": \"15.5.4\",\n    \"react-chrome-redux\": \"1.3.2\",\n    \"react-dom\": \"15.5.4\",\n    \"react-dropzone-component\": \"1.4.1\",\n    \"react-icons\": \"2.2.3\",\n    \"react-quill\": \"1.0.0-rc.2\",\n    \"react-redux\": \"5.0.4\",\n    \"redux\": \"3.6.0\",\n    \"redux-promise-middleware\": \"4.2.0\",\n    \"redux-thunk\": \"2.2.0\",\n    \"reselect\": \"3.0.0\",\n    \"sweetalert2\": \"6.6.0\",\n    \"tether\": \"1.4.0\",\n    \"unique-selector\": \"0.3.4\"\n  }\n}\n",
+    "longname": "/Users/jrbotros/development/b12/tent/package.json",
+    "name": "package.json",
+    "static": true,
+    "access": "public"
+  }
+]

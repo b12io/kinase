@@ -1,0 +1,136 @@
+{
+  "coverage": "0%",
+  "expectCount": 57,
+  "actualCount": 0,
+  "files": {
+    "src/api.js": {
+      "expectCount": 2,
+      "actualCount": 0,
+      "undocumentLines": [
+        3,
+        7
+      ]
+    },
+    "src/background.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        13
+      ]
+    },
+    "src/highlighter.js": {
+      "expectCount": 6,
+      "actualCount": 0,
+      "undocumentLines": [
+        8,
+        9,
+        10,
+        11,
+        17,
+        26
+      ]
+    },
+    "src/redux/constants.js": {
+      "expectCount": 13,
+      "actualCount": 0,
+      "undocumentLines": [
+        3,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ]
+    },
+    "src/redux/promiseHelpers.js": {
+      "expectCount": 5,
+      "actualCount": 0,
+      "undocumentLines": [
+        6,
+        7,
+        8,
+        14,
+        19
+      ]
+    },
+    "src/redux/proxyActions.js": {
+      "expectCount": 9,
+      "actualCount": 0,
+      "undocumentLines": [
+        13,
+        20,
+        26,
+        34,
+        40,
+        46,
+        55,
+        62,
+        71
+      ]
+    },
+    "src/redux/proxyStore.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        7
+      ]
+    },
+    "src/redux/reducers/annotatedItem.js": {
+      "expectCount": 2,
+      "actualCount": 0,
+      "undocumentLines": [
+        16,
+        27
+      ]
+    },
+    "src/redux/reducers/annotatedItemField.js": {
+      "expectCount": 3,
+      "actualCount": 0,
+      "undocumentLines": [
+        6,
+        13,
+        19
+      ]
+    },
+    "src/redux/reducers/annotationContext.js": {
+      "expectCount": 2,
+      "actualCount": 0,
+      "undocumentLines": [
+        15,
+        17
+      ]
+    },
+    "src/redux/reducers/main.js": {
+      "expectCount": 3,
+      "actualCount": 0,
+      "undocumentLines": [
+        15,
+        17,
+        29
+      ]
+    },
+    "src/redux/selectors.js": {
+      "expectCount": 10,
+      "actualCount": 0,
+      "undocumentLines": [
+        6,
+        7,
+        8,
+        9,
+        10,
+        12,
+        14,
+        20,
+        26,
+        34
+      ]
+    }
+  }
+}
