@@ -6,9 +6,9 @@
 /******/ 	function __webpack_require__(moduleId) {
 /******/
 /******/ 		// Check if module is in cache
-/******/ 		if(installedModules[moduleId])
+/******/ 		if(installedModules[moduleId]) {
 /******/ 			return installedModules[moduleId].exports;
-/******/
+/******/ 		}
 /******/ 		// Create a new module (and put it into the cache)
 /******/ 		var module = installedModules[moduleId] = {
 /******/ 			i: moduleId,
@@ -240,6 +240,10 @@ process.off = noop;
 process.removeListener = noop;
 process.removeAllListeners = noop;
 process.emit = noop;
+process.prependListener = noop;
+process.prependOnceListener = noop;
+
+process.listeners = function (name) { return [] }
 
 process.binding = function (name) {
     throw new Error('process.binding is not supported');
@@ -4667,7 +4671,7 @@ function addCollectionMapping(annotationName) {
     annotationName: annotationName,
     type: _constants.ADD_COLLECTION_MAPPING
   };
-}
+} /* global window */
 
 function clearError() {
   return {
@@ -4702,6 +4706,7 @@ function selectElement(selector, content) {
     selector: selector,
     content: content,
     append: append,
+    url: window.location.href,
     type: _constants.SELECT_ELEMENT_PROXY
   };
 }
@@ -8555,7 +8560,10 @@ var initialState = {
 var annotatedItemFieldType = exports.annotatedItemFieldType = _propTypes2.default.shape({
   content: _propTypes2.default.string,
   original: _propTypes2.default.string,
-  sources: _propTypes2.default.arrayOf(_propTypes2.default.string)
+  sources: _propTypes2.default.arrayOf(_propTypes2.default.shape({
+    url: _propTypes2.default.string.isRequired,
+    selector: _propTypes2.default.string.isRequired
+  }))
 });
 
 function annotatedItemField() {
@@ -43613,8 +43621,20 @@ var AnnotatedItemField = function (_React$Component) {
                 this.props.mapping.sources.map(function (source) {
                   return _react2.default.createElement(
                     'li',
-                    { key: source },
-                    source
+                    {
+                      className: _style2.default.mappingSource,
+                      key: source.url + '-' + source.selector
+                    },
+                    _react2.default.createElement(
+                      'div',
+                      null,
+                      source.url
+                    ),
+                    _react2.default.createElement(
+                      'div',
+                      null,
+                      source.selector
+                    )
                   );
                 })
               )
@@ -45220,13 +45240,12 @@ exports = module.exports = __webpack_require__(38)(undefined);
 
 
 // module
-exports.push([module.i, ".style__fieldGroup___2XAD9 {\n  padding: 5px;\n  display: flex;\n  flex-direction: column; }\n  .style__fieldGroup___2XAD9 > *:not(:last-child) {\n    margin-bottom: 5px; }\n\n.style__annotatedItemField___N9Ke0 {\n  padding: 5px; }\n  .style__annotatedItemField___N9Ke0 textarea {\n    width: 100%;\n    height: auto;\n    box-sizing: border-box; }\n\n.style__mappingSourcePath___2D-9y {\n  font-style: italic;\n  font-size: 0.8em; }\n", ""]);
+exports.push([module.i, ".style__annotatedItemField___N9Ke0 {\n  padding: 5px; }\n  .style__annotatedItemField___N9Ke0 textarea {\n    width: 100%;\n    height: auto;\n    box-sizing: border-box; }\n  .style__annotatedItemField___N9Ke0 .style__mappingSource___3quTv {\n    margin-bottom: 5px; }\n", ""]);
 
 // exports
 exports.locals = {
-	"fieldGroup": "style__fieldGroup___2XAD9",
 	"annotatedItemField": "style__annotatedItemField___N9Ke0",
-	"mappingSourcePath": "style__mappingSourcePath___2D-9y"
+	"mappingSource": "style__mappingSource___3quTv"
 };
 
 /***/ }),

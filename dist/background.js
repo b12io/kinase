@@ -6,9 +6,9 @@
 /******/ 	function __webpack_require__(moduleId) {
 /******/
 /******/ 		// Check if module is in cache
-/******/ 		if(installedModules[moduleId])
+/******/ 		if(installedModules[moduleId]) {
 /******/ 			return installedModules[moduleId].exports;
-/******/
+/******/ 		}
 /******/ 		// Create a new module (and put it into the cache)
 /******/ 		var module = installedModules[moduleId] = {
 /******/ 			i: moduleId,
@@ -240,6 +240,10 @@ process.off = noop;
 process.removeListener = noop;
 process.removeAllListeners = noop;
 process.emit = noop;
+process.prependListener = noop;
+process.prependOnceListener = noop;
+
+process.listeners = function (name) { return [] }
 
 process.binding = function (name) {
     throw new Error('process.binding is not supported');
@@ -3244,7 +3248,7 @@ function addCollectionMapping(annotationName) {
     annotationName: annotationName,
     type: _constants.ADD_COLLECTION_MAPPING
   };
-}
+} /* global window */
 
 function clearError() {
   return {
@@ -3279,6 +3283,7 @@ function selectElement(selector, content) {
     selector: selector,
     content: content,
     append: append,
+    url: window.location.href,
     type: _constants.SELECT_ELEMENT_PROXY
   };
 }
@@ -5035,7 +5040,10 @@ var initialState = {
 var annotatedItemFieldType = exports.annotatedItemFieldType = _propTypes2.default.shape({
   content: _propTypes2.default.string,
   original: _propTypes2.default.string,
-  sources: _propTypes2.default.arrayOf(_propTypes2.default.string)
+  sources: _propTypes2.default.arrayOf(_propTypes2.default.shape({
+    url: _propTypes2.default.string.isRequired,
+    selector: _propTypes2.default.string.isRequired
+  }))
 });
 
 function annotatedItemField() {
@@ -15254,7 +15262,10 @@ exports.default = (_LOAD_ANNOTATIONS_PRO = {}, (0, _defineProperty3.default)(_LO
     if (currentAnnotation && !(0, _lodash4.default)(currentIndex) && currentField) {
       return dispatch((0, _proxyActions.updateField)(currentAnnotation, currentIndex, currentField, {
         content: action.content,
-        sources: [action.selector]
+        sources: [{
+          url: action.url,
+          selector: action.selector
+        }]
       }, action.append));
     }
     return _promise2.default.resolve();
@@ -18355,7 +18366,10 @@ module.exports = {
 					"content": "About Us",
 					"original": "about us",
 					"sources": [
-						"#h1"
+						{
+							"url": "http://www.b12.io",
+							"selector": "#h1"
+						}
 					]
 				}
 			}

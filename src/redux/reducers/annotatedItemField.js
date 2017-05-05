@@ -13,7 +13,10 @@ const initialState = {
 export const annotatedItemFieldType = PropTypes.shape({
   content: PropTypes.string,
   original: PropTypes.string,
-  sources: PropTypes.arrayOf(PropTypes.string),
+  sources: PropTypes.arrayOf(PropTypes.shape({
+    url: PropTypes.string.isRequired,
+    selector: PropTypes.string.isRequired,
+  })),
 });
 
 export default function annotatedItemField(state = initialState, action) {
