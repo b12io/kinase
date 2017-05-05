@@ -3,7 +3,7 @@
 .sidebar {
   position: relative;
   color: $dark-gray;
-  padding: 15px;
+  padding: $default-padding;
 
   header {
     display: flex;
@@ -11,7 +11,7 @@
     align-items: center;
     border-bottom: 1px solid $dark-gray;
     font-size: 1.5em;
-    margin-bottom: 15px;
+    margin-bottom: $default-padding;
   }
 
   ul, li {
@@ -24,5 +24,5 @@
 :global(.rc-collapse-header) {
   display: flex;
   align-items: center;
-  padding: 0 15px;
+  padding: 0 $default-padding;
 }
