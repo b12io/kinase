@@ -1,10 +1,7 @@
-const assignIn = require('lodash.assignin');
 const cloneDeep = require('lodash.clonedeep');
 const fs = require('fs');
 const merge = require('lodash.merge');
 const path = require('path');
-const pick = require('lodash.pick');
-const semver = require('semver');
 const shell = require('shelljs');
 const tmp = require('tmp');
 
@@ -17,10 +14,12 @@ module.exports = class Tent {
   constructor(options) {
     this.options = options;
 
-    this.runningDir = process.cwd();
-
     tmp.dir((err, tmpPath) => {
       if (err) throw err;
+
+      if (!this.options.output) {
+        throw Error('You must provide an output path for the packaged extension.');
+      }
 
       this.tmpPath = tmpPath;
 
@@ -41,21 +40,16 @@ module.exports = class Tent {
     if (this.options.apiFile) {
       // Copy custom API file into temporary directory to add to webpack pipeline
       console.log('\nAdding custom API...');
-      shell.cp(
-        path.join(this.runningDir, this.options.apiFile),
-        path.join(__dirname, 'src/api.js')
-      );
+      shell.cp(this.options.apiFile, path.join(this.tmpPath, 'src/api.js'));
 
-      const customPackagePath = path.join(this.runningDir, 'package.json');
-      if (fs.existsSync(customPackagePath)) {
+      if (this.options.dependencies) {
         // Add API requirements to base package.json
-        const customPackage = require(customPackagePath);
-        const newPackage = merge(
-          packageJSON, pick(customPackage, ['dependencies']));
+        const newPackage = merge({}, packageJSON, {
+          dependencies: this.options.dependencies,
+        });
         fs.writeFileSync(
           path.join(this.tmpPath, 'package.json'),
-          `${JSON.stringify(newPackage, null, 2)}\n`
-        );
+          `${JSON.stringify(newPackage, null, 2)}\n`);
       }
 
       // Build extension with new API
@@ -67,13 +61,6 @@ module.exports = class Tent {
 
   updateManifest() {
     let newManifest = cloneDeep(manifestJSON);
-    if (this.options.bumpVersion) {
-      // Bump version if version level provided
-      console.log('\nBumping version...');
-      newManifest = assignIn({}, manifestJSON, {
-        version: semver.inc(newManifest.version, this.options.bumpVersion),
-      });
-    }
 
     if (this.options.manifestOverrides) {
       console.log('\nOverriding manifest defaults...');
@@ -82,16 +69,13 @@ module.exports = class Tent {
 
     fs.writeFileSync(
       path.join(this.tmpPath, 'manifest.json'),
-      `${JSON.stringify(newManifest, null, 2)}\n`
-    );
+      `${JSON.stringify(newManifest, null, 2)}\n`);
   }
 
   packageExtension() {
     console.log('\nZipping up extension...');
-    const packagePath = path.join(
-      this.runningDir,
-      this.options.outputPath || 'package.zip');
-    shell.exec(`zip -qr ${packagePath} .`, {
+    shell.mkdir('-p', path.dirname(this.options.output));
+    shell.exec(`zip -qr ${this.options.output} .`, {
       cwd: this.tmpPath,
     });
   }
