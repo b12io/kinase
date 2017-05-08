@@ -1,6 +1,16 @@
 {
+  "name": "jrbotros-test-tent",
+  "version": "0.1.0",
+  "description": "Tent is an extension for Google Chrome allowing users to map web content to a list of annotations.",
+  "author": "B12 <hello@b12.io> (https://b12.io/)",
   "scripts": {
     "package": "bash scripts/package.sh"
+  },
+  "main": "Tent.js",
+  "license": "Apache License 2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/b12io/tent.git"
   },
   "devDependencies": {
     "babel-core": "6.24.1",
@@ -21,9 +31,7 @@
     "eslint-plugin-react": "6.10.3",
     "node-sass": "4.5.2",
     "sass-loader": "6.0.3",
-    "semver": "5.3.0",
-    "style-loader": "0.16.1",
-    "webpack": "2.3.3"
+    "style-loader": "0.16.1"
   },
   "dependencies": {
     "css-selector-generator": "1.0.2",
@@ -38,6 +46,7 @@
     "lodash.isnil": "4.0.0",
     "lodash.isundefined": "3.0.1",
     "lodash.mapvalues": "4.6.0",
+    "lodash.merge": "4.6.0",
     "lodash.pick": "4.4.0",
     "lodash.pickby": "4.6.0",
     "lodash.trim": "4.5.1",
@@ -54,8 +63,11 @@
     "redux-promise-middleware": "4.2.0",
     "redux-thunk": "2.2.0",
     "reselect": "3.0.0",
+    "shelljs": "0.7.7",
     "sweetalert2": "6.6.0",
     "tether": "1.4.0",
-    "unique-selector": "0.3.4"
+    "tmp": "0.0.31",
+    "unique-selector": "0.3.4",
+    "webpack": "2.4.1"
   }
 }

@@ -1,9 +1,14 @@
-import testAnnotations from 'redux/testAnnotations.json';
+import request from 'superagent';
 
 export function load() {
-  return Promise.resolve(testAnnotations);
+  return request
+    .get('https://your-api.here/get-annotation-mappings/')
+    .then(response => response.body);
 }
 
-export function save() {
-  return Promise.resolve();
+export function save(state) {
+  return request
+    .post('https://your-api.here/save-annotation-mappings/')
+    .send(state)
+    .then(response => response.body);
 }

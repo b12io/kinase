@@ -13,7 +13,7 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.json', '.jsx'],
     modules: [
-      path.join(__dirname, 'src/'),
+      path.join(__dirname, 'src'),
       'node_modules',
     ],
   },
