@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { connect } from 'react-redux';
 
+import manifest from 'manifest.json';
 import AnnotatedItem from 'components/AnnotatedItem';
 import { saveAnnotatedItems } from 'redux/proxyActions';
 import { annotationContextType } from 'redux/reducers/annotationContext';
@@ -20,7 +21,7 @@ function Sidebar(props) {
   return (
     <div className={styles.sidebar}>
       <header>
-        <span>Tent</span>
+        <span>{ manifest.name }</span>
         <span onClick={props.saveAnnotatedItems}><MdSave /></span>
       </header>
       <ul>{annotatedItems}</ul>

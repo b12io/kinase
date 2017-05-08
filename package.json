@@ -1,16 +1,16 @@
 {
-  "name": "jrbotros-test-tent",
+  "name": "Kinase",
   "version": "0.1.0",
-  "description": "Tent is an extension for Google Chrome allowing users to map web content to a list of annotations.",
+  "description": "Kinase is an extension for Google Chrome allowing users to map web content to a list of annotations.",
   "author": "B12 <hello@b12.io> (https://b12.io/)",
   "scripts": {
     "package": "bash scripts/package.sh"
   },
-  "main": "Tent.js",
+  "main": "Kinase.js",
   "license": "Apache License 2.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/b12io/tent.git"
+    "url": "https://github.com/b12io/kinase.git"
   },
   "devDependencies": {
     "babel-core": "6.24.1",

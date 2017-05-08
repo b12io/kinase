@@ -10,7 +10,7 @@ const packageJSON = require('./package.json');
 
 shell.set('-e');
 
-module.exports = class Tent {
+module.exports = class Kinase {
   constructor(options) {
     this.options = options;
 
@@ -28,15 +28,16 @@ module.exports = class Tent {
         cwd: __dirname,
       });
 
-      this.addCustomAPI();
+      // Update manifest first so the new extension name is used during build
       this.updateManifest();
+      this.buildExtension();
       this.packageExtension();
     }, {
       unsafeCleanup: true,
     });
   }
 
-  addCustomAPI() {
+  buildExtension() {
     if (this.options.apiFile) {
       // Copy custom API file into temporary directory to add to webpack pipeline
       console.log('\nAdding custom API...');
@@ -51,12 +52,12 @@ module.exports = class Tent {
           path.join(this.tmpPath, 'package.json'),
           `${JSON.stringify(newPackage, null, 2)}\n`);
       }
-
-      // Build extension with new API
-      shell.exec('yarn && webpack && rm -rf node_modules/', {
-        cwd: this.tmpPath,
-      });
     }
+
+    // Build extension with new manifest and API
+    shell.exec('yarn && webpack && rm -rf node_modules/', {
+      cwd: this.tmpPath,
+    });
   }
 
   updateManifest() {

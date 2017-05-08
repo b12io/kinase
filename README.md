@@ -1,8 +1,8 @@
-# Tent
-Tent is an extension for Google Chrome allowing users to map web content to a list of annotations.
+# Kinase
+Kinase is an extension for Google Chrome allowing users to map web content to a list of annotations.
 
 ## Contexts
-In Tent, content mapped to the provided annotations is grouped together in a context. This context is keyed by an arbitrary string in the redux state, and might represent a specific user tagging content in the extension or a project that content is being tagged for.
+In Kinase, content mapped to the provided annotations is grouped together in a context. This context is keyed by an arbitrary string in the redux state, and might represent a specific user tagging content in the extension or a project that content is being tagged for.
 
 To switch contexts from another extension or webpage (e.g., if a user first reads an instruction page, you can set the project context from there), you can send a message to the extension with:
 
