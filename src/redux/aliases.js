@@ -41,6 +41,7 @@ export default {
             sources: [{
               url: action.url,
               selector: action.selector,
+              value: action.content,
             }],
           },
           action.append,
