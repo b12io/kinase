@@ -6,9 +6,9 @@
 /******/ 	function __webpack_require__(moduleId) {
 /******/
 /******/ 		// Check if module is in cache
-/******/ 		if(installedModules[moduleId]) {
+/******/ 		if(installedModules[moduleId])
 /******/ 			return installedModules[moduleId].exports;
-/******/ 		}
+/******/
 /******/ 		// Create a new module (and put it into the cache)
 /******/ 		var module = installedModules[moduleId] = {
 /******/ 			i: moduleId,
@@ -240,10 +240,6 @@ process.off = noop;
 process.removeListener = noop;
 process.removeAllListeners = noop;
 process.emit = noop;
-process.prependListener = noop;
-process.prependOnceListener = noop;
-
-process.listeners = function (name) { return [] }
 
 process.binding = function (name) {
     throw new Error('process.binding is not supported');
@@ -8553,16 +8549,15 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var initialState = {
   // TODO(jrbotros): also store the URL for this selector
   content: '',
-  original: '',
   sources: []
 };
 
 var annotatedItemFieldType = exports.annotatedItemFieldType = _propTypes2.default.shape({
   content: _propTypes2.default.string,
-  original: _propTypes2.default.string,
   sources: _propTypes2.default.arrayOf(_propTypes2.default.shape({
     url: _propTypes2.default.string.isRequired,
-    selector: _propTypes2.default.string.isRequired
+    selector: _propTypes2.default.string.isRequired,
+    value: _propTypes2.default.string.isRequired
   }))
 });
 
@@ -8577,14 +8572,13 @@ function annotatedItemField() {
       if (action.append) {
         return (0, _extends3.default)({}, state, {
           content: state.content + '\n' + action.mapping.content,
-          original: state.original + '\n' + action.mapping.content,
           sources: [].concat((0, _toConsumableArray3.default)(state.sources), (0, _toConsumableArray3.default)(action.mapping.sources))
         });
       }
       return (0, _lodash2.default)((0, _extends3.default)({}, state, {
         content: action.mapping.content,
-        original: action.mapping.content,
-        sources: action.mapping.sources
+        // Content is derived from preexisting sources unless specified
+        sources: action.mapping.sources || state.sources
       }), initialState);
     default:
       return state;
