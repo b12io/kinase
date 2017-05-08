@@ -23,7 +23,12 @@
       "description": {
         "content": "About Us",
         "original": "about us",
-        "sources": ["#h1"]
+        "sources": [
+          {
+            "url": "http://www.b12.io",
+            "selector": "#h1"
+          }
+        ]
       }
     }]
   }

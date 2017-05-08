@@ -1,3 +1,5 @@
+/* global window */
+
 import {
   ADD_COLLECTION_MAPPING,
   CLEAR_ERROR,
@@ -48,6 +50,7 @@ export function selectElement(selector, content, append = false) {
     selector,
     content,
     append,
+    url: window.location.href,
     type: SELECT_ELEMENT_PROXY,
   };
 }

@@ -9,13 +9,7 @@
     height: auto;
     box-sizing: border-box;
   }
-}
-
-.fieldGroup {
-  @extend %collapse-group;
-}
-
-.mappingSourcePath {
-  font-style: italic;
-  font-size: 0.8em;
+  .mappingSource {
+    margin-bottom: 5px;
+  }
 }

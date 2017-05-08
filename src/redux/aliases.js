@@ -38,7 +38,10 @@ export default {
           currentField,
           {
             content: action.content,
-            sources: [action.selector],
+            sources: [{
+              url: action.url,
+              selector: action.selector,
+            }],
           },
           action.append,
         ),

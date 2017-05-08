@@ -98,7 +98,19 @@ class AnnotatedItemField extends React.Component {
             <div className={styles.fieldGroup}>
               <div className={styles.fieldLabel}>Sources</div>
               <ul className={styles.mappingSourcePath}>
-                {this.props.mapping.sources.map(source => <li key={source}>{source}</li>)}
+                {
+                  this.props.mapping.sources.map(
+                    source => (
+                      <li
+                        className={styles.mappingSource}
+                        key={`${source.url}-${source.selector}`}
+                      >
+                        <div>{source.url}</div>
+                        <div>{source.selector}</div>
+                      </li>
+                    ),
+                  )
+                }
               </ul>
             </div>
           </Collapse.Panel>
