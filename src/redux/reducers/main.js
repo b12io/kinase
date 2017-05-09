@@ -12,7 +12,7 @@ import {
   UPDATE_FIELD,
 } from 'redux/constants';
 
-const defaultContextKey = 'kinaseDefault';
+const defaultContextKey = '__default';
 
 const initialState = {
   contexts: {
