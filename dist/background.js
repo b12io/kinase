@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 331);
+/******/ 	return __webpack_require__(__webpack_require__.s = 332);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -15207,7 +15207,7 @@ var _promise2 = _interopRequireDefault(_promise);
 
 var _LOAD_ANNOTATIONS_PRO;
 
-var _lodash = __webpack_require__(391);
+var _lodash = __webpack_require__(392);
 
 var _lodash2 = _interopRequireDefault(_lodash);
 
@@ -15215,11 +15215,11 @@ var _lodash3 = __webpack_require__(147);
 
 var _lodash4 = _interopRequireDefault(_lodash3);
 
-var _lodash5 = __webpack_require__(392);
+var _lodash5 = __webpack_require__(393);
 
 var _lodash6 = _interopRequireDefault(_lodash5);
 
-var _api = __webpack_require__(330);
+var _api = __webpack_require__(331);
 
 var _proxyActions = __webpack_require__(41);
 
@@ -15313,7 +15313,7 @@ var _constants = __webpack_require__(20);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var defaultContextKey = 'tentDefault';
+var defaultContextKey = 'kinaseDefault';
 
 var initialState = {
   contexts: (0, _defineProperty3.default)({}, defaultContextKey, (0, _annotationContext2.default)(undefined, {})),
@@ -15413,7 +15413,7 @@ var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = [
 
 exports.default = promiseMiddleware;
 
-var _isPromise = __webpack_require__(576);
+var _isPromise = __webpack_require__(577);
 
 var _isPromise2 = _interopRequireDefault(_isPromise);
 
@@ -15599,7 +15599,8 @@ thunk.withExtraArgument = createThunkMiddleware;
 exports['default'] = thunk;
 
 /***/ }),
-/* 330 */
+/* 330 */,
+/* 331 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -15616,7 +15617,7 @@ var _promise2 = _interopRequireDefault(_promise);
 exports.load = load;
 exports.save = save;
 
-var _testAnnotations = __webpack_require__(590);
+var _testAnnotations = __webpack_require__(591);
 
 var _testAnnotations2 = _interopRequireDefault(_testAnnotations);
 
@@ -15631,7 +15632,7 @@ function save() {
 }
 
 /***/ }),
-/* 331 */
+/* 332 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -15689,7 +15690,6 @@ chrome.browserAction.onClicked.addListener(function () {
 });
 
 /***/ }),
-/* 332 */,
 /* 333 */,
 /* 334 */,
 /* 335 */,
@@ -15748,7 +15748,8 @@ chrome.browserAction.onClicked.addListener(function () {
 /* 388 */,
 /* 389 */,
 /* 390 */,
-/* 391 */
+/* 391 */,
+/* 392 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global, module) {/**
@@ -17603,7 +17604,7 @@ module.exports = isEqual;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(8), __webpack_require__(16)(module)))
 
 /***/ }),
-/* 392 */
+/* 393 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global) {/**
@@ -18113,7 +18114,6 @@ module.exports = pick;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(8)))
 
 /***/ }),
-/* 393 */,
 /* 394 */,
 /* 395 */,
 /* 396 */,
@@ -18296,7 +18296,8 @@ module.exports = pick;
 /* 573 */,
 /* 574 */,
 /* 575 */,
-/* 576 */
+/* 576 */,
+/* 577 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -18318,7 +18319,6 @@ function isPromise(value) {
 }
 
 /***/ }),
-/* 577 */,
 /* 578 */,
 /* 579 */,
 /* 580 */,
@@ -18331,7 +18331,8 @@ function isPromise(value) {
 /* 587 */,
 /* 588 */,
 /* 589 */,
-/* 590 */
+/* 590 */,
+/* 591 */
 /***/ (function(module, exports) {
 
 module.exports = {

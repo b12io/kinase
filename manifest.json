@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
-  "name": "Tent",
-  "description": "Tent is an extension for Google Chrome allowing users to map web content to a list of annotations.",
+  "name": "Kinase",
+  "description": "Kinase is an extension for Google Chrome allowing users to map web content to a list of annotations.",
   "version": "0.1.0",
   "icons": {
     "128": "icon.png"
