@@ -27,4 +27,4 @@ fs.writeFileSync(PACKAGE_PATH, `${JSON.stringify(packageJSON, null, 2)}\n`);
 
 shell.exec(`git commit -am v${packageJSON.version}`);
 shell.exec(`git tag ${packageJSON.version} && git push origin ${packageJSON.version}`);
-shell.exec(`npm publish ${path.join(__dirname, '..')} --tag ${packageJSON.version}}`);
+shell.exec(`npm publish ${path.join(__dirname, '..')}}`);
