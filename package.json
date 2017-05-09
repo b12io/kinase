@@ -1,10 +1,10 @@
 {
-  "name": "Kinase",
+  "name": "kinase",
   "version": "0.1.0",
   "description": "Kinase is an extension for Google Chrome allowing users to map web content to a list of annotations.",
   "author": "B12 <hello@b12.io> (https://b12.io/)",
   "scripts": {
-    "package": "bash scripts/package.sh"
+    "release": "node scripts/release.js"
   },
   "main": "Kinase.js",
   "license": "Apache License 2.0",
@@ -63,6 +63,7 @@
     "redux-promise-middleware": "4.2.0",
     "redux-thunk": "2.2.0",
     "reselect": "3.0.0",
+    "semver": "5.3.0",
     "shelljs": "0.7.7",
     "sweetalert2": "6.6.0",
     "tether": "1.4.0",
