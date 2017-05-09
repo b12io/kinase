@@ -1,5 +1,5 @@
 # Kinase
-Kinase is an extension for Google Chrome allowing users to map web content to a list of annotations.
+Kinase (pronounced ki·nase) is an extension for Google Chrome allowing users to map web content to a list of annotations.
 
 ## Contexts
 In Kinase, content mapped to the provided annotations is grouped together in a context. This context is keyed by an arbitrary string in the redux state, and might represent a specific user tagging content in the extension or a project that content is being tagged for.
