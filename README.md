@@ -128,3 +128,7 @@ If your custom API imports node modules that aren’t in Kinase, you’ll need t
 
 ### Overriding the Manifest
 You can override properties in the [Chrome manifest file](https://developer.chrome.com/extensions/manifest) by passing `options.manifestOverrides` to the Kinase constructor. Your custom properties will be [merged](https://lodash.com/docs/4.17.4#merge) with the existing Kinase manifest. If you want to set the context from outside the extension, be sure to configure  `externally_connectable` accordingly!
+
+
+## Why Kinase?
+Kinases are enzymes that add phosphate groups to other proteins, often as an activation mechanism for complex regulatory pathways. We hope that, by adding annotations, our Kinase can make web content a more active component of your own research pipelines!
