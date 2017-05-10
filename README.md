@@ -4,9 +4,9 @@ Kinase (pronounced ki·nase) is a pluggable browser extension allowing you to la
 
 ## Concepts
 ### Annotations
-Annotations represent the labels which you’d like to select content for. An annotation is represented by a string identifier (e.g., `products`) and a schema containing the fields and their types that can be mapped to the annotation (e.g., `name`, `description`, `photo`). The schema can optionally specify the `multiple` flag to indicate that multiple groupings of these fields can be mapped to the annotation.
+Annotations represent the labels for which you’d like to select content. An annotation is represented by a string identifier (e.g., `products`) and a schema containing the fields and their types that can be mapped to the annotation (e.g., `name`, `description`, `photo`). The schema can optionally specify the `multiple` flag to indicate that multiple groupings of these fields can be mapped to the annotation.
 
-NB: Currently only `text`, `rich-text`, and `image` fields are supported. Help us out and add more!
+The currently supported field types are `text`, `rich-text`, and `image`. Help us out and add more!
 
 ```JSON
 {
@@ -22,7 +22,7 @@ NB: Currently only `text`, `rich-text`, and `image` fields are supported. Help u
 ```
 
 ### Mappings
-A mapping represents selected content for a given annotation. If `multiple` is specified in its schema, the annotation can have multiple mappings (though the mappings for an annotation will be in array form, without the `multiple` flag the array will always be of length 1).
+A mapping represents selected content for a given annotation. If `multiple` is specified in its schema, the annotation can have multiple mappings. The mappings for an annotation will be in array form, but without the `multiple` flag the array will always be of length 1.
 
 Each mapped field in a mapping contains the content taken from the website (with any additional user edits) and the original source of that content (the URL of the website it was taken from, and a unique CSS selector specifying its container).
 
@@ -56,14 +56,14 @@ The mappings for our `products` annotation might look like this:
 ```
 
 ### Contexts
-In Kinase, annotations and their mappings are grouped together in a context. This context is keyed by an arbitrary string in the redux state, and might represent a specific user tagging content in the extension or a project that content is being tagged for.
+In Kinase, annotations and their mappings are grouped together in a context. This context is keyed by an arbitrary string and might represent a specific user tagging content in the extension or a project that content is being tagged for. In this case, our user is doing research on both laptop and desktop vendors, and is using a context to represent each of those research projects:
 
 ```JSON
 {
-  "laptop-world": {
+  "laptop-research": {
     "products": []
   },
-  "desktop-universe": {
+  "desktop-research": {
     "products": []
   }
 }
@@ -89,6 +89,8 @@ You can get your EXTENSION_ID from the Chrome store once you've published your e
 By default, all mapped content is stored in a default context, so if you don't need to switch contexts you can ignore the concept entirely.
 
 ## Configuration
+Check out [our example](https://github.com/b12io/kinase-example) and read more about the options below!
+
 First, install Kinase with
 ```bash
 npm install kinase
@@ -100,8 +102,6 @@ const Kinase = require(‘kinase’)
 const extension = new Kinase(options)
 ```
 This will create a zipfile of your extension at the path provided in `options.output` (required).
-
-Check out [our example](https://github.com/b12io/kinase-example) and read more about the options below.
 
 ### Providing a Custom API
 To use Kinase with your own data, you’ll need to provide `options.api_file`, the path to your custom API. This file should be written in ES6 and will be injected into Kinase’s webpack build to create your customized extension.
