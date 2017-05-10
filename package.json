@@ -59,6 +59,7 @@
     "react-icons": "2.2.3",
     "react-quill": "1.0.0-rc.2",
     "react-redux": "5.0.4",
+    "react-spinkit": "2.1.2",
     "redux": "3.6.0",
     "redux-promise-middleware": "4.2.0",
     "redux-thunk": "2.2.0",

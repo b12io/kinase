@@ -1,5 +1,10 @@
 @import '~variables.scss';
 
+:global(.sk-three-bounce > div) {
+  width: 10px;
+  height: 10px;
+}
+
 .sidebar {
   position: relative;
   color: $dark-gray;
@@ -12,6 +17,7 @@
     border-bottom: 1px solid $dark-gray;
     font-size: 1.5em;
     margin-bottom: $default-padding;
+    height: 40px;
   }
 
   ul, li {

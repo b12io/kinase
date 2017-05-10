@@ -2,6 +2,7 @@ import MdSave from 'react-icons/lib/md/save';
 import PropTypes from 'prop-types';
 import React from 'react';
 import { connect } from 'react-redux';
+import Spinner from 'react-spinkit';
 
 import manifest from 'manifest.json';
 import AnnotatedItem from 'components/AnnotatedItem';
@@ -22,7 +23,13 @@ function Sidebar(props) {
     <div className={styles.sidebar}>
       <header>
         <span>{ manifest.name }</span>
-        <span onClick={props.saveAnnotatedItems}><MdSave /></span>
+        <span onClick={props.saveAnnotatedItems}>
+          {
+            props.saving
+            ? <Spinner noFadeIn spinnerName={'three-bounce'} />
+            : <MdSave />
+          }
+        </span>
       </header>
       <ul>{annotatedItems}</ul>
     </div>
@@ -32,11 +39,13 @@ function Sidebar(props) {
 Sidebar.propTypes = {
   saveAnnotatedItems: PropTypes.func.isRequired,
   context: annotationContextType.isRequired,
+  saving: PropTypes.bool.isRequired,
 };
 
 export default connect(
   state => ({
     context: currentContextSelector(state),
+    saving: state.saving,
   }),
   dispatch => ({
     saveAnnotatedItems: () => dispatch(saveAnnotatedItems()),
