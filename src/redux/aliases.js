@@ -24,7 +24,7 @@ export default {
   }),
 
   [SAVE_ANNOTATED_ITEMS_PROXY]: () => (dispatch, getState) => dispatch({
-    type: SAVE_ANNOTATED_ITEMS,
+    type: SAVE_ANNOTATED_ITEMS.BASE,
     payload: save(getState()),
   }),
 

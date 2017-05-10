@@ -7,6 +7,7 @@ import {
   CLEAR_ERROR,
   DELETE_COLLECTION_MAPPING,
   LOAD_ANNOTATIONS,
+  SAVE_ANNOTATED_ITEMS,
   SET_CONTEXT_KEY,
   SET_CURRENT_FIELD,
   UPDATE_FIELD,
@@ -24,6 +25,7 @@ const initialState = {
   currentField: null,
   error: null,
   ready: false,
+  saving: false,
 };
 
 export default function main(state = initialState, action) {
@@ -48,6 +50,18 @@ export default function main(state = initialState, action) {
         ready: true,
         contexts: mapValues(
           state.contexts, context => annotationContext(context, action)),
+      };
+    }
+    case SAVE_ANNOTATED_ITEMS.PENDING: {
+      return {
+        ...state,
+        saving: true,
+      };
+    }
+    case SAVE_ANNOTATED_ITEMS.FULFILLED: {
+      return {
+        ...state,
+        saving: false,
       };
     }
     case SET_CONTEXT_KEY: {
