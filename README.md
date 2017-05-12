@@ -6,7 +6,7 @@ Kinase (pronounced ki·nase) is a pluggable browser extension allowing you to la
 ### Annotations
 Annotations represent the labels for which you’d like to select content. An annotation is represented by a string identifier (e.g., `products`) and a schema containing the fields and their types that can be mapped to the annotation (e.g., `name`, `description`, `photo`). The schema can optionally specify the `multiple` flag to indicate that multiple groupings of these fields can be mapped to the annotation.
 
-The currently supported field types are `text`, `rich-text`, and `image`. Help us out and add more!
+The currently supported field types are text, rich-text, and image. Help us out and add more! Here is an example description of a schema for a collection of `products`:
 
 ```JSON
 {
@@ -131,4 +131,4 @@ You can override properties in the [Chrome manifest file](https://developer.chro
 
 
 ## Why Kinase?
-Kinases are enzymes that add phosphate groups to other proteins, often as an activation mechanism for complex regulatory pathways. We hope that, by adding annotations, our Kinase can make web content a more active component of your own research pipelines!
+Kinases are enzymes that add phosphate groups to other proteins, often as an activation mechanism for complex regulatory pathways. We hope that, by adding annotations, our Kinase can make web content a more active component of your own pipelines!
