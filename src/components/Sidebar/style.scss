@@ -25,6 +25,7 @@
     border-bottom: 1px solid $dark-gray;
     font-size: 1.5em;
     line-height: 0;
+    margin-bottom: $default-padding;
   }
 
   .annotationList {
@@ -36,9 +37,32 @@
   .saveButton {
     cursor: pointer;
   }
-  
+
   .saveSpinner {
     cursor: not-allowed;
+  }
+
+  .searchBox {
+    position: relative;
+    padding: 0 $default-padding;
+
+    input {
+      width: 100%;
+      padding-right: 20px;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    &::after {
+      content: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAYAAAA71pVKAAAAAXNSR0IArs4c6QAAAQJJREFUKBWVkr2uQUEUhf3ET6GRaC5aFRoJKrf1BKpb8SwqovYGXkCj00k0QnRKEYkILYobvpUYmeMMyVnJl7P3mjN7Zu9zwiGv2qRFyMMSRrAFp6JPN8XzBj+wgDkUYAg7WINTYdwpDECxrRLJHeq2accdkgm8bzTvNAg2EDOGeUYI1KNO1gkuzTA1g8T7ojbn4ONQWPuHPWgeHmnzCqoe15tkSNPgPEAn68oVcOmA2XMtGK9FoE/VhOTTVNExqLCGZnxCv2pYauEC6lF0oQxX6IOvb7yX9NPEQafan+aPXDdQC18LsO6Tip5BBY6gIQaSbnMCFRCBZRcIvFkbsvCr4AFGOCxQy+JdGQAAAABJRU5ErkJggg==');
+      display: block;
+      position: absolute;
+      top: 50%;
+      right: 0;
+      transform: translate(-100%, -50%);
+      font-size: 20px;
+      opacity: 0.6;
+    }
   }
 
   ul, li {
