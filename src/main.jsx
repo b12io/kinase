@@ -64,6 +64,7 @@ if (!document.querySelector(styles.tentMain)) {
 
   // Prevent inheriting styles from parent elements
   reactRoot.style.all = 'initial';
+  reactRoot.style.display = 'block';
 
   const highlighter = new Highlighter();
 

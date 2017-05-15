@@ -39993,13 +39993,13 @@ function Sidebar(props) {
       ),
       _react2.default.createElement(
         'span',
-        { onClick: props.saveAnnotatedItems },
+        { className: _style2.default.saveIndicator, onClick: props.saveAnnotatedItems },
         props.saving ? _react2.default.createElement(_reactSpinkit2.default, { noFadeIn: true, spinnerName: 'three-bounce' }) : _react2.default.createElement(_save2.default, null)
       )
     ),
     _react2.default.createElement(
       'ul',
-      null,
+      { className: _style2.default.annotationList },
       annotatedItems
     )
   );
@@ -44234,6 +44234,7 @@ if (!document.querySelector(_main2.default.tentMain)) {
 
   // Prevent inheriting styles from parent elements
   reactRoot.style.all = 'initial';
+  reactRoot.style.display = 'block';
 
   var highlighter = new _highlighter2.default();
 
@@ -45466,11 +45467,13 @@ exports = module.exports = __webpack_require__(10)(undefined);
 
 
 // module
-exports.push([module.i, ".sk-three-bounce > div {\n  width: 10px;\n  height: 10px; }\n\n.style__sidebar___QGmwG {\n  position: relative;\n  color: #333;\n  padding: 15px; }\n  .style__sidebar___QGmwG header {\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n    border-bottom: 1px solid #333;\n    font-size: 1.5em;\n    margin-bottom: 15px;\n    height: 40px; }\n  .style__sidebar___QGmwG ul, .style__sidebar___QGmwG li {\n    list-style: none;\n    margin: 0;\n    padding: 0; }\n\n.rc-collapse-header {\n  display: flex;\n  align-items: center;\n  padding: 0 15px; }\n", ""]);
+exports.push([module.i, ".sk-three-bounce > div {\n  width: 10px;\n  height: 10px; }\n\n.style__sidebar___QGmwG {\n  position: absolute;\n  top: 0;\n  bottom: 0;\n  left: 0;\n  right: 0;\n  color: #333;\n  display: flex;\n  flex-direction: column; }\n  .style__sidebar___QGmwG header {\n    flex: 0 0 auto;\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n    border-bottom: 1px solid #333;\n    font-size: 1.5em;\n    height: 25px;\n    padding: 10px; }\n  .style__sidebar___QGmwG .style__annotationList___3D1Qa {\n    flex: 1 1 auto;\n    overflow: scroll;\n    padding: 10px; }\n  .style__sidebar___QGmwG .style__saveIndicator___1z6ya {\n    line-height: 0; }\n  .style__sidebar___QGmwG ul, .style__sidebar___QGmwG li {\n    list-style: none;\n    margin: 0;\n    padding: 0; }\n\n.rc-collapse-header {\n  display: flex;\n  align-items: center;\n  padding: 0 10px; }\n", ""]);
 
 // exports
 exports.locals = {
-	"sidebar": "style__sidebar___QGmwG"
+	"sidebar": "style__sidebar___QGmwG",
+	"annotationList": "style__annotationList___3D1Qa",
+	"saveIndicator": "style__saveIndicator___1z6ya"
 };
 
 /***/ }),
@@ -45498,7 +45501,7 @@ exports = module.exports = __webpack_require__(10)(undefined);
 
 
 // module
-exports.push([module.i, ".main__tentSidebar___oO6zE {\n  position: fixed;\n  top: 0;\n  left: 0;\n  bottom: 0;\n  width: 30vw;\n  overflow: scroll;\n  background: white;\n  box-shadow: 1px 0 1px #333; }\n\n.main__tentMain___RGNyt {\n  position: fixed;\n  top: 0;\n  left: 30vw;\n  bottom: 0;\n  right: 0;\n  overflow: scroll;\n  padding-left: 15px; }\n\n.main__tentHighlight___3D8Bz {\n  border: 1px solid red;\n  box-sizing: border-box;\n  pointer-events: none; }\n\n.main__tentHighlightTarget___472DU {\n  cursor: cell; }\n", ""]);
+exports.push([module.i, ".main__tentSidebar___oO6zE {\n  position: fixed;\n  top: 0;\n  left: 0;\n  bottom: 0;\n  width: 30vw;\n  background: white;\n  box-shadow: 1px 0 1px #333; }\n\n.main__tentMain___RGNyt {\n  position: fixed;\n  top: 0;\n  left: 30vw;\n  bottom: 0;\n  right: 0;\n  overflow: scroll;\n  padding-left: 10px; }\n\n.main__tentHighlight___3D8Bz {\n  border: 1px solid red;\n  box-sizing: border-box;\n  pointer-events: none; }\n\n.main__tentHighlightTarget___472DU {\n  cursor: cell; }\n", ""]);
 
 // exports
 exports.locals = {
