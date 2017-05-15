@@ -17,3 +17,8 @@
 .collapseGroup {
   @extend %collapse-group;
 }
+
+.addCollectionMapping,
+.deleteCollectionMapping {
+  cursor: pointer;
+}
