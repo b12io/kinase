@@ -23,7 +23,7 @@ function Sidebar(props) {
     <div className={styles.sidebar}>
       <header>
         <span>{ manifest.name }</span>
-        <span onClick={props.saveAnnotatedItems}>
+        <span className={styles.saveIndicator} onClick={props.saveAnnotatedItems}>
           {
             props.saving
             ? <Spinner noFadeIn spinnerName={'three-bounce'} />
@@ -31,7 +31,7 @@ function Sidebar(props) {
           }
         </span>
       </header>
-      <ul>{annotatedItems}</ul>
+      <ul className={styles.annotationList}>{annotatedItems}</ul>
     </div>
   );
 }

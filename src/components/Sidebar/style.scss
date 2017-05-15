@@ -6,18 +6,34 @@
 }
 
 .sidebar {
-  position: relative;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
   color: $dark-gray;
-  padding: $default-padding;
+  display: flex;
+  flex-direction: column;
 
   header {
+    flex: 0 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid $dark-gray;
     font-size: 1.5em;
-    margin-bottom: $default-padding;
-    height: 40px;
+    height: 25px;
+    padding: $default-padding;
+  }
+
+  .annotationList {
+    flex: 1 1 auto;
+    overflow: scroll;
+    padding: $default-padding;
+  }
+
+  .saveIndicator {
+    line-height: 0;
   }
 
   ul, li {
