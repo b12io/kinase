@@ -36,16 +36,7 @@ module.exports = {
       }, {
         test: /\.jsx?$/,
         exclude: [/node_modules/, /.*\.min\.js/],
-        use: {
-          loader: 'babel-loader',
-          options: {
-            presets: ['es2015', 'react'],
-            plugins: [
-              'transform-runtime',
-              'transform-object-rest-spread',
-            ],
-          },
-        },
+        use: 'babel-loader',
       }, {
         /**
          * Load custom styles as CSS modules, but don't namespace imported third-party styles
