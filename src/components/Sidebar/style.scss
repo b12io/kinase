@@ -20,10 +20,11 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid $dark-gray;
-    font-size: 1.5em;
     height: 25px;
     padding: $default-padding;
+    border-bottom: 1px solid $dark-gray;
+    font-size: 1.5em;
+    line-height: 0;
   }
 
   .annotationList {
@@ -32,8 +33,12 @@
     padding: $default-padding;
   }
 
-  .saveIndicator {
-    line-height: 0;
+  .saveButton {
+    cursor: pointer;
+  }
+  
+  .saveSpinner {
+    cursor: not-allowed;
   }
 
   ul, li {

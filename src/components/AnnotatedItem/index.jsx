@@ -21,9 +21,10 @@ class AnnotatedItem extends React.Component {
     const collectionHeader = (
       <div className={styles.annotatedItemHeader}>
         <span>{collectionIndex}</span>
-        <span onClick={event => this.props.deleteCollectionMapping(event, collectionIndex)}>
-          <MdDelete />
-        </span>
+        <MdDelete
+          className={styles.deleteCollectionMapping}
+          onClick={event => this.props.deleteCollectionMapping(event, collectionIndex)}
+        />
       </div>
     );
     return (
@@ -39,9 +40,10 @@ class AnnotatedItem extends React.Component {
     if (this.props.item.schema.multiple) {
       // Include add button for annotations that support multiple items
       return (
-        <span onClick={this.props.addCollectionMapping}>
-          <MdAdd />
-        </span>
+        <MdAdd
+          className={styles.addCollectionMapping}
+          onClick={this.props.addCollectionMapping}
+        />
       );
     }
     return null;

@@ -39993,8 +39993,8 @@ function Sidebar(props) {
       ),
       _react2.default.createElement(
         'span',
-        { className: _style2.default.saveIndicator, onClick: props.saveAnnotatedItems },
-        props.saving ? _react2.default.createElement(_reactSpinkit2.default, { noFadeIn: true, spinnerName: 'three-bounce' }) : _react2.default.createElement(_save2.default, null)
+        { onClick: props.saveAnnotatedItems },
+        props.saving ? _react2.default.createElement(_reactSpinkit2.default, { className: _style2.default.saveSpinner, noFadeIn: true, spinnerName: 'three-bounce' }) : _react2.default.createElement(_save2.default, { className: _style2.default.saveButton })
       )
     ),
     _react2.default.createElement(
@@ -43353,13 +43353,12 @@ var AnnotatedItem = function (_React$Component) {
           null,
           collectionIndex
         ),
-        _react2.default.createElement(
-          'span',
-          { onClick: function onClick(event) {
-              return _this2.props.deleteCollectionMapping(event, collectionIndex);
-            } },
-          _react2.default.createElement(_delete2.default, null)
-        )
+        _react2.default.createElement(_delete2.default, {
+          className: _style2.default.deleteCollectionMapping,
+          onClick: function onClick(event) {
+            return _this2.props.deleteCollectionMapping(event, collectionIndex);
+          }
+        })
       );
       return _react2.default.createElement(
         _rcCollapse2.default,
@@ -43376,11 +43375,10 @@ var AnnotatedItem = function (_React$Component) {
     value: function getHeaderOptions() {
       if (this.props.item.schema.multiple) {
         // Include add button for annotations that support multiple items
-        return _react2.default.createElement(
-          'span',
-          { onClick: this.props.addCollectionMapping },
-          _react2.default.createElement(_add2.default, null)
-        );
+        return _react2.default.createElement(_add2.default, {
+          className: _style2.default.addCollectionMapping,
+          onClick: this.props.addCollectionMapping
+        });
       }
       return null;
     }
@@ -45432,13 +45430,15 @@ exports = module.exports = __webpack_require__(10)(undefined);
 
 
 // module
-exports.push([module.i, ".style__annotatedItem___3gPW8, .style__collapseGroup___1Gr0R {\n  padding: 5px;\n  display: flex;\n  flex-direction: column; }\n  .style__annotatedItem___3gPW8 > *:not(:last-child), .style__collapseGroup___1Gr0R > *:not(:last-child) {\n    margin-bottom: 5px; }\n\n.style__annotatedItemHeader___KfJfW {\n  display: flex;\n  flex: 1 0 auto;\n  line-indent: 0;\n  text-indent: 0;\n  justify-content: space-between;\n  align-items: center; }\n", ""]);
+exports.push([module.i, ".style__annotatedItem___3gPW8, .style__collapseGroup___1Gr0R {\n  padding: 5px;\n  display: flex;\n  flex-direction: column; }\n  .style__annotatedItem___3gPW8 > *:not(:last-child), .style__collapseGroup___1Gr0R > *:not(:last-child) {\n    margin-bottom: 5px; }\n\n.style__annotatedItemHeader___KfJfW {\n  display: flex;\n  flex: 1 0 auto;\n  line-indent: 0;\n  text-indent: 0;\n  justify-content: space-between;\n  align-items: center; }\n\n.style__addCollectionMapping___2vTu5,\n.style__deleteCollectionMapping___L2uK- {\n  cursor: pointer; }\n", ""]);
 
 // exports
 exports.locals = {
 	"annotatedItem": "style__annotatedItem___3gPW8",
 	"collapseGroup": "style__collapseGroup___1Gr0R",
-	"annotatedItemHeader": "style__annotatedItemHeader___KfJfW"
+	"annotatedItemHeader": "style__annotatedItemHeader___KfJfW",
+	"addCollectionMapping": "style__addCollectionMapping___2vTu5",
+	"deleteCollectionMapping": "style__deleteCollectionMapping___L2uK-"
 };
 
 /***/ }),
@@ -45467,13 +45467,14 @@ exports = module.exports = __webpack_require__(10)(undefined);
 
 
 // module
-exports.push([module.i, ".sk-three-bounce > div {\n  width: 10px;\n  height: 10px; }\n\n.style__sidebar___QGmwG {\n  position: absolute;\n  top: 0;\n  bottom: 0;\n  left: 0;\n  right: 0;\n  color: #333;\n  display: flex;\n  flex-direction: column; }\n  .style__sidebar___QGmwG header {\n    flex: 0 0 auto;\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n    border-bottom: 1px solid #333;\n    font-size: 1.5em;\n    height: 25px;\n    padding: 10px; }\n  .style__sidebar___QGmwG .style__annotationList___3D1Qa {\n    flex: 1 1 auto;\n    overflow: scroll;\n    padding: 10px; }\n  .style__sidebar___QGmwG .style__saveIndicator___1z6ya {\n    line-height: 0; }\n  .style__sidebar___QGmwG ul, .style__sidebar___QGmwG li {\n    list-style: none;\n    margin: 0;\n    padding: 0; }\n\n.rc-collapse-header {\n  display: flex;\n  align-items: center;\n  padding: 0 10px; }\n", ""]);
+exports.push([module.i, ".sk-three-bounce > div {\n  width: 10px;\n  height: 10px; }\n\n.style__sidebar___QGmwG {\n  position: absolute;\n  top: 0;\n  bottom: 0;\n  left: 0;\n  right: 0;\n  color: #333;\n  display: flex;\n  flex-direction: column; }\n  .style__sidebar___QGmwG header {\n    flex: 0 0 auto;\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n    height: 25px;\n    padding: 10px;\n    border-bottom: 1px solid #333;\n    font-size: 1.5em;\n    line-height: 0; }\n  .style__sidebar___QGmwG .style__annotationList___3D1Qa {\n    flex: 1 1 auto;\n    overflow: scroll;\n    padding: 10px; }\n  .style__sidebar___QGmwG .style__saveButton____2s7B {\n    cursor: pointer; }\n  .style__sidebar___QGmwG .style__saveSpinner___13YyS {\n    cursor: not-allowed; }\n  .style__sidebar___QGmwG ul, .style__sidebar___QGmwG li {\n    list-style: none;\n    margin: 0;\n    padding: 0; }\n\n.rc-collapse-header {\n  display: flex;\n  align-items: center;\n  padding: 0 10px; }\n", ""]);
 
 // exports
 exports.locals = {
 	"sidebar": "style__sidebar___QGmwG",
 	"annotationList": "style__annotationList___3D1Qa",
-	"saveIndicator": "style__saveIndicator___1z6ya"
+	"saveButton": "style__saveButton____2s7B",
+	"saveSpinner": "style__saveSpinner___13YyS"
 };
 
 /***/ }),

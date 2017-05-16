@@ -23,11 +23,11 @@ function Sidebar(props) {
     <div className={styles.sidebar}>
       <header>
         <span>{ manifest.name }</span>
-        <span className={styles.saveIndicator} onClick={props.saveAnnotatedItems}>
+        <span onClick={props.saveAnnotatedItems}>
           {
             props.saving
-            ? <Spinner noFadeIn spinnerName={'three-bounce'} />
-            : <MdSave />
+            ? <Spinner className={styles.saveSpinner} noFadeIn spinnerName={'three-bounce'} />
+            : <MdSave className={styles.saveButton} />
           }
         </span>
       </header>
