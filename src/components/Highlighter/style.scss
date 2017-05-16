@@ -1,0 +1,13 @@
+.kinaseHighlight {
+  border: 1px solid red;
+  box-sizing: border-box;
+  pointer-events: none;
+  display: none;
+  &.visible {
+    display: block;
+  }
+}
+
+.kinaseHighlightTarget {
+  cursor: cell;
+}

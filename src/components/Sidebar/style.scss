@@ -6,11 +6,8 @@
 }
 
 .sidebar {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  height: 100%;
+  background: white;
   color: $dark-gray;
   display: flex;
   flex-direction: column;
@@ -26,6 +23,7 @@
     font-size: 1.5em;
     line-height: 0;
     margin-bottom: $default-padding;
+    box-sizing: content-box;
   }
 
   .annotationList {

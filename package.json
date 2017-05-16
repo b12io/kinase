@@ -34,6 +34,7 @@
     "style-loader": "0.16.1"
   },
   "dependencies": {
+    "classnames": "2.2.5",
     "css-selector-generator": "1.0.2",
     "dropzone": "4.3.0",
     "lodash.clonedeep": "4.5.0",
