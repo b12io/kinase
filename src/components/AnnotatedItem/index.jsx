@@ -50,7 +50,7 @@ class AnnotatedItem extends React.Component {
   }
 
   getMappingFields(collectionMapping, collectionIndex) {
-    const fields = Object.keys(this.props.item.schema.fields).map(fieldName => (
+    const fields = Object.keys(this.props.item.schema.fields).sort().map(fieldName => (
       <li key={fieldName}>
         <AnnotatedItemField
           annotationName={this.props.annotationName}

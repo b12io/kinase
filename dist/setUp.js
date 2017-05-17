@@ -40749,7 +40749,7 @@ var AnnotatedItem = function (_React$Component) {
     value: function getMappingFields(collectionMapping, collectionIndex) {
       var _this3 = this;
 
-      var fields = (0, _keys2.default)(this.props.item.schema.fields).map(function (fieldName) {
+      var fields = (0, _keys2.default)(this.props.item.schema.fields).sort().map(function (fieldName) {
         return _react2.default.createElement(
           'li',
           { key: fieldName },
