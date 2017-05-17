@@ -7,6 +7,7 @@ import {
   LOAD_ANNOTATIONS_PROXY,
   SAVE_ANNOTATED_ITEMS_PROXY,
   SELECT_ELEMENT_PROXY,
+  SET_ACTIVE_PROXY,
   SET_CONTEXT_KEY,
   SET_CURRENT_FIELD,
   UPDATE_FIELD_PROXY,
@@ -22,6 +23,13 @@ export function addCollectionMapping(annotationName) {
 export function clearError() {
   return {
     type: CLEAR_ERROR,
+  };
+}
+
+export function setActive(active) {
+  return {
+    active,
+    type: SET_ACTIVE_PROXY,
   };
 }
 

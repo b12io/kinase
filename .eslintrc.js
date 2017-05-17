@@ -14,5 +14,8 @@ module.exports = {
 
     // TODO(jrbotros): assign collection items a unique identifier
     'react/no-array-index-key': 0,
+
+    // We use dangerouslySetInnerHTML to inject the website content into our react wrapper
+    'react/no-danger': 0,
   }
 };

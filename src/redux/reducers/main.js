@@ -8,6 +8,7 @@ import {
   DELETE_COLLECTION_MAPPING,
   LOAD_ANNOTATIONS,
   SAVE_ANNOTATED_ITEMS,
+  SET_ACTIVE,
   SET_CONTEXT_KEY,
   SET_CURRENT_FIELD,
   UPDATE_FIELD,
@@ -24,6 +25,7 @@ const initialState = {
   currentIndex: null,
   currentField: null,
   error: null,
+  active: false,
   ready: false,
   saving: false,
 };
@@ -62,6 +64,12 @@ export default function main(state = initialState, action) {
       return {
         ...state,
         saving: false,
+      };
+    }
+    case SET_ACTIVE: {
+      return {
+        ...state,
+        active: action.active,
       };
     }
     case SET_CONTEXT_KEY: {

@@ -2,7 +2,7 @@ import isEqual from 'lodash.isequal';
 import isNil from 'lodash.isnil';
 import pick from 'lodash.pick';
 import { load, save } from 'api';
-import { updateField } from 'redux/proxyActions';
+import { setCurrentField, updateField } from 'redux/proxyActions';
 import { currentContextSelector } from 'redux/selectors';
 import {
   LOAD_ANNOTATIONS,
@@ -10,6 +10,8 @@ import {
   SAVE_ANNOTATED_ITEMS,
   SAVE_ANNOTATED_ITEMS_PROXY,
   SELECT_ELEMENT_PROXY,
+  SET_ACTIVE,
+  SET_ACTIVE_PROXY,
   UPDATE_FIELD,
   UPDATE_FIELD_PROXY,
 } from 'redux/constants';
@@ -51,15 +53,24 @@ export default {
     return Promise.resolve();
   },
 
+  [SET_ACTIVE_PROXY]: action => (dispatch) => {
+    dispatch(setCurrentField());
+    return dispatch({
+      ...action,
+      type: SET_ACTIVE,
+    });
+  },
+
   [UPDATE_FIELD_PROXY]: action => (dispatch, getState) => {
     const currentMapping = currentContextSelector(getState())[
       action.annotationName].collectionMappings[action.collectionIndex][action.fieldName];
     if (!isEqual(action.mapping, pick(currentMapping, Object.keys(action.mapping)))) {
       // Only fire action if something will change
-      dispatch({
+      return dispatch({
         ...action,
         type: UPDATE_FIELD,
       });
     }
+    return Promise.resolve();
   },
 };
