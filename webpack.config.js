@@ -20,7 +20,8 @@ module.exports = {
   },
   entry: {
     background: 'background.js',
-    main: 'main.jsx',
+    setUp: 'setUp.jsx',
+    tearDown: 'tearDown.jsx',
   },
   output: {
     path: path.join(__dirname, 'dist'),

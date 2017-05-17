@@ -14,7 +14,7 @@ import Highlighter from 'components/Highlighter';
 import Sidebar from 'components/Sidebar';
 import {
   selectElement as _selectElement,
-  setActive as _setActive,
+  setExpanded as _setExpanded,
 } from 'redux/proxyActions';
 import { currentFieldTypeSelector } from 'redux/selectors';
 
@@ -81,7 +81,7 @@ class Main extends React.Component {
 
   toggleOpen() {
     this.setState({ highlightTarget: null });
-    this.props.setActive(!this.props.active);
+    this.props.setExpanded(!this.props.expanded);
   }
 
   render() {
@@ -90,7 +90,7 @@ class Main extends React.Component {
         <div
           className={
             classNames(styles.kinaseSidebar, {
-              [styles.sidebarOpen]: this.props.active,
+              [styles.sidebarOpen]: this.props.expanded,
             })
           }
         >
@@ -102,7 +102,7 @@ class Main extends React.Component {
         <div
           className={
             classNames(styles.kinaseMain, {
-              [styles.sidebarOpen]: this.props.active,
+              [styles.sidebarOpen]: this.props.expanded,
             })
           }
           onClick={this.clickMain}
@@ -116,21 +116,21 @@ class Main extends React.Component {
 }
 
 Main.propTypes = {
-  active: PropTypes.bool.isRequired,
   body: PropTypes.string.isRequired,
   currentFieldType: PropTypes.string.isRequired,
+  expanded: PropTypes.bool.isRequired,
   selectElement: PropTypes.func.isRequired,
-  setActive: PropTypes.func.isRequired,
+  setExpanded: PropTypes.func.isRequired,
 };
 
 export default connect(
   state => ({
     currentFieldType: currentFieldTypeSelector(state) || '',
-    active: state.active,
+    expanded: state.expanded,
   }),
   dispatch => ({
-    setActive: active => dispatch(_setActive(active)),
     selectElement: (selector, content, append) => dispatch(
       _selectElement(selector, content, append)),
+    setExpanded: expanded => dispatch(_setExpanded(expanded)),
   }),
 )(Main);
