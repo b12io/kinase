@@ -9,6 +9,7 @@ import {
   LOAD_ANNOTATIONS,
   SAVE_ANNOTATED_ITEMS,
   SET_ACTIVE,
+  SET_EXPANDED,
   SET_CONTEXT_KEY,
   SET_CURRENT_FIELD,
   UPDATE_FIELD,
@@ -26,6 +27,7 @@ const initialState = {
   currentField: null,
   error: null,
   active: false,
+  expanded: true,
   ready: false,
   saving: false,
 };
@@ -70,6 +72,13 @@ export default function main(state = initialState, action) {
       return {
         ...state,
         active: action.active,
+        expanded: false,
+      };
+    }
+    case SET_EXPANDED: {
+      return {
+        ...state,
+        expanded: action.expanded,
       };
     }
     case SET_CONTEXT_KEY: {

@@ -1,0 +1,5 @@
+// Prevent inheriting styles from parent elements
+.reactRoot {
+  all: initial;
+  display: block;
+}

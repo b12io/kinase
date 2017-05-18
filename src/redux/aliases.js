@@ -12,6 +12,8 @@ import {
   SELECT_ELEMENT_PROXY,
   SET_ACTIVE,
   SET_ACTIVE_PROXY,
+  SET_EXPANDED,
+  SET_EXPANDED_PROXY,
   UPDATE_FIELD,
   UPDATE_FIELD_PROXY,
 } from 'redux/constants';
@@ -58,6 +60,14 @@ export default {
     return dispatch({
       ...action,
       type: SET_ACTIVE,
+    });
+  },
+
+  [SET_EXPANDED_PROXY]: action => (dispatch) => {
+    dispatch(setCurrentField());
+    return dispatch({
+      ...action,
+      type: SET_EXPANDED,
     });
   },
 

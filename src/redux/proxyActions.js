@@ -9,6 +9,7 @@ import {
   SELECT_ELEMENT_PROXY,
   SET_ACTIVE_PROXY,
   SET_CONTEXT_KEY,
+  SET_EXPANDED_PROXY,
   SET_CURRENT_FIELD,
   UPDATE_FIELD_PROXY,
 } from 'redux/constants';
@@ -23,13 +24,6 @@ export function addCollectionMapping(annotationName) {
 export function clearError() {
   return {
     type: CLEAR_ERROR,
-  };
-}
-
-export function setActive(active) {
-  return {
-    active,
-    type: SET_ACTIVE_PROXY,
   };
 }
 
@@ -63,6 +57,13 @@ export function selectElement(selector, content, append = false) {
   };
 }
 
+export function setActive(active) {
+  return {
+    active,
+    type: SET_ACTIVE_PROXY,
+  };
+}
+
 export function setContextKey(contextKey) {
   return {
     contextKey,
@@ -76,6 +77,13 @@ export function setCurrentField(annotationName, collectionIndex, fieldName) {
     collectionIndex,
     fieldName,
     type: SET_CURRENT_FIELD,
+  };
+}
+
+export function setExpanded(expanded) {
+  return {
+    expanded,
+    type: SET_EXPANDED_PROXY,
   };
 }
 

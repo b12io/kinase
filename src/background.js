@@ -8,7 +8,7 @@ import { alias, wrapStore } from 'react-chrome-redux';
 import aliases from 'redux/aliases';
 import main from 'redux/reducers/main';
 import { promiseTypeSuffixes, PORT_NAME } from 'redux/constants';
-import { setContextKey } from 'redux/proxyActions';
+import { setActive, setContextKey } from 'redux/proxyActions';
 
 const store = createStore(
   main,
@@ -29,8 +29,35 @@ chrome.runtime.onMessageExternal.addListener((request) => {
   }
 });
 
-chrome.browserAction.onClicked.addListener(() => {
-  chrome.tabs.executeScript(null, {
-    file: 'dist/main.js',
+const setUp = (tabId = null) => {
+  chrome.tabs.executeScript(tabId, {
+    file: 'dist/setUp.js',
   });
+};
+
+const tearDown = (tabId = null) => {
+  chrome.tabs.executeScript(tabId, {
+    file: 'dist/tearDown.js',
+  });
+};
+
+chrome.browserAction.onClicked.addListener(() => {
+  const active = store.getState().active;
+  store.dispatch(setActive(!active));
+
+  let tabCallback;
+  if (active) {
+    // Tear down extension on all tabs
+    tabCallback = tab => tearDown(tab.id);
+
+    // Prevent set up when page is refreshed
+    chrome.tabs.onUpdated.removeListener(setUp);
+  } else {
+    // Set up extension on all tabs
+    tabCallback = tab => setUp(tab.id);
+
+    // Set up extension when page is refreshed
+    chrome.tabs.onUpdated.addListener(setUp);
+  }
+  chrome.tabs.query({}, tabs => tabs.forEach(tabCallback));
 });
