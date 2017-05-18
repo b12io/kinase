@@ -40999,45 +40999,8 @@ var AnnotatedItemField = function (_React$Component) {
               { className: _style2.default.fieldGroup },
               _react2.default.createElement(
                 'div',
-                { className: _style2.default.fieldLabel },
-                'Content'
-              ),
-              _react2.default.createElement(
-                'div',
                 { onClick: this.props.setFocus },
                 this.getField()
-              )
-            ),
-            _react2.default.createElement(
-              'div',
-              { className: _style2.default.fieldGroup },
-              _react2.default.createElement(
-                'div',
-                { className: _style2.default.fieldLabel },
-                'Sources'
-              ),
-              _react2.default.createElement(
-                'ul',
-                { className: _style2.default.mappingSourcePath },
-                this.props.mapping.sources.map(function (source) {
-                  return _react2.default.createElement(
-                    'li',
-                    {
-                      className: _style2.default.mappingSource,
-                      key: source.url + '-' + source.selector
-                    },
-                    _react2.default.createElement(
-                      'div',
-                      null,
-                      source.url
-                    ),
-                    _react2.default.createElement(
-                      'div',
-                      null,
-                      source.selector
-                    )
-                  );
-                })
               )
             )
           )
