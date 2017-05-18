@@ -15,7 +15,10 @@ import {
   selectElement as _selectElement,
   setExpanded as _setExpanded,
 } from 'redux/proxyActions';
-import { currentFieldTypeSelector } from 'redux/selectors';
+import {
+  currentAnnotationSelector,
+  currentFieldTypeSelector,
+} from 'redux/selectors';
 
 import styles from './style.scss';
 
@@ -33,6 +36,12 @@ class Main extends React.Component {
     this.clickMain = this.clickMain.bind(this);
     this.mouseOverMain = this.mouseOverMain.bind(this);
     this.toggleOpen = this.toggleOpen.bind(this);
+  }
+
+  componentWillReceiveProps({ currentAnnotation }) {
+    if (currentAnnotation !== this.props.currentAnnotation) {
+      this.setState({ highlightTarget: null });
+    }
   }
 
   getWrappedText(node) {
@@ -116,15 +125,22 @@ class Main extends React.Component {
 
 Main.propTypes = {
   body: PropTypes.string.isRequired,
-  currentFieldType: PropTypes.string.isRequired,
+  currentAnnotation: PropTypes.string,
+  currentFieldType: PropTypes.string,
   expanded: PropTypes.bool.isRequired,
   selectElement: PropTypes.func.isRequired,
   setExpanded: PropTypes.func.isRequired,
 };
 
+Main.defaultProps = {
+  currentAnnotation: null,
+  currentFieldType: null,
+};
+
 export default connect(
   state => ({
-    currentFieldType: currentFieldTypeSelector(state) || '',
+    currentAnnotation: currentAnnotationSelector(state),
+    currentFieldType: currentFieldTypeSelector(state),
     expanded: state.expanded,
   }),
   dispatch => ({

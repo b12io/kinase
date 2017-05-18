@@ -2,6 +2,7 @@
 
 import classNames from 'classnames';
 import isUndefined from 'lodash.isundefined';
+import PropTypes from 'prop-types';
 import React from 'react';
 import Tether from 'tether';
 
@@ -10,7 +11,7 @@ import styles from './style.scss';
 export default class Highlighter extends React.Component {
   constructor(props) {
     super(props);
-    this.padding = 5;
+    this.padding = 10;
   }
 
   componentDidUpdate() {
@@ -52,7 +53,7 @@ export default class Highlighter extends React.Component {
 }
 
 Highlighter.propTypes = {
-  target: React.PropTypes.instanceOf(HTMLElement),
+  target: PropTypes.instanceOf(HTMLElement),
 };
 
 Highlighter.defaultProps = {

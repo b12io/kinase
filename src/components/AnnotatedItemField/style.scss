@@ -9,7 +9,40 @@
     height: auto;
     box-sizing: border-box;
   }
-  .mappingSource {
-    margin-bottom: 5px;
+
+  :global(.rc-collapse-content-box) {
+    margin-top: 0;
+    margin-bottom: $default-padding;
   }
+}
+
+.mappingSource {
+  margin-bottom: 5px;
+}
+
+.selectionMode {
+  .selectContent {
+    color: $selection-color;
+  }
+}
+
+.selectionTools {
+  margin: $default-padding (-$default-padding);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.2em;
+}
+
+.selectContent,
+.clearContent {
+  cursor: pointer;
+}
+
+.selectContent:hover {
+  color: $selection-color;
+}
+
+.clearContent:hover {
+  color: $danger-color;
 }

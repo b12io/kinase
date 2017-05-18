@@ -21,10 +21,12 @@ export default class RichTextField extends React.Component {
 
   updateData(value, debounced = false) {
     this.setState({ value }, () => {
+      const processed = (
+        this.reactQuillRef.getEditor().getText().trim().length ? value : null);
       if (debounced) {
-        this.onChangeDebounced(value);
+        this.onChangeDebounced(processed);
       } else {
-        this.props.onChange(value);
+        this.props.onChange(processed);
       }
     });
   }
@@ -33,6 +35,7 @@ export default class RichTextField extends React.Component {
     return (
       <div onBlur={() => this.updateData(this.state.value)}>
         <ReactQuill
+          ref={(element) => { this.reactQuillRef = element; }}
           modules={{
             toolbar: [
               ['bold', 'italic', 'underline'],
