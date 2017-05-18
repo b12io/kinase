@@ -1,8 +1,7 @@
 /* global document, HTMLImageElement */
 
 import classNames from 'classnames';
-import filter from 'lodash.filter';
-import isNil from 'lodash.isnil';
+import map from 'lodash.map';
 import trim from 'lodash.trim';
 import CssSelectorGenerator from 'css-selector-generator';
 import FaTags from 'react-icons/lib/fa/tags';
@@ -25,12 +24,15 @@ const selectorGenerator = new CssSelectorGenerator({
   selectors: ['id', 'tag', 'nthchild'],
 });
 
-const getWrappedText = (node) => {
-  const textNodes = filter(
-    node.childNodes, child => child.nodeType === child.TEXT_NODE);
-  const combined = trim(
-    textNodes.map(textNode => textNode.textContent).join(''));
-  return combined || null;
+const getWrappedText = (node, rich = false) => {
+  if (node.nodeType === node.TEXT_NODE) {
+    return node.textContent;
+  }
+  if (node.tagName === 'BR') {
+    return rich ? '<br>' : '\n';
+  }
+  const text = map(node.childNodes, child => getWrappedText(child, rich));
+  return trim(text.join(''));
 };
 
 const getWrappedImage = node => (
@@ -49,9 +51,11 @@ class Main extends React.Component {
 
   getWrappedContent(node) {
     switch (this.props.currentFieldType) {
-      case 'rich-text':
       case 'text': {
         return getWrappedText(node);
+      }
+      case 'rich-text': {
+        return getWrappedText(node, true);
       }
       case 'image': {
         return getWrappedImage(node);
@@ -70,7 +74,7 @@ class Main extends React.Component {
 
   clickMain(event) {
     const content = this.getWrappedContent(event.target);
-    if (!isNil(content)) {
+    if (content) {
       const selector = selectorGenerator.getSelector(event.target);
       // Append the content if the `cmd` or `windows` key is pressed
       this.props.selectElement(selector, content, event.metaKey);
