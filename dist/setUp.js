@@ -39789,24 +39789,42 @@ var selectorGenerator = new _cssSelectorGenerator2.default({
 var Main = function (_React$Component) {
   (0, _inherits3.default)(Main, _React$Component);
 
-  function Main(props) {
+  function Main() {
+    var _ref;
+
+    var _temp, _this, _ret;
+
     (0, _classCallCheck3.default)(this, Main);
 
-    var _this = (0, _possibleConstructorReturn3.default)(this, (Main.__proto__ || (0, _getPrototypeOf2.default)(Main)).call(this, props));
+    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
 
-    _this.state = {
+    return _ret = (_temp = (_this = (0, _possibleConstructorReturn3.default)(this, (_ref = Main.__proto__ || (0, _getPrototypeOf2.default)(Main)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
       highlightTarget: null
-    };
-    _this.clickMain = _this.clickMain.bind(_this);
-    _this.mouseOverMain = _this.mouseOverMain.bind(_this);
-    _this.toggleOpen = _this.toggleOpen.bind(_this);
-    return _this;
+    }, _this.mouseOverMain = function (event) {
+      if (_this.getWrappedContent(event.target)) {
+        _this.setState({ highlightTarget: event.target });
+      }
+    }, _this.clickMain = function (event) {
+      var content = _this.getWrappedContent(event.target);
+      if (content) {
+        var selector = selectorGenerator.getSelector(event.target);
+        // Append the content if the `cmd` or `windows` key is pressed
+        _this.props.selectElement(selector, content, event.metaKey);
+        event.preventDefault();
+        event.stopPropagation();
+      }
+    }, _this.toggleOpen = function () {
+      _this.setState({ highlightTarget: null });
+      _this.props.setExpanded(!_this.props.expanded);
+    }, _temp), (0, _possibleConstructorReturn3.default)(_this, _ret);
   }
 
   (0, _createClass3.default)(Main, [{
     key: 'componentWillReceiveProps',
-    value: function componentWillReceiveProps(_ref) {
-      var currentAnnotation = _ref.currentAnnotation;
+    value: function componentWillReceiveProps(_ref2) {
+      var currentAnnotation = _ref2.currentAnnotation;
 
       if (currentAnnotation !== this.props.currentAnnotation) {
         this.setState({ highlightTarget: null });
@@ -39846,31 +39864,6 @@ var Main = function (_React$Component) {
             return null;
           }
       }
-    }
-  }, {
-    key: 'mouseOverMain',
-    value: function mouseOverMain(event) {
-      if (this.getWrappedContent(event.target)) {
-        this.setState({ highlightTarget: event.target });
-      }
-    }
-  }, {
-    key: 'clickMain',
-    value: function clickMain(event) {
-      var content = this.getWrappedContent(event.target);
-      if (content) {
-        var selector = selectorGenerator.getSelector(event.target);
-        // Append the content if the `cmd` or `windows` key is pressed
-        this.props.selectElement(selector, content, event.metaKey);
-        event.preventDefault();
-        event.stopPropagation();
-      }
-    }
-  }, {
-    key: 'toggleOpen',
-    value: function toggleOpen() {
-      this.setState({ highlightTarget: null });
-      this.props.setExpanded(!this.props.expanded);
     }
   }, {
     key: 'render',
@@ -40093,15 +40086,17 @@ var AnnotatedItem = function (_React$Component) {
   (0, _inherits3.default)(AnnotatedItem, _React$Component);
 
   function AnnotatedItem() {
+    var _ref;
+
+    var _temp, _this, _ret;
+
     (0, _classCallCheck3.default)(this, AnnotatedItem);
-    return (0, _possibleConstructorReturn3.default)(this, (AnnotatedItem.__proto__ || (0, _getPrototypeOf2.default)(AnnotatedItem)).apply(this, arguments));
-  }
 
-  (0, _createClass3.default)(AnnotatedItem, [{
-    key: 'getCollectionMapping',
-    value: function getCollectionMapping(collectionMapping, collectionIndex) {
-      var _this2 = this;
+    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
 
+    return _ret = (_temp = (_this = (0, _possibleConstructorReturn3.default)(this, (_ref = AnnotatedItem.__proto__ || (0, _getPrototypeOf2.default)(AnnotatedItem)).call.apply(_ref, [this].concat(args))), _this), _this.getCollectionMapping = function (collectionMapping, collectionIndex) {
       var collectionHeader = _react2.default.createElement(
         'div',
         { className: _style2.default.annotatedItemHeader },
@@ -40113,7 +40108,7 @@ var AnnotatedItem = function (_React$Component) {
         _react2.default.createElement(_delete2.default, {
           className: _style2.default.deleteCollectionMapping,
           onClick: function onClick(event) {
-            return _this2.props.deleteCollectionMapping(event, collectionIndex);
+            return _this.props.deleteCollectionMapping(event, collectionIndex);
           }
         })
       );
@@ -40123,11 +40118,13 @@ var AnnotatedItem = function (_React$Component) {
         _react2.default.createElement(
           _rcCollapse2.default.Panel,
           { header: collectionHeader },
-          this.getMappingFields(collectionMapping, collectionIndex)
+          _this.getMappingFields(collectionMapping, collectionIndex)
         )
       );
-    }
-  }, {
+    }, _temp), (0, _possibleConstructorReturn3.default)(_this, _ret);
+  }
+
+  (0, _createClass3.default)(AnnotatedItem, [{
     key: 'getHeaderOptions',
     value: function getHeaderOptions() {
       if (this.props.item.schema.multiple) {
@@ -40142,14 +40139,14 @@ var AnnotatedItem = function (_React$Component) {
   }, {
     key: 'getMappingFields',
     value: function getMappingFields(collectionMapping, collectionIndex) {
-      var _this3 = this;
+      var _this2 = this;
 
       var fields = (0, _keys2.default)(this.props.item.schema.fields).sort().map(function (fieldName) {
         return _react2.default.createElement(
           'li',
           { key: fieldName },
           _react2.default.createElement(_AnnotatedItemField2.default, {
-            annotationName: _this3.props.annotationName,
+            annotationName: _this2.props.annotationName,
             collectionIndex: collectionIndex,
             fieldName: fieldName
           })
@@ -40168,7 +40165,7 @@ var AnnotatedItem = function (_React$Component) {
         return _react2.default.createElement(
           'div',
           { className: _style2.default.collapseGroup },
-          this.props.item.collectionMappings.map(this.getCollectionMapping.bind(this))
+          this.props.item.collectionMappings.map(this.getCollectionMapping)
         );
       }
       return this.getMappingFields(this.props.item.collectionMappings[0], 0);
@@ -40311,16 +40308,39 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var AnnotatedItemField = function (_React$Component) {
   (0, _inherits3.default)(AnnotatedItemField, _React$Component);
 
-  function AnnotatedItemField(props) {
+  function AnnotatedItemField() {
+    var _ref;
+
+    var _temp, _this, _ret;
+
     (0, _classCallCheck3.default)(this, AnnotatedItemField);
 
-    var _this = (0, _possibleConstructorReturn3.default)(this, (AnnotatedItemField.__proto__ || (0, _getPrototypeOf2.default)(AnnotatedItemField)).call(this, props));
+    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
 
-    _this.changeFile = _this.changeFile.bind(_this);
-    _this.editText = _this.editText.bind(_this);
-    _this.toggleCollapse = _this.toggleCollapse.bind(_this);
-    _this.toggleFocus = _this.toggleFocus.bind(_this);
-    return _this;
+    return _ret = (_temp = (_this = (0, _possibleConstructorReturn3.default)(this, (_ref = AnnotatedItemField.__proto__ || (0, _getPrototypeOf2.default)(AnnotatedItemField)).call.apply(_ref, [this].concat(args))), _this), _this.changeFile = function (file) {
+      _this.props.editField(file.url);
+    }, _this.editText = function (text) {
+      if (!text) {
+        // Implicitly clear the content and annotations if the user has
+        // deleted all of their text.
+        _this.props.clearContent();
+      } else {
+        _this.props.editField(text);
+      }
+    }, _this.toggleCollapse = function (activeKeys) {
+      // TODO(jrbotros): Find a nicer way to determine whether collapsed
+      if (activeKeys.length) {
+        _this.props.resetFocus();
+      }
+    }, _this.toggleFocus = function () {
+      if (_this.props.focused) {
+        _this.props.resetFocus();
+      } else {
+        _this.props.setFocus();
+      }
+    }, _temp), (0, _possibleConstructorReturn3.default)(_this, _ret);
   }
 
   (0, _createClass3.default)(AnnotatedItemField, [{
@@ -40367,39 +40387,6 @@ var AnnotatedItemField = function (_React$Component) {
         };
       }
       return null;
-    }
-  }, {
-    key: 'changeFile',
-    value: function changeFile(file) {
-      this.props.editField(file.url);
-    }
-  }, {
-    key: 'editText',
-    value: function editText(text) {
-      if (!text) {
-        // Implicitly clear the content and annotations if the user has
-        // deleted all of their text.
-        this.props.clearContent();
-      } else {
-        this.props.editField(text);
-      }
-    }
-  }, {
-    key: 'toggleCollapse',
-    value: function toggleCollapse(activeKeys) {
-      // TODO(jrbotros): Find a nicer way to determine whether collapsed
-      if (activeKeys.length && this.props.focused) {
-        this.props.resetFocus();
-      }
-    }
-  }, {
-    key: 'toggleFocus',
-    value: function toggleFocus() {
-      if (this.props.focused) {
-        this.props.resetFocus();
-      } else {
-        this.props.setFocus();
-      }
     }
   }, {
     key: 'render',
@@ -40710,16 +40697,22 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var Sidebar = function (_React$Component) {
   (0, _inherits3.default)(Sidebar, _React$Component);
 
-  function Sidebar(props) {
+  function Sidebar() {
+    var _ref;
+
+    var _temp, _this, _ret;
+
     (0, _classCallCheck3.default)(this, Sidebar);
 
-    var _this = (0, _possibleConstructorReturn3.default)(this, (Sidebar.__proto__ || (0, _getPrototypeOf2.default)(Sidebar)).call(this, props));
+    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
 
-    _this.state = {
+    return _ret = (_temp = (_this = (0, _possibleConstructorReturn3.default)(this, (_ref = Sidebar.__proto__ || (0, _getPrototypeOf2.default)(Sidebar)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
       search: ''
-    };
-    _this.searchUpdated = _this.searchUpdated.bind(_this);
-    return _this;
+    }, _this.searchUpdated = function (search) {
+      _this.setState({ search: search });
+    }, _temp), (0, _possibleConstructorReturn3.default)(_this, _ret);
   }
 
   (0, _createClass3.default)(Sidebar, [{
@@ -40738,11 +40731,6 @@ var Sidebar = function (_React$Component) {
           _react2.default.createElement(_AnnotatedItem2.default, { annotationName: annotation.name })
         );
       });
-    }
-  }, {
-    key: 'searchUpdated',
-    value: function searchUpdated(search) {
-      this.setState({ search: search });
     }
   }, {
     key: 'render',
