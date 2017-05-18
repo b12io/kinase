@@ -40364,25 +40364,6 @@ var selectorGenerator = new _cssSelectorGenerator2.default({
   selectors: ['id', 'tag', 'nthchild']
 }); /* global document, HTMLImageElement */
 
-var getWrappedText = function getWrappedText(node) {
-  var rich = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
-
-  if (node.nodeType === node.TEXT_NODE) {
-    return node.textContent;
-  }
-  if (node.tagName === 'BR') {
-    return rich ? '<br>' : '\n';
-  }
-  var text = (0, _lodash2.default)(node.childNodes, function (child) {
-    return getWrappedText(child, rich);
-  });
-  return (0, _lodash4.default)(text.join(''));
-};
-
-var getWrappedImage = function getWrappedImage(node) {
-  return node instanceof HTMLImageElement && node.src ? node.src : null;
-};
-
 var Main = function (_React$Component) {
   (0, _inherits3.default)(Main, _React$Component);
 
@@ -40401,20 +40382,33 @@ var Main = function (_React$Component) {
   }
 
   (0, _createClass3.default)(Main, [{
+    key: 'getWrappedText',
+    value: function getWrappedText(node) {
+      var _this2 = this;
+
+      if (node.nodeType === node.TEXT_NODE) {
+        return node.textContent;
+      }
+      if (node.tagName === 'BR') {
+        return this.props.currentFieldType === 'rich-text' ? '<br>' : '\n';
+      }
+      var text = (0, _lodash2.default)(node.childNodes, function (child) {
+        return _this2.getWrappedText(child);
+      });
+      return (0, _lodash4.default)(text.join(''));
+    }
+  }, {
     key: 'getWrappedContent',
     value: function getWrappedContent(node) {
       switch (this.props.currentFieldType) {
         case 'text':
-          {
-            return getWrappedText(node);
-          }
         case 'rich-text':
           {
-            return getWrappedText(node, true);
+            return this.getWrappedText(node);
           }
         case 'image':
           {
-            return getWrappedImage(node);
+            return node instanceof HTMLImageElement && node.src ? node.src : null;
           }
         default:
           {

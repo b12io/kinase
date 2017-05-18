@@ -24,20 +24,6 @@ const selectorGenerator = new CssSelectorGenerator({
   selectors: ['id', 'tag', 'nthchild'],
 });
 
-const getWrappedText = (node, rich = false) => {
-  if (node.nodeType === node.TEXT_NODE) {
-    return node.textContent;
-  }
-  if (node.tagName === 'BR') {
-    return rich ? '<br>' : '\n';
-  }
-  const text = map(node.childNodes, child => getWrappedText(child, rich));
-  return trim(text.join(''));
-};
-
-const getWrappedImage = node => (
-  node instanceof HTMLImageElement && node.src ? node.src : null);
-
 class Main extends React.Component {
   constructor(props) {
     super(props);
@@ -49,16 +35,25 @@ class Main extends React.Component {
     this.toggleOpen = this.toggleOpen.bind(this);
   }
 
+  getWrappedText(node) {
+    if (node.nodeType === node.TEXT_NODE) {
+      return node.textContent;
+    }
+    if (node.tagName === 'BR') {
+      return this.props.currentFieldType === 'rich-text' ? '<br>' : '\n';
+    }
+    const text = map(node.childNodes, child => this.getWrappedText(child));
+    return trim(text.join(''));
+  }
+
   getWrappedContent(node) {
     switch (this.props.currentFieldType) {
-      case 'text': {
-        return getWrappedText(node);
-      }
+      case 'text':
       case 'rich-text': {
-        return getWrappedText(node, true);
+        return this.getWrappedText(node);
       }
       case 'image': {
-        return getWrappedImage(node);
+        return node instanceof HTMLImageElement && node.src ? node.src : null;
       }
       default: {
         return null;
