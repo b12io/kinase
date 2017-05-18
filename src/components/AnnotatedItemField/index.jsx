@@ -90,28 +90,9 @@ class AnnotatedItemField extends React.Component {
         <Collapse accordion={false} onChange={this.toggleCollapse}>
           <Collapse.Panel header={this.props.fieldName}>
             <div className={styles.fieldGroup}>
-              <div className={styles.fieldLabel}>Content</div>
               <div onClick={this.props.setFocus}>
                 {this.getField()}
               </div>
-            </div>
-            <div className={styles.fieldGroup}>
-              <div className={styles.fieldLabel}>Sources</div>
-              <ul className={styles.mappingSourcePath}>
-                {
-                  this.props.mapping.sources.map(
-                    source => (
-                      <li
-                        className={styles.mappingSource}
-                        key={`${source.url}-${source.selector}`}
-                      >
-                        <div>{source.url}</div>
-                        <div>{source.selector}</div>
-                      </li>
-                    ),
-                  )
-                }
-              </ul>
             </div>
           </Collapse.Panel>
         </Collapse>
