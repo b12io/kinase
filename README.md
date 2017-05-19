@@ -1,4 +1,6 @@
 # Kinase
+[![Build Status][circle-image]][circle-url]
+
 Kinase (pronounced ki·nase) is a pluggable browser extension allowing you to label content on the web and use it for a wide variety of machine learning and data collection applications. By providing a set of `annotations` and their corresponding schemas, you can use Kinase to select the content best representing these annotations.
 
 
@@ -132,3 +134,6 @@ You can override properties in the [Chrome manifest file](https://developer.chro
 
 ## Why Kinase?
 Kinases are enzymes that add phosphate groups to other proteins, often as an activation mechanism for complex regulatory pathways. We hope that, by adding annotations, our Kinase can make web content a more active component of your own pipelines!
+
+[circle-url]: http://circle-ci.org/b12io/kinase
+[circle-image]: https://circleci.com/gh/b12io/kinase.svg?maxAge=2592000&style=shield&circle-token=:circle-token
