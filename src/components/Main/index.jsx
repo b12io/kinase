@@ -28,15 +28,9 @@ const selectorGenerator = new CssSelectorGenerator({
 });
 
 class Main extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      highlightTarget: null,
-    };
-    this.clickMain = this.clickMain.bind(this);
-    this.mouseOverMain = this.mouseOverMain.bind(this);
-    this.toggleOpen = this.toggleOpen.bind(this);
-  }
+  state = {
+    highlightTarget: null,
+  };
 
   componentWillReceiveProps({ currentAnnotation }) {
     if (currentAnnotation !== this.props.currentAnnotation) {
@@ -70,13 +64,13 @@ class Main extends React.Component {
     }
   }
 
-  mouseOverMain(event) {
+  mouseOverMain = (event) => {
     if (this.getWrappedContent(event.target)) {
       this.setState({ highlightTarget: event.target });
     }
   }
 
-  clickMain(event) {
+  clickMain = (event) => {
     const content = this.getWrappedContent(event.target);
     if (content) {
       const selector = selectorGenerator.getSelector(event.target);
@@ -87,7 +81,7 @@ class Main extends React.Component {
     }
   }
 
-  toggleOpen() {
+  toggleOpen = () => {
     this.setState({ highlightTarget: null });
     this.props.setExpanded(!this.props.expanded);
   }

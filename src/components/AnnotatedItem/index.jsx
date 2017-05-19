@@ -17,7 +17,7 @@ import 'rc-collapse/assets/index.css';
 import styles from './style.scss';
 
 class AnnotatedItem extends React.Component {
-  getCollectionMapping(collectionMapping, collectionIndex) {
+  getCollectionMapping = (collectionMapping, collectionIndex) => {
     const collectionHeader = (
       <div className={styles.annotatedItemHeader}>
         <span>{collectionIndex}</span>
@@ -68,7 +68,7 @@ class AnnotatedItem extends React.Component {
     if (this.props.item.schema.multiple) {
       return (
         <div className={styles.collapseGroup}>
-          {this.props.item.collectionMappings.map(this.getCollectionMapping.bind(this))}
+          {this.props.item.collectionMappings.map(this.getCollectionMapping)}
         </div>
       );
     }

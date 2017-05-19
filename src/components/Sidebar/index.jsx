@@ -20,13 +20,9 @@ import 'sweetalert2/dist/sweetalert2.css';
 import styles from './style.scss';
 
 class Sidebar extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      search: '',
-    };
-    this.searchUpdated = this.searchUpdated.bind(this);
-  }
+  state = {
+    search: '',
+  };
 
   getAnnotations() {
     const annotations = values(mapValues(this.props.context, (annotation, name) => ({
@@ -42,7 +38,7 @@ class Sidebar extends React.Component {
     ));
   }
 
-  searchUpdated(search) {
+  searchUpdated = (search) => {
     this.setState({ search });
   }
 

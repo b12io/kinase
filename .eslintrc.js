@@ -1,6 +1,11 @@
 const path = require('path');
 
 module.exports = {
+  parser: 'babel-eslint',
+  ecmaFeatures: {
+      classes: true,
+      jsx: true
+  },
   extends: 'airbnb',
   installedESLint: true,
   settings: {

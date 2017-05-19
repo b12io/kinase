@@ -22,14 +22,6 @@ import 'rc-collapse/assets/index.css';
 import styles from './style.scss';
 
 class AnnotatedItemField extends React.Component {
-  constructor(props) {
-    super(props);
-    this.changeFile = this.changeFile.bind(this);
-    this.editText = this.editText.bind(this);
-    this.toggleCollapse = this.toggleCollapse.bind(this);
-    this.toggleFocus = this.toggleFocus.bind(this);
-  }
-
   componentWillReceiveProps(nextProps) {
     this.setState({ value: nextProps.mapping.content || '' });
   }
@@ -74,11 +66,11 @@ class AnnotatedItemField extends React.Component {
     return null;
   }
 
-  changeFile(file) {
+  changeFile = (file) => {
     this.props.editField(file.url);
   }
 
-  editText(text) {
+  editText = (text) => {
     if (!text) {
       // Implicitly clear the content and annotations if the user has
       // deleted all of their text.
@@ -88,14 +80,14 @@ class AnnotatedItemField extends React.Component {
     }
   }
 
-  toggleCollapse(activeKeys) {
+  toggleCollapse = (activeKeys) => {
     // TODO(jrbotros): Find a nicer way to determine whether collapsed
-    if (activeKeys.length && this.props.focused) {
+    if (activeKeys.length) {
       this.props.resetFocus();
     }
   }
 
-  toggleFocus() {
+  toggleFocus = () => {
     if (this.props.focused) {
       this.props.resetFocus();
     } else {
