@@ -1,5 +1,7 @@
+@import '~variables.scss';
+
 .kinaseHighlight {
-  border: 1px solid red;
+  border: 3px solid $selection-color;
   box-sizing: border-box;
   pointer-events: none;
   display: none;
