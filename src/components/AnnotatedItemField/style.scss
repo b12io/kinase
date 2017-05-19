@@ -46,3 +46,11 @@
 .clearContent:hover {
   color: $danger-color;
 }
+
+.helpText {
+  margin-top: $default-padding;
+  color: $selection-color;
+  font-size: 0.8em;
+  font-style: italic;
+  text-align: right;
+}

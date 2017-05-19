@@ -80,6 +80,8 @@ class AnnotatedItemField extends React.Component {
 
   editText(text) {
     if (!text) {
+      // Implicitly clear the content and annotations if the user has
+      // deleted all of their text.
       this.props.clearContent();
     } else {
       this.props.editField(text);
@@ -125,6 +127,11 @@ class AnnotatedItemField extends React.Component {
             <div className={styles.fieldGroup}>
               {this.getField()}
             </div>
+            {
+              this.props.focused
+              ? <div className={styles.helpText}>cmd + click to select multiple items</div>
+              : undefined
+            }
           </Collapse.Panel>
         </Collapse>
       </div>
