@@ -15258,7 +15258,7 @@ chrome.browserAction.onClicked.addListener(function () {
     // Set up extension when page is refreshed
     chrome.tabs.onUpdated.addListener(setUp);
   }
-  chrome.tabs.query({}, function (tabs) {
+  chrome.tabs.query({ active: true }, function (tabs) {
     return tabs.forEach(tabCallback);
   });
 });

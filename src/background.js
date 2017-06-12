@@ -59,5 +59,5 @@ chrome.browserAction.onClicked.addListener(() => {
     // Set up extension when page is refreshed
     chrome.tabs.onUpdated.addListener(setUp);
   }
-  chrome.tabs.query({}, tabs => tabs.forEach(tabCallback));
+  chrome.tabs.query({ active: true }, tabs => tabs.forEach(tabCallback));
 });
