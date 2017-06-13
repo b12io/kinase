@@ -5,7 +5,8 @@
   "author": "B12 <hello@b12.io> (https://b12.io/)",
   "scripts": {
     "prepublish": "webpack",
-    "release": "np"
+    "release": "np",
+    "test": "webpack"
   },
   "main": "Kinase.js",
   "license": "Apache-2.0",
