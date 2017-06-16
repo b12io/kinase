@@ -41,23 +41,33 @@ const tearDown = (tabId = null) => {
   });
 };
 
+// Store per-tab setup listeners to keep kinase active on refresh
+const updatedListeners = {};
+
 chrome.browserAction.onClicked.addListener(() => {
-  const active = store.getState().active;
-  store.dispatch(setActive(!active));
+  chrome.tabs.query({ active: true }, tabs => tabs.forEach((activeTab) => {
+    // Toggle active state for active tab
+    const kinaseActiveOnTab = store.getState().active[activeTab.id];
+    store.dispatch(setActive(activeTab.id, !kinaseActiveOnTab));
 
-  let tabCallback;
-  if (active) {
-    // Tear down extension on all tabs
-    tabCallback = tab => tearDown(tab.id);
+    if (kinaseActiveOnTab) {
+      // Tear down extension on active tab
+      tearDown(activeTab.id);
 
-    // Prevent set up when page is refreshed
-    chrome.tabs.onUpdated.removeListener(setUp);
-  } else {
-    // Set up extension on all tabs
-    tabCallback = tab => setUp(tab.id);
+      // Prevent set up when page is refreshed
+      chrome.tabs.onUpdated.removeListener(updatedListeners[activeTab.id]);
+      delete updatedListeners[activeTab.id];
+    } else {
+      // Set up extension on active tab
+      setUp(activeTab.id);
 
-    // Set up extension when page is refreshed
-    chrome.tabs.onUpdated.addListener(setUp);
-  }
-  chrome.tabs.query({ active: true }, tabs => tabs.forEach(tabCallback));
+      // Set up extension when page is refreshed
+      updatedListeners[activeTab.id] = (tabId) => {
+        if (tabId === activeTab.id) {
+          setUp(tabId);
+        }
+      };
+      chrome.tabs.onUpdated.addListener(updatedListeners[activeTab.id]);
+    }
+  }));
 });
