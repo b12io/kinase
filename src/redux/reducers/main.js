@@ -26,7 +26,7 @@ const initialState = {
   currentIndex: null,
   currentField: null,
   error: null,
-  active: false,
+  active: {},
   expanded: true,
   ready: false,
   saving: false,
@@ -71,7 +71,10 @@ export default function main(state = initialState, action) {
     case SET_ACTIVE: {
       return {
         ...state,
-        active: action.active,
+        active: {
+          ...state.active,
+          [action.tabId]: action.active,
+        },
         expanded: false,
       };
     }

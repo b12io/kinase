@@ -57,9 +57,10 @@ export function selectElement(selector, content, append = false) {
   };
 }
 
-export function setActive(active) {
+export function setActive(tabId, active) {
   return {
     active,
+    tabId,
     type: SET_ACTIVE_PROXY,
   };
 }
