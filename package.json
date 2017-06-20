@@ -1,6 +1,6 @@
 {
   "name": "kinase",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Kinase is an extension for Google Chrome allowing users to map web content to a list of annotations.",
   "author": "B12 <hello@b12.io> (https://b12.io/)",
   "scripts": {
