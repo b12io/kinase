@@ -160,7 +160,7 @@ export default connect(
         ownProps.collectionIndex,
         ownProps.fieldName,
         {
-          content: null,
+          content: '',
           original: null,
           sources: [],
         },
