@@ -1,5 +1,6 @@
 const path = require('path');
 
+const apiPath = path.resolve(__dirname, 'src/api.js');
 const customStyleLoader = {
   loader: 'style-loader',
   options: {
@@ -31,7 +32,7 @@ module.exports = {
     rules: [
       {
         test: /\.jsx?$/,
-        exclude: [/node_modules/, /.*\.min\.js/],
+        exclude: [/node_modules/, /.*\.min\.js/, apiPath],
         use: 'eslint-loader',
         enforce: 'pre',
       }, {
