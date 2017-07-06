@@ -6569,7 +6569,7 @@ module.exports = reactProdInvariant;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.currentMappingsSelector = exports.currentFieldTypeSelector = exports.currentAnnotatedItemSelector = exports.currentContextSelector = exports.currentContextKeySelector = exports.readySelector = exports.currentFieldSelector = exports.currentIndexSelector = exports.currentAnnotationSelector = exports.annotationContextsSelector = undefined;
+exports.updatedMappingsSelector = exports.currentFieldTypeSelector = exports.currentAnnotatedItemSelector = exports.currentContextSelector = exports.currentContextKeySelector = exports.readySelector = exports.currentFieldSelector = exports.currentIndexSelector = exports.currentAnnotationSelector = exports.annotationContextsSelector = undefined;
 
 var _lodash = __webpack_require__(192);
 
@@ -6619,7 +6619,7 @@ var currentFieldTypeSelector = exports.currentFieldTypeSelector = (0, _reselect.
   return (0, _lodash2.default)(currentAnnotatedItem, ['schema', 'fields', currentField]);
 });
 
-var currentMappingsSelector = exports.currentMappingsSelector = (0, _reselect.createSelector)(currentContextSelector, function (context) {
+var updatedMappingsSelector = exports.updatedMappingsSelector = (0, _reselect.createSelector)(currentContextSelector, function (context) {
   return (0, _lodash4.default)((0, _lodash6.default)(context, function (annotatedItem) {
     return annotatedItem.updated;
   }), function (annotatedItem) {
@@ -40456,7 +40456,7 @@ exports.default = (0, _reactRedux.connect)(function (state, ownProps) {
   return {
     clearContent: function clearContent() {
       return dispatch((0, _proxyActions.updateField)(ownProps.annotationName, ownProps.collectionIndex, ownProps.fieldName, {
-        content: null,
+        content: '',
         original: null,
         sources: []
       }));

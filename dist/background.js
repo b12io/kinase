@@ -3680,7 +3680,7 @@ module.exports = eq;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.currentMappingsSelector = exports.currentFieldTypeSelector = exports.currentAnnotatedItemSelector = exports.currentContextSelector = exports.currentContextKeySelector = exports.readySelector = exports.currentFieldSelector = exports.currentIndexSelector = exports.currentAnnotationSelector = exports.annotationContextsSelector = undefined;
+exports.updatedMappingsSelector = exports.currentFieldTypeSelector = exports.currentAnnotatedItemSelector = exports.currentContextSelector = exports.currentContextKeySelector = exports.readySelector = exports.currentFieldSelector = exports.currentIndexSelector = exports.currentAnnotationSelector = exports.annotationContextsSelector = undefined;
 
 var _lodash = __webpack_require__(192);
 
@@ -3730,7 +3730,7 @@ var currentFieldTypeSelector = exports.currentFieldTypeSelector = (0, _reselect.
   return (0, _lodash2.default)(currentAnnotatedItem, ['schema', 'fields', currentField]);
 });
 
-var currentMappingsSelector = exports.currentMappingsSelector = (0, _reselect.createSelector)(currentContextSelector, function (context) {
+var updatedMappingsSelector = exports.updatedMappingsSelector = (0, _reselect.createSelector)(currentContextSelector, function (context) {
   return (0, _lodash4.default)((0, _lodash6.default)(context, function (annotatedItem) {
     return annotatedItem.updated;
   }), function (annotatedItem) {
@@ -14734,14 +14734,14 @@ exports.default = (_LOAD_ANNOTATIONS_PRO = {}, (0, _defineProperty3.default)(_LO
   return function (dispatch, getState) {
     return dispatch({
       type: _constants.LOAD_ANNOTATIONS.BASE,
-      payload: (0, _api.load)(getState())
+      payload: (0, _api.load)((0, _selectors.currentContextKeySelector)(getState()))
     });
   };
 }), (0, _defineProperty3.default)(_LOAD_ANNOTATIONS_PRO, _constants.SAVE_ANNOTATED_ITEMS_PROXY, function () {
   return function (dispatch, getState) {
     return dispatch({
       type: _constants.SAVE_ANNOTATED_ITEMS.BASE,
-      payload: (0, _api.save)(getState())
+      payload: (0, _api.save)((0, _selectors.updatedMappingsSelector)(getState()), (0, _selectors.currentContextKeySelector)(getState()))
     });
   };
 }), (0, _defineProperty3.default)(_LOAD_ANNOTATIONS_PRO, _constants.SELECT_ELEMENT_PROXY, function (action) {
@@ -15161,11 +15161,15 @@ var _testAnnotations2 = _interopRequireDefault(_testAnnotations);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function load() {
+function load(contextKey) {
   return _promise2.default.resolve(_testAnnotations2.default);
-}
+} /* eslint no-unused-vars: "off" */
 
-function save() {
+/**
+ * This file represents an API stub to be overwritten by derived extensions.
+ */
+
+function save(updatedMappings, contextKey) {
   return _promise2.default.resolve();
 }
 

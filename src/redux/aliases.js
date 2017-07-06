@@ -3,7 +3,11 @@ import isNil from 'lodash.isnil';
 import pick from 'lodash.pick';
 import { load, save } from 'api';
 import { setCurrentField, updateField } from 'redux/proxyActions';
-import { currentContextSelector } from 'redux/selectors';
+import {
+  currentContextSelector,
+  currentContextKeySelector,
+  updatedMappingsSelector,
+} from 'redux/selectors';
 import {
   LOAD_ANNOTATIONS,
   LOAD_ANNOTATIONS_PROXY,
@@ -24,12 +28,15 @@ import {
 export default {
   [LOAD_ANNOTATIONS_PROXY]: () => (dispatch, getState) => dispatch({
     type: LOAD_ANNOTATIONS.BASE,
-    payload: load(getState()),
+    payload: load(currentContextKeySelector(getState())),
   }),
 
   [SAVE_ANNOTATED_ITEMS_PROXY]: () => (dispatch, getState) => dispatch({
     type: SAVE_ANNOTATED_ITEMS.BASE,
-    payload: save(getState()),
+    payload: save(
+      updatedMappingsSelector(getState()),
+      currentContextKeySelector(getState()),
+    ),
   }),
 
   [SELECT_ELEMENT_PROXY]: action => (dispatch, getState) => {
