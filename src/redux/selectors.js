@@ -31,7 +31,7 @@ export const currentFieldTypeSelector = createSelector(
   ),
 );
 
-export const currentMappingsSelector = createSelector(
+export const updatedMappingsSelector = createSelector(
   currentContextSelector,
   context => (
     mapValues(

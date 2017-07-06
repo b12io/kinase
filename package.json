@@ -6,7 +6,7 @@
   "scripts": {
     "prepublish": "webpack",
     "release": "np",
-    "test": "webpack"
+    "test": "webpack && [ -z \"$(git status --porcelain)\" ] || echo 'Webpacked source files have not been committed!' >&2"
   },
   "main": "Kinase.js",
   "license": "Apache-2.0",
