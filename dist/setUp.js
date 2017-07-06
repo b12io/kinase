@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 333);
+/******/ 	return __webpack_require__(__webpack_require__.s = 332);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -39764,11 +39764,11 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactRedux = __webpack_require__(83);
 
-var _Highlighter = __webpack_require__(328);
+var _Highlighter = __webpack_require__(327);
 
 var _Highlighter2 = _interopRequireDefault(_Highlighter);
 
-var _Sidebar = __webpack_require__(329);
+var _Sidebar = __webpack_require__(328);
 
 var _Sidebar2 = _interopRequireDefault(_Sidebar);
 
@@ -40008,8 +40008,7 @@ module.exports = {
 
 /***/ }),
 /* 324 */,
-/* 325 */,
-/* 326 */
+/* 325 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -40065,7 +40064,7 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactRedux = __webpack_require__(83);
 
-var _AnnotatedItemField = __webpack_require__(327);
+var _AnnotatedItemField = __webpack_require__(326);
 
 var _AnnotatedItemField2 = _interopRequireDefault(_AnnotatedItemField);
 
@@ -40218,7 +40217,7 @@ exports.default = (0, _reactRedux.connect)(function (state, ownProps) {
 })(AnnotatedItem);
 
 /***/ }),
-/* 327 */
+/* 326 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -40278,15 +40277,15 @@ var _input2 = _interopRequireDefault(_input);
 
 var _reactRedux = __webpack_require__(83);
 
-var _ImageField = __webpack_require__(330);
+var _ImageField = __webpack_require__(329);
 
 var _ImageField2 = _interopRequireDefault(_ImageField);
 
-var _TextField = __webpack_require__(332);
+var _TextField = __webpack_require__(331);
 
 var _TextField2 = _interopRequireDefault(_TextField);
 
-var _RichTextField = __webpack_require__(331);
+var _RichTextField = __webpack_require__(330);
 
 var _RichTextField2 = _interopRequireDefault(_RichTextField);
 
@@ -40456,7 +40455,7 @@ exports.default = (0, _reactRedux.connect)(function (state, ownProps) {
   return {
     clearContent: function clearContent() {
       return dispatch((0, _proxyActions.updateField)(ownProps.annotationName, ownProps.collectionIndex, ownProps.fieldName, {
-        content: null,
+        content: '',
         original: null,
         sources: []
       }));
@@ -40474,7 +40473,7 @@ exports.default = (0, _reactRedux.connect)(function (state, ownProps) {
 })(AnnotatedItemField);
 
 /***/ }),
-/* 328 */
+/* 327 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -40605,7 +40604,7 @@ Highlighter.defaultProps = {
 };
 
 /***/ }),
-/* 329 */
+/* 328 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -40677,7 +40676,7 @@ var _manifest = __webpack_require__(323);
 
 var _manifest2 = _interopRequireDefault(_manifest);
 
-var _AnnotatedItem = __webpack_require__(326);
+var _AnnotatedItem = __webpack_require__(325);
 
 var _AnnotatedItem2 = _interopRequireDefault(_AnnotatedItem);
 
@@ -40785,7 +40784,7 @@ exports.default = (0, _reactRedux.connect)(function (state) {
 })(Sidebar);
 
 /***/ }),
-/* 330 */
+/* 329 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -40947,7 +40946,7 @@ ImageField.defaultProps = {
 };
 
 /***/ }),
-/* 331 */
+/* 330 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -41080,7 +41079,7 @@ RichTextField.defaultProps = {
 };
 
 /***/ }),
-/* 332 */
+/* 331 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -41199,7 +41198,7 @@ TextField.defaultProps = {
 };
 
 /***/ }),
-/* 333 */
+/* 332 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -41253,6 +41252,7 @@ store.ready().then(function () {
 });
 
 /***/ }),
+/* 333 */,
 /* 334 */,
 /* 335 */
 /***/ (function(module, exports, __webpack_require__) {

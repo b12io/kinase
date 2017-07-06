@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 325);
+/******/ 	return __webpack_require__(__webpack_require__.s = 324);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -14717,7 +14717,7 @@ var _lodash5 = __webpack_require__(413);
 
 var _lodash6 = _interopRequireDefault(_lodash5);
 
-var _api = __webpack_require__(324);
+var _api = __webpack_require__(334);
 
 var _proxyActions = __webpack_require__(35);
 
@@ -15148,38 +15148,6 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _promise = __webpack_require__(257);
-
-var _promise2 = _interopRequireDefault(_promise);
-
-exports.load = load;
-exports.save = save;
-
-var _testAnnotations = __webpack_require__(632);
-
-var _testAnnotations2 = _interopRequireDefault(_testAnnotations);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function load() {
-  return _promise2.default.resolve(_testAnnotations2.default);
-}
-
-function save() {
-  return _promise2.default.resolve();
-}
-
-/***/ }),
-/* 325 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
 var _reduxPromiseMiddleware = __webpack_require__(321);
 
 var _reduxPromiseMiddleware2 = _interopRequireDefault(_reduxPromiseMiddleware);
@@ -15271,6 +15239,7 @@ chrome.browserAction.onClicked.addListener(function () {
 });
 
 /***/ }),
+/* 325 */,
 /* 326 */,
 /* 327 */,
 /* 328 */,
@@ -15279,7 +15248,38 @@ chrome.browserAction.onClicked.addListener(function () {
 /* 331 */,
 /* 332 */,
 /* 333 */,
-/* 334 */,
+/* 334 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _promise = __webpack_require__(257);
+
+var _promise2 = _interopRequireDefault(_promise);
+
+exports.load = load;
+exports.save = save;
+
+var _testAnnotations = __webpack_require__(632);
+
+var _testAnnotations2 = _interopRequireDefault(_testAnnotations);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function load() {
+  return _promise2.default.resolve(_testAnnotations2.default);
+}
+
+function save() {
+  return _promise2.default.resolve();
+}
+
+/***/ }),
 /* 335 */,
 /* 336 */,
 /* 337 */,
